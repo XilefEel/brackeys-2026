@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bet3vjayiyr06"]
+
+[node name="Main" type="Control" unique_id=179983871]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Room" type="Control" parent="." unique_id=1671315466]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Door1View" type="Control" parent="." unique_id=1660144989]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Door2View" type="Control" parent="." unique_id=525922659]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Door3View" type="Control" parent="." unique_id=1536626191]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Guard1View" type="Control" parent="." unique_id=1253071377]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Guard2View" type="Control" parent="." unique_id=707965512]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Guard3View" type="Control" parent="." unique_id=499812086]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dialogue" type="CanvasLayer" parent="." unique_id=1091339350]
