@@ -1,4 +1,7 @@
+class_name Main
 extends Control
+
+@onready var dialogue_ui: DialogueUI = $DialogueUI
 
 enum RoomViews {
 	MAIN_ROOM,
@@ -42,3 +45,12 @@ func _on_to_guard_2_pressed() -> void: switch_view(RoomViews.GUARD_2)
 func _on_to_guard_3_pressed() -> void: switch_view(RoomViews.GUARD_3)
 
 func _on_go_back_pressed() -> void: switch_view(RoomViews.MAIN_ROOM)
+
+func _on_talk_guard_1_pressed() -> void:
+	dialogue_ui.show_message("Guard 1", "Door 1 leads to death.")
+
+func _on_talk_guard_2_pressed() -> void:
+	dialogue_ui.show_message("Guard 2", "Guard 1 is telling the truth.")
+
+func _on_talk_guard_3_pressed() -> void:
+	dialogue_ui.show_message("Guard 3", "Door 2 is safe.")

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dn708a7d2p7q4" path="res://assets/guard_1.png" id="5_lhr70"]
 [ext_resource type="Texture2D" uid="uid://d2ksl6m3pb7ly" path="res://assets/guard_2.png" id="6_wp0k4"]
 [ext_resource type="Texture2D" uid="uid://dexyga0ufnjqt" path="res://assets/guard_3.png" id="7_bjd11"]
+[ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/DialogueUI.tscn" id="9_q8u5g"]
 
 [node name="Main" type="Control" unique_id=179983871]
 layout_mode = 3
@@ -88,6 +89,7 @@ text = "Guard 3
 "
 
 [node name="Door1View" type="Control" parent="." unique_id=1660144989]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -245,6 +247,14 @@ offset_right = 889.0
 offset_bottom = 434.0
 text = "Door 1"
 
+[node name="Talk" type="Button" parent="Guard1View" unique_id=656389389]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 385.0
+offset_right = 712.0
+offset_bottom = 438.0
+text = "Talk"
+
 [node name="Guard2View" type="Control" parent="." unique_id=707965512]
 visible = false
 layout_mode = 1
@@ -289,6 +299,14 @@ offset_right = 152.0
 offset_bottom = 437.0
 text = "Door 1"
 
+[node name="Talk" type="Button" parent="Guard2View" unique_id=538085153]
+layout_mode = 0
+offset_left = 569.0
+offset_top = 378.0
+offset_right = 694.0
+offset_bottom = 431.0
+text = "Talk"
+
 [node name="Guard3View" type="Control" parent="." unique_id=499812086]
 visible = false
 layout_mode = 1
@@ -325,6 +343,14 @@ offset_right = 882.0
 offset_bottom = 450.0
 text = "Door 3"
 
+[node name="Talk" type="Button" parent="Guard3View" unique_id=229851571]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 396.0
+offset_right = 707.0
+offset_bottom = 449.0
+text = "Talk"
+
 [node name="ToDoor2" type="Button" parent="Guard3View" unique_id=991477940]
 layout_mode = 0
 offset_left = 42.0
@@ -333,7 +359,9 @@ offset_right = 167.0
 offset_bottom = 442.0
 text = "Door 2"
 
-[node name="Dialogue" type="CanvasLayer" parent="." unique_id=1091339350]
+[node name="DialogueUI" parent="." unique_id=1727500279 instance=ExtResource("9_q8u5g")]
+unique_name_in_owner = true
+visible = false
 
 [connection signal="pressed" from="RoomView/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="RoomView/ToDoor2" to="." method="_on_to_door_2_pressed"]
@@ -351,9 +379,12 @@ text = "Door 2"
 [connection signal="pressed" from="Door3View/ToGuard3" to="." method="_on_to_guard_3_pressed"]
 [connection signal="pressed" from="Guard1View/Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard1View/ToDoor1" to="." method="_on_to_door_1_pressed"]
+[connection signal="pressed" from="Guard1View/Talk" to="." method="_on_talk_guard_1_pressed"]
 [connection signal="pressed" from="Guard2View/Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard2View/ToDoor2" to="." method="_on_to_door_2_pressed"]
 [connection signal="pressed" from="Guard2View/ToDoor1" to="." method="_on_to_door_1_pressed"]
+[connection signal="pressed" from="Guard2View/Talk" to="." method="_on_talk_guard_2_pressed"]
 [connection signal="pressed" from="Guard3View/Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard3View/ToDoor3" to="." method="_on_to_door_3_pressed"]
+[connection signal="pressed" from="Guard3View/Talk" to="." method="_on_talk_guard_3_pressed"]
 [connection signal="pressed" from="Guard3View/ToDoor2" to="." method="_on_to_door_2_pressed"]

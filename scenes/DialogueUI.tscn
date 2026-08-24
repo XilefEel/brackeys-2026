@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://w5q73hqsidip"]
+
+[ext_resource type="Script" uid="uid://co48xnqqcu8ag" path="res://scripts/dialogue_ui.gd" id="1_0qyo7"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1727500279]
+script = ExtResource("1_0qyo7")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1410622325]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2048483957]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1061049170]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=605766838]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=578551963]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=767563912]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CharacterLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1175091052]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Character"
+
+[node name="MessageLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1554550188]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dialogue"
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1835480848]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue"
