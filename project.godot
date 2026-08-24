@@ -15,6 +15,10 @@ run/main_scene="uid://cs4itx811a1n5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://chxemeuabcuer"
+
 [autoload]
 
 SceneTransition="*uid://d3vw17krnm24"
@@ -24,6 +28,7 @@ AudioManager="*uid://cvjr8a5tx8cdf"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [physics]
 
