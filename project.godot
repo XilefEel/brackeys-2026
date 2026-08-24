@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneTransition="*uid://d3vw17krnm24"
+AudioManager="*uid://cvjr8a5tx8cdf"
 
 [display]
 
