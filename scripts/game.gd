@@ -84,13 +84,7 @@ func _choose_door(chosen_door: int) -> void:
 	var current_level = levels[current_level_index]
 	
 	if chosen_door == current_level.death_door:
-		await SceneTransition.fade_out()
-		current_level_index = 0
-		load_current_level()
-		dialogue_ui.show_message("DEATH", "Door %d was the death door! Resetting to Room 1..." % chosen_door)
-		switch_view(RoomViews.MAIN_ROOM)
-		await SceneTransition.fade_in()
-		
+		SceneTransition.change_scene("res://scenes/GameOver.tscn")
 	else:
 		current_level_index += 1
 
