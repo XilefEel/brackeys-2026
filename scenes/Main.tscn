@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://d1l30pnvmq81k" path="res://assets/room.png" id="1_elqb8"]
 [ext_resource type="Script" uid="uid://bdv1oc2utolsx" path="res://scripts/main.gd" id="1_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://bennd2hj5ikcp" path="res://assets/door_1.png" id="2_nxtc6"]
+[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://scripts/LevelData.gd" id="2_wp0k4"]
+[ext_resource type="Resource" uid="uid://0tlnctue5clv" path="res://resources/level_1.tres" id="3_bjd11"]
 [ext_resource type="Texture2D" uid="uid://dmft0df2wcjbk" path="res://assets/door_2.png" id="3_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://rkw2nll21roj" path="res://assets/door_3.png" id="4_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://dn708a7d2p7q4" path="res://assets/guard_1.png" id="5_lhr70"]
@@ -18,6 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jlsqs")
+levels = Array[ExtResource("2_wp0k4")]([ExtResource("3_bjd11")])
 
 [node name="RoomView" type="Control" parent="." unique_id=1671315466]
 visible = false
@@ -160,7 +163,7 @@ texture = ExtResource("3_jlsqs")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Go Back" type="Button" parent="Door2View" unique_id=1248489535]
+[node name="GoBack" type="Button" parent="Door2View" unique_id=1248489535]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 51.0
@@ -212,7 +215,7 @@ texture = ExtResource("4_q8u5g")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Go Back" type="Button" parent="Door3View" unique_id=2001529103]
+[node name="GoBack" type="Button" parent="Door3View" unique_id=2001529103]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 51.0
@@ -237,6 +240,7 @@ offset_bottom = 438.0
 text = "Enter Door"
 
 [node name="Guard1View" type="Control" parent="." unique_id=1253071377]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -255,7 +259,7 @@ texture = ExtResource("5_lhr70")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Go Back" type="Button" parent="Guard1View" unique_id=1765352749]
+[node name="GoBack" type="Button" parent="Guard1View" unique_id=1765352749]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 51.0
@@ -299,7 +303,7 @@ texture = ExtResource("6_wp0k4")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Go Back" type="Button" parent="Guard2View" unique_id=2136604533]
+[node name="GoBack" type="Button" parent="Guard2View" unique_id=2136604533]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 51.0
@@ -351,7 +355,7 @@ texture = ExtResource("7_bjd11")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Go Back" type="Button" parent="Guard3View" unique_id=1665156038]
+[node name="GoBack" type="Button" parent="Guard3View" unique_id=1665156038]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 51.0
@@ -397,21 +401,21 @@ visible = false
 [connection signal="pressed" from="Door1View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
 [connection signal="pressed" from="Door1View/ToGuard1" to="." method="_on_to_guard_1_pressed"]
 [connection signal="pressed" from="Door1View/EnterDoor" to="." method="_on_enter_door_1_pressed"]
-[connection signal="pressed" from="Door2View/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Door2View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Door2View/ToGuard3" to="." method="_on_to_guard_3_pressed"]
 [connection signal="pressed" from="Door2View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
 [connection signal="pressed" from="Door2View/EnterDoor" to="." method="_on_enter_door_2_pressed"]
-[connection signal="pressed" from="Door3View/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Door3View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Door3View/ToGuard3" to="." method="_on_to_guard_3_pressed"]
 [connection signal="pressed" from="Door3View/EnterDoor" to="." method="_on_enter_door_3_pressed"]
-[connection signal="pressed" from="Guard1View/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Guard1View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard1View/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="Guard1View/Talk" to="." method="_on_talk_guard_1_pressed"]
-[connection signal="pressed" from="Guard2View/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Guard2View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard2View/ToDoor2" to="." method="_on_to_door_2_pressed"]
 [connection signal="pressed" from="Guard2View/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="Guard2View/Talk" to="." method="_on_talk_guard_2_pressed"]
-[connection signal="pressed" from="Guard3View/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Guard3View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard3View/ToDoor3" to="." method="_on_to_door_3_pressed"]
 [connection signal="pressed" from="Guard3View/Talk" to="." method="_on_talk_guard_3_pressed"]
 [connection signal="pressed" from="Guard3View/ToDoor2" to="." method="_on_to_door_2_pressed"]

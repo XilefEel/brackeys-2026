@@ -1,7 +1,11 @@
 class_name Main
 extends Control
 
+@export var levels: Array[LevelData] = []
+
 @onready var dialogue_ui: DialogueUI = $DialogueUI
+
+var current_level_index: int = 0
 
 enum RoomViews {
 	MAIN_ROOM,
@@ -46,21 +50,36 @@ func _on_to_guard_3_pressed() -> void: switch_view(RoomViews.GUARD_3)
 
 func _on_go_back_pressed() -> void: switch_view(RoomViews.MAIN_ROOM)
 
-func _on_talk_guard_1_pressed() -> void:
-	dialogue_ui.show_message("Guard 1", "Door 1 leads to death.")
-
-func _on_talk_guard_2_pressed() -> void:
-	dialogue_ui.show_message("Guard 2", "Guard 1 is telling the truth.")
-
-func _on_talk_guard_3_pressed() -> void:
-	dialogue_ui.show_message("Guard 3", "Door 2 is safe.")
+func _on_talk_guard_1_pressed() -> void: _talk_guard(1)
+func _on_talk_guard_2_pressed() -> void: _talk_guard(2)
+func _on_talk_guard_3_pressed() -> void: _talk_guard(3)
 
 func _on_enter_door_1_pressed() -> void: _choose_door(1)
 func _on_enter_door_2_pressed() -> void: _choose_door(2)
 func _on_enter_door_3_pressed() -> void: _choose_door(3)
 
-func _choose_door(door_number: int) -> void:
-	if door_number == 2:
-		dialogue_ui.show_message("DEATH", "You opened Door 2 and fell into darkness!")
+
+func _talk_guard(guard_number: int) -> void:
+	var current_level = levels[current_level_index]
+	var guard_text: String = ""
+
+	match guard_number:
+		1: guard_text = current_level.guard_1_text
+		2: guard_text = current_level.guard_2_text
+		3: guard_text = current_level.guard_3_text
+
+	dialogue_ui.show_message("Guard %d" % guard_number, guard_text)
+
+
+func _choose_door(chosen_door: int) -> void:
+	var current_level = levels[current_level_index]
+	
+	if chosen_door == current_level.death_door:
+		dialogue_ui.show_message("DEATH", "Door %d was the death door!" % chosen_door)
 	else:
-		dialogue_ui.show_message("SAFE", "You opened Door %d and escaped safely!" % door_number)
+		current_level_index += 1
+		if current_level_index >= levels.size():
+			dialogue_ui.show_message("VICTORY", "You escaped all rooms!")
+			current_level_index = 0
+		else:
+			dialogue_ui.show_message("SAFE", "Door %d was safe!" % chosen_door)
