@@ -84,19 +84,24 @@ func _choose_door(chosen_door: int) -> void:
 	var current_level = levels[current_level_index]
 	
 	if chosen_door == current_level.death_door:
-		dialogue_ui.show_message("DEATH", "Door %d was the death door! Resetting to Room 1..." % chosen_door)
+		await SceneTransition.fade_out()
 		current_level_index = 0
 		load_current_level()
+		dialogue_ui.show_message("DEATH", "Door %d was the death door! Resetting to Room 1..." % chosen_door)
 		switch_view(RoomViews.MAIN_ROOM)
+		await SceneTransition.fade_in()
+		
 	else:
 		current_level_index += 1
+
+		await SceneTransition.fade_out()
 		
 		if current_level_index >= levels.size():
 			dialogue_ui.show_message("VICTORY", "You escaped all rooms! You win!")
 			current_level_index = 0
-			load_current_level()
 		else:
 			dialogue_ui.show_message("SAFE", "Door %d was safe! Moving to next room..." % chosen_door)
-			load_current_level()
 			
+		load_current_level()
 		switch_view(RoomViews.MAIN_ROOM)
+		await SceneTransition.fade_in()

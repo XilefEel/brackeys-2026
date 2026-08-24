@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	if ResourceLoader.exists(game_scene):
-		get_tree().change_scene_to_file(game_scene)
+		SceneTransition.change_scene(game_scene)
 	else:
 		push_error("Main game scene path is invalid: %s" % game_scene)
 
