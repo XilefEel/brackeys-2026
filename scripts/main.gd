@@ -4,6 +4,7 @@ extends Control
 @export var levels: Array[LevelData] = []
 
 @onready var dialogue_ui: DialogueUI = $DialogueUI
+@onready var hud: HUD = $HUD
 
 var current_level_index: int = 0
 
@@ -31,11 +32,19 @@ var current_view: RoomViews = RoomViews.MAIN_ROOM
 
 func _ready() -> void:
 	switch_view(RoomViews.MAIN_ROOM)
+	load_current_level()
+
+
+func load_current_level() -> void:
+	if levels.is_empty():
+		push_error("No LevelData resources assigned in Inspector!")
+		return
+		
+	hud.update_room_info(current_level_index + 1)
 
 
 func switch_view(target_view: RoomViews) -> void:
 	current_view = target_view
-
 	for view_type in views.keys():
 		views[view_type].visible = (view_type == target_view)
 
@@ -75,11 +84,19 @@ func _choose_door(chosen_door: int) -> void:
 	var current_level = levels[current_level_index]
 	
 	if chosen_door == current_level.death_door:
-		dialogue_ui.show_message("DEATH", "Door %d was the death door!" % chosen_door)
+		dialogue_ui.show_message("DEATH", "Door %d was the death door! Resetting to Room 1..." % chosen_door)
+		current_level_index = 0
+		load_current_level()
+		switch_view(RoomViews.MAIN_ROOM)
 	else:
 		current_level_index += 1
+		
 		if current_level_index >= levels.size():
-			dialogue_ui.show_message("VICTORY", "You escaped all rooms!")
+			dialogue_ui.show_message("VICTORY", "You escaped all rooms! You win!")
 			current_level_index = 0
+			load_current_level()
 		else:
-			dialogue_ui.show_message("SAFE", "Door %d was safe!" % chosen_door)
+			dialogue_ui.show_message("SAFE", "Door %d was safe! Moving to next room..." % chosen_door)
+			load_current_level()
+			
+		switch_view(RoomViews.MAIN_ROOM)

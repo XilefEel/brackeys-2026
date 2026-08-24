@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://vp8xrcsx8gvi"]
+
+[ext_resource type="Script" uid="uid://1m3m2bo4565b" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=360686923]
+script = ExtResource("1_ahhtf")
+
+[node name="Control" type="Control" parent="." unique_id=1418544434]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RoomLabel" type="Label" parent="Control" unique_id=2016960804]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 615.0
+offset_top = 42.0
+offset_right = 674.0
+offset_bottom = 65.0
+size_flags_horizontal = 6
+text = "Room 1"
+
+[node name="Settings" type="Button" parent="Control" unique_id=926752071]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1159.0
+offset_top = 40.0
+offset_right = 1229.0
+offset_bottom = 71.0
+text = "Settings"
