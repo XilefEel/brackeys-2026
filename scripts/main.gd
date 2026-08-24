@@ -54,3 +54,13 @@ func _on_talk_guard_2_pressed() -> void:
 
 func _on_talk_guard_3_pressed() -> void:
 	dialogue_ui.show_message("Guard 3", "Door 2 is safe.")
+
+func _on_enter_door_1_pressed() -> void: _choose_door(1)
+func _on_enter_door_2_pressed() -> void: _choose_door(2)
+func _on_enter_door_3_pressed() -> void: _choose_door(3)
+
+func _choose_door(door_number: int) -> void:
+	if door_number == 2:
+		dialogue_ui.show_message("DEATH", "You opened Door 2 and fell into darkness!")
+	else:
+		dialogue_ui.show_message("SAFE", "You opened Door %d and escaped safely!" % door_number)

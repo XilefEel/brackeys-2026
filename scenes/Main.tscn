@@ -41,26 +41,26 @@ stretch_mode = 5
 
 [node name="ToDoor1" type="Button" parent="RoomView" unique_id=1732475068]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 363.0
-offset_right = 295.0
-offset_bottom = 416.0
+offset_left = 143.0
+offset_top = 357.0
+offset_right = 268.0
+offset_bottom = 410.0
 text = "Door 1"
 
 [node name="ToDoor2" type="Button" parent="RoomView" unique_id=62858658]
 layout_mode = 0
-offset_left = 583.0
+offset_left = 587.0
 offset_top = 314.0
-offset_right = 708.0
+offset_right = 712.0
 offset_bottom = 367.0
 text = "Door 2"
 
 [node name="ToDoor3" type="Button" parent="RoomView" unique_id=529011390]
 layout_mode = 0
-offset_left = 1054.0
-offset_top = 363.0
-offset_right = 1179.0
-offset_bottom = 416.0
+offset_left = 1051.0
+offset_top = 351.0
+offset_right = 1176.0
+offset_bottom = 404.0
 text = "Door 3"
 
 [node name="ToGuard1" type="Button" parent="RoomView" unique_id=53008608]
@@ -108,7 +108,7 @@ texture = ExtResource("2_nxtc6")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Go Back" type="Button" parent="Door1View" unique_id=1850824653]
+[node name="GoBack" type="Button" parent="Door1View" unique_id=1850824653]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 51.0
@@ -118,10 +118,10 @@ text = "Go Back"
 
 [node name="ToGuard2" type="Button" parent="Door1View" unique_id=695427338]
 layout_mode = 0
-offset_left = 991.0
-offset_top = 383.0
-offset_right = 1116.0
-offset_bottom = 436.0
+offset_left = 1001.0
+offset_top = 391.0
+offset_right = 1126.0
+offset_bottom = 444.0
 text = "Guard 2"
 
 [node name="ToGuard1" type="Button" parent="Door1View" unique_id=531560571]
@@ -131,6 +131,14 @@ offset_top = 389.0
 offset_right = 361.0
 offset_bottom = 442.0
 text = "Guard 1"
+
+[node name="EnterDoor" type="Button" parent="Door1View" unique_id=184439389]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 390.0
+offset_right = 719.0
+offset_bottom = 443.0
+text = "Enter Door"
 
 [node name="Door2View" type="Control" parent="." unique_id=525922659]
 visible = false
@@ -176,6 +184,14 @@ offset_right = 324.0
 offset_bottom = 429.0
 text = "Guard 2"
 
+[node name="EnterDoor" type="Button" parent="Door2View" unique_id=1079018334]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 386.0
+offset_right = 711.0
+offset_bottom = 439.0
+text = "Enter Door"
+
 [node name="Door3View" type="Control" parent="." unique_id=1536626191]
 visible = false
 layout_mode = 1
@@ -211,6 +227,14 @@ offset_top = 381.0
 offset_right = 400.0
 offset_bottom = 434.0
 text = "Guard 3"
+
+[node name="EnterDoor" type="Button" parent="Door3View" unique_id=265995269]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 385.0
+offset_right = 718.0
+offset_bottom = 438.0
+text = "Enter Door"
 
 [node name="Guard1View" type="Control" parent="." unique_id=1253071377]
 layout_mode = 1
@@ -369,14 +393,17 @@ visible = false
 [connection signal="pressed" from="RoomView/ToGuard1" to="." method="_on_to_guard_1_pressed"]
 [connection signal="pressed" from="RoomView/ToGuard2" to="." method="_on_to_guard_2_pressed"]
 [connection signal="pressed" from="RoomView/ToGuard3" to="." method="_on_to_guard_3_pressed"]
-[connection signal="pressed" from="Door1View/Go Back" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="Door1View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Door1View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
 [connection signal="pressed" from="Door1View/ToGuard1" to="." method="_on_to_guard_1_pressed"]
+[connection signal="pressed" from="Door1View/EnterDoor" to="." method="_on_enter_door_1_pressed"]
 [connection signal="pressed" from="Door2View/Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Door2View/ToGuard3" to="." method="_on_to_guard_3_pressed"]
 [connection signal="pressed" from="Door2View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
+[connection signal="pressed" from="Door2View/EnterDoor" to="." method="_on_enter_door_2_pressed"]
 [connection signal="pressed" from="Door3View/Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Door3View/ToGuard3" to="." method="_on_to_guard_3_pressed"]
+[connection signal="pressed" from="Door3View/EnterDoor" to="." method="_on_enter_door_3_pressed"]
 [connection signal="pressed" from="Guard1View/Go Back" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard1View/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="Guard1View/Talk" to="." method="_on_talk_guard_1_pressed"]
