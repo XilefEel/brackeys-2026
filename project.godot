@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="brackeys-2026"
-run/main_scene="uid://bet3vjayiyr06"
+run/main_scene="uid://cs4itx811a1n5"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

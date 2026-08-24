@@ -1,4 +1,4 @@
-class_name Main
+class_name Game
 extends Control
 
 @export var levels: Array[LevelData] = []
