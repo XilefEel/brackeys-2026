@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://scripts/LevelData.gd" id="2_wp0k4"]
 [ext_resource type="Resource" uid="uid://0tlnctue5clv" path="res://resources/level_1.tres" id="3_bjd11"]
 [ext_resource type="Texture2D" uid="uid://dmft0df2wcjbk" path="res://assets/door_2.png" id="3_jlsqs"]
+[ext_resource type="Resource" uid="uid://pfamldwn3xba" path="res://resources/level_2.tres" id="4_mwfav"]
 [ext_resource type="Texture2D" uid="uid://rkw2nll21roj" path="res://assets/door_3.png" id="4_q8u5g"]
+[ext_resource type="Resource" uid="uid://drpkjegru2k31" path="res://resources/level_3.tres" id="5_3p2gp"]
 [ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/hud.tscn" id="5_bjd11"]
 [ext_resource type="Texture2D" uid="uid://dn708a7d2p7q4" path="res://assets/guard_1.png" id="5_lhr70"]
 [ext_resource type="Texture2D" uid="uid://d2ksl6m3pb7ly" path="res://assets/guard_2.png" id="6_wp0k4"]
@@ -21,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jlsqs")
-levels = Array[ExtResource("2_wp0k4")]([ExtResource("3_bjd11")])
+levels = Array[ExtResource("2_wp0k4")]([ExtResource("3_bjd11"), ExtResource("4_mwfav"), ExtResource("5_3p2gp")])
 
 [node name="RoomView" type="Control" parent="." unique_id=1671315466]
 layout_mode = 1
@@ -389,6 +391,7 @@ text = "Door 2"
 
 [node name="DialogueUI" parent="." unique_id=1727500279 instance=ExtResource("9_q8u5g")]
 unique_name_in_owner = true
+visible = false
 
 [node name="HUD" parent="." unique_id=360686923 instance=ExtResource("5_bjd11")]
 unique_name_in_owner = true

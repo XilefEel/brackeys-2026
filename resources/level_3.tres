@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://drpkjegru2k31"]
+
+[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://scripts/LevelData.gd" id="1_f5gkw"]
+
+[resource]
+script = ExtResource("1_f5gkw")
+death_door = 3
+guard_1_text = "Guard 3 is lying."
+guard_2_text = "Door 3 is safe."
+guard_3_text = "Door 1 is safe."
+metadata/_custom_type_script = "uid://t4f7rb56ocsr"
