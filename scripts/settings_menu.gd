@@ -7,4 +7,5 @@ extends Control
 
 
 func _on_back_button_pressed() -> void:
+	AudioManager.play_sfx(AudioManager.SFX.CLICK)
 	SceneTransition.change_scene("res://scenes/MainMenu.tscn")

@@ -9,4 +9,4 @@ func update_room_info(room_number: int = 1) -> void:
 
 
 func _on_settings_button_pressed() -> void:
-	print("Settings pressed!")
+	pass

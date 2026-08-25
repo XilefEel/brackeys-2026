@@ -31,7 +31,7 @@ enum RoomViews {
 var current_view: RoomViews = RoomViews.MAIN_ROOM
 
 func _ready() -> void:
-	switch_view(RoomViews.MAIN_ROOM)
+	switch_view(RoomViews.MAIN_ROOM, false)
 	load_current_level()
 
 
@@ -43,10 +43,48 @@ func load_current_level() -> void:
 	hud.update_room_info(current_level_index + 1)
 
 
-func switch_view(target_view: RoomViews) -> void:
+func switch_view(target_view: RoomViews, play_sound: bool = true) -> void:
+	if play_sound:
+		AudioManager.play_sfx(AudioManager.SFX.CLICK)
+
 	current_view = target_view
 	for view_type in views.keys():
 		views[view_type].visible = (view_type == target_view)
+
+
+func _talk_guard(guard_number: int) -> void:
+	AudioManager.play_sfx(AudioManager.SFX.CLICK)
+	var current_level = levels[current_level_index]
+	var guard_text: String = ""
+
+	match guard_number:
+		1: guard_text = current_level.guard_1_text
+		2: guard_text = current_level.guard_2_text
+		3: guard_text = current_level.guard_3_text
+
+	dialogue_ui.show_message("Guard %d" % guard_number, guard_text)
+
+
+func _choose_door(chosen_door: int) -> void:
+	AudioManager.play_sfx(AudioManager.SFX.DOOR_OPEN)
+	var current_level = levels[current_level_index]
+	
+	if chosen_door == current_level.death_door:
+		SceneTransition.change_scene("res://scenes/GameOver.tscn")
+	else:
+		current_level_index += 1
+
+		await SceneTransition.fade_out()
+		
+		if current_level_index >= levels.size():
+			dialogue_ui.show_message("VICTORY", "You escaped all rooms! You win!")
+			current_level_index = 0
+		else:
+			dialogue_ui.show_message("SAFE", "Door %d was safe! Moving to next room..." % chosen_door)
+			
+		load_current_level()
+		switch_view(RoomViews.MAIN_ROOM, false)
+		await SceneTransition.fade_in()
 
 
 func _on_to_door_1_pressed() -> void: switch_view(RoomViews.DOOR_1)
@@ -66,36 +104,3 @@ func _on_talk_guard_3_pressed() -> void: _talk_guard(3)
 func _on_enter_door_1_pressed() -> void: _choose_door(1)
 func _on_enter_door_2_pressed() -> void: _choose_door(2)
 func _on_enter_door_3_pressed() -> void: _choose_door(3)
-
-
-func _talk_guard(guard_number: int) -> void:
-	var current_level = levels[current_level_index]
-	var guard_text: String = ""
-
-	match guard_number:
-		1: guard_text = current_level.guard_1_text
-		2: guard_text = current_level.guard_2_text
-		3: guard_text = current_level.guard_3_text
-
-	dialogue_ui.show_message("Guard %d" % guard_number, guard_text)
-
-
-func _choose_door(chosen_door: int) -> void:
-	var current_level = levels[current_level_index]
-	
-	if chosen_door == current_level.death_door:
-		SceneTransition.change_scene("res://scenes/GameOver.tscn")
-	else:
-		current_level_index += 1
-
-		await SceneTransition.fade_out()
-		
-		if current_level_index >= levels.size():
-			dialogue_ui.show_message("VICTORY", "You escaped all rooms! You win!")
-			current_level_index = 0
-		else:
-			dialogue_ui.show_message("SAFE", "Door %d was safe! Moving to next room..." % chosen_door)
-			
-		load_current_level()
-		switch_view(RoomViews.MAIN_ROOM)
-		await SceneTransition.fade_in()

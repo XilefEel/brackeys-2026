@@ -15,14 +15,17 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	if ResourceLoader.exists(game_scene):
+		AudioManager.play_sfx(AudioManager.SFX.CLICK)
 		SceneTransition.change_scene(game_scene)
 	else:
 		push_error("Main game scene path is invalid: %s" % game_scene)
 
 
 func _on_settings_pressed() -> void:
+	AudioManager.play_sfx(AudioManager.SFX.CLICK)
 	SceneTransition.change_scene("res://scenes/SettingsMenu.tscn")
 
 
 func _on_quit_pressed() -> void:
+	AudioManager.play_sfx(AudioManager.SFX.CLICK)
 	get_tree().quit()
