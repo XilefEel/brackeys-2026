@@ -3,6 +3,7 @@ extends Node
 enum BGM {
 	GAME,
 }
+
 enum SFX {
 	CLICK,
 	DOOR_OPEN,
@@ -12,6 +13,10 @@ enum SFX {
 @export var sfx_click: AudioStream = preload("res://assets/click.mp3")
 @export var sfx_door: AudioStream = preload("res://assets/door.mp3")
 
+var master_volume: float = 0.5
+var bgm_volume: float = 0.5
+var sfx_volume: float = 0.5
+
 var bgm_player: AudioStreamPlayer
 
 var bgm_tracks: Dictionary = {}
@@ -19,9 +24,13 @@ var sfx_tracks: Dictionary = {}
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+
+	set_master_volume(master_volume)
+	set_bgm_volume(bgm_volume)
+	set_sfx_volume(sfx_volume)
 	
 	bgm_player = AudioStreamPlayer.new()
-	bgm_player.bus = &"Music" if AudioServer.get_bus_index("Music") != -1 else &"Master"
+	bgm_player.bus = &"BGM" if AudioServer.get_bus_index("BGM") != -1 else &"Master"
 	add_child(bgm_player)
 	
 	bgm_tracks = {
@@ -60,3 +69,26 @@ func play_sfx(sound: SFX) -> void:
 	
 	sfx_player.play()
 	sfx_player.finished.connect(sfx_player.queue_free)
+
+
+func set_master_volume(value: float) -> void:
+	master_volume = value
+	var bus = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(bus, linear_to_db(value))
+	AudioServer.set_bus_mute(bus, value <= 0.001)
+
+
+func set_bgm_volume(value: float) -> void:
+	bgm_volume = value
+	var bus = AudioServer.get_bus_index("BGM")
+	if bus != -1:
+		AudioServer.set_bus_volume_db(bus, linear_to_db(value))
+		AudioServer.set_bus_mute(bus, value <= 0.001)
+
+
+func set_sfx_volume(value: float) -> void:
+	sfx_volume = value
+	var bus = AudioServer.get_bus_index("SFX")
+	if bus != -1:
+		AudioServer.set_bus_volume_db(bus, linear_to_db(value))
+		AudioServer.set_bus_mute(bus, value <= 0.001)

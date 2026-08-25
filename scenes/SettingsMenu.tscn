@@ -58,6 +58,8 @@ text = "Master Volume"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=1671038130]
 layout_mode = 2
@@ -67,6 +69,8 @@ text = "BGM Volume"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=2016676239]
 layout_mode = 2
@@ -76,9 +80,14 @@ text = "SFX Volume"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+max_value = 1.0
+step = 0.01
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/GridContainer" unique_id=691912267]
 layout_mode = 2
 text = "Back"
 
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/BGMVolumeSlider" to="." method="_on_bgm_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/BackButton" to="." method="_on_back_button_pressed"]
