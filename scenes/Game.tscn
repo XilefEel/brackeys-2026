@@ -320,10 +320,10 @@ text = "Door 1"
 
 [node name="Talk" type="Button" parent="Guard2View" unique_id=538085153]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 388.0
-offset_right = 782.0
-offset_bottom = 473.0
+offset_left = 463.0
+offset_top = 362.0
+offset_right = 785.0
+offset_bottom = 440.0
 text = "Talk"
 
 [node name="Guard3View" type="Control" parent="." unique_id=499812086]

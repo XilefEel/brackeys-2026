@@ -1,7 +1,7 @@
 class_name MainMenu
 extends Control
 
-@export_file("*.tscn") var game_scene: String = "res://scenes/game.tscn"
+@export_file("*.tscn") var game_scene: String = "res://scenes/Game.tscn"
 
 @onready var play_button: Button = %Play
 @onready var settings_button: Button = %Settings
@@ -18,6 +18,10 @@ func _on_play_pressed() -> void:
 		SceneTransition.change_scene(game_scene)
 	else:
 		push_error("Main game scene path is invalid: %s" % game_scene)
+
+
+func _on_settings_pressed() -> void:
+	SceneTransition.change_scene("res://scenes/SettingsMenu.tscn")
 
 
 func _on_quit_pressed() -> void:
