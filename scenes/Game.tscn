@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ksl6m3pb7ly" path="res://assets/guard_2.png" id="11_ocgqw"]
 [ext_resource type="Texture2D" uid="uid://dexyga0ufnjqt" path="res://assets/guard_3.png" id="12_jbgew"]
 [ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/DialogueUI.tscn" id="13_a85ww"]
-[ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/HUD.tscn" id="14_jhsr3"]
+[ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/hud.tscn" id="14_jhsr3"]
 
 [node name="Game" type="Control" unique_id=179983871]
 layout_mode = 3
@@ -275,6 +275,7 @@ offset_left = 526.0
 offset_top = 389.0
 offset_right = 773.0
 offset_bottom = 448.0
+focus_mode = 0
 text = "Talk"
 
 [node name="Guard2View" type="Control" parent="." unique_id=707965512]
@@ -324,6 +325,7 @@ offset_left = 463.0
 offset_top = 362.0
 offset_right = 785.0
 offset_bottom = 440.0
+focus_mode = 0
 text = "Talk"
 
 [node name="Guard3View" type="Control" parent="." unique_id=499812086]
@@ -367,6 +369,7 @@ offset_left = 517.0
 offset_top = 391.0
 offset_right = 771.0
 offset_bottom = 453.0
+focus_mode = 0
 text = "Talk"
 
 [node name="ToDoor2" type="Button" parent="Guard3View" unique_id=991477940]

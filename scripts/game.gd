@@ -62,7 +62,7 @@ func _talk_guard(guard_number: int) -> void:
 		2: guard_text = current_level.guard_2_text
 		3: guard_text = current_level.guard_3_text
 
-	dialogue_ui.show_message("Guard %d" % guard_number, guard_text)
+	dialogue_ui.play("Guard %d" % guard_number, guard_text)
 
 
 func _choose_door(chosen_door: int) -> void:
@@ -77,10 +77,10 @@ func _choose_door(chosen_door: int) -> void:
 		await SceneTransition.fade_out()
 		
 		if current_level_index >= levels.size():
-			dialogue_ui.show_message("VICTORY", "You escaped all rooms! You win!")
+			dialogue_ui.play("VICTORY", "You escaped all rooms! You win!")
 			current_level_index = 0
 		else:
-			dialogue_ui.show_message("SAFE", "Door %d was safe! Moving to next room..." % chosen_door)
+			dialogue_ui.play("SAFE", "Door %d was safe! Moving to next room..." % chosen_door)
 			
 		load_current_level()
 		switch_view(RoomViews.MAIN_ROOM, false)

@@ -7,11 +7,13 @@ enum BGM {
 enum SFX {
 	CLICK,
 	DOOR_OPEN,
+	TALK,
 }
 
 @export var bgm: AudioStream = preload("res://assets/bgm.mp3")
 @export var sfx_click: AudioStream = preload("res://assets/click.mp3")
 @export var sfx_door: AudioStream = preload("res://assets/door.mp3")
+@export var sfx_talk: AudioStream = preload("res://assets/talk.mp3")
 
 var master_volume: float = 0.5
 var bgm_volume: float = 0.5
@@ -40,6 +42,7 @@ func _ready() -> void:
 	sfx_tracks = {
 		SFX.CLICK: sfx_click,
 		SFX.DOOR_OPEN: sfx_door,
+		SFX.TALK: sfx_talk
 	}
 	
 	play_bgm(BGM.GAME)
