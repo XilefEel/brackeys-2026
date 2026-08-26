@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://rkw2nll21roj" path="res://assets/door_3.png" id="9_attvq"]
 [ext_resource type="Texture2D" uid="uid://dn708a7d2p7q4" path="res://assets/guard_1.png" id="10_bneo8"]
 [ext_resource type="Texture2D" uid="uid://d2ksl6m3pb7ly" path="res://assets/guard_2.png" id="11_ocgqw"]
+[ext_resource type="PackedScene" uid="uid://bc1huw5ivx3m1" path="res://scenes/FlowerOverlay.tscn" id="11_y5y3l"]
 [ext_resource type="Texture2D" uid="uid://dexyga0ufnjqt" path="res://assets/guard_3.png" id="12_jbgew"]
 [ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/DialogueUI.tscn" id="13_a85ww"]
 [ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/hud.tscn" id="14_jhsr3"]
@@ -312,6 +313,13 @@ offset_bottom = 448.0
 focus_mode = 0
 text = "Talk"
 
+[node name="FlowerOverlay" parent="Guard1View" unique_id=2132681387 instance=ExtResource("11_y5y3l")]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 455.0
+offset_right = 583.0
+offset_bottom = 455.0
+
 [node name="Guard2View" type="Control" parent="." unique_id=707965512]
 visible = false
 layout_mode = 1
@@ -361,6 +369,13 @@ offset_right = 785.0
 offset_bottom = 440.0
 focus_mode = 0
 text = "Talk"
+
+[node name="FlowerOverlay" parent="Guard2View" unique_id=746707899 instance=ExtResource("11_y5y3l")]
+layout_mode = 0
+offset_left = 564.0
+offset_top = 453.0
+offset_right = 564.0
+offset_bottom = 453.0
 
 [node name="Guard3View" type="Control" parent="." unique_id=499812086]
 visible = false
@@ -412,6 +427,13 @@ offset_right = 150.0
 offset_bottom = 720.0
 text = "Door 2"
 
+[node name="FlowerOverlay" parent="Guard3View" unique_id=1783036142 instance=ExtResource("11_y5y3l")]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 460.0
+offset_right = 582.0
+offset_bottom = 460.0
+
 [node name="DialogueUI" parent="." unique_id=1727500279 instance=ExtResource("13_a85ww")]
 unique_name_in_owner = true
 visible = false
@@ -420,6 +442,7 @@ visible = false
 unique_name_in_owner = true
 
 [node name="RoomTitleCard" parent="." unique_id=1249060871 instance=ExtResource("15_r7sob")]
+visible = false
 
 [connection signal="pressed" from="RoomView/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="RoomView/ToDoor2" to="." method="_on_to_door_2_pressed"]

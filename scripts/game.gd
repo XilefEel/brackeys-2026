@@ -7,9 +7,6 @@ extends Control
 @onready var hud: HUD = $HUD
 @onready var room_title_card: RoomTitleCard = $RoomTitleCard
 
-var current_level_index: int = 0
-var spoken_guards: Array[int] = []
-
 enum RoomViews {
 	MAIN_ROOM,
 	DOOR_1,
@@ -19,6 +16,9 @@ enum RoomViews {
 	GUARD_2,
 	GUARD_3,
 }
+
+var current_level_index: int = 0
+var spoken_guards: Array[int] = []
 
 @onready var views: Dictionary = {
 	RoomViews.MAIN_ROOM: $RoomView,
@@ -36,11 +36,55 @@ enum RoomViews {
 	$RoomView/ToGuard3/SummaryLabel
 ]
 
+@onready var flower_overlays: Array[FlowerOverlay] = [
+	$Guard1View/FlowerOverlay,
+	$Guard2View/FlowerOverlay,
+	$Guard3View/FlowerOverlay
+]
+
+var guard_flower_states: Array[FlowerOverlay.FlowerState] = [
+	FlowerOverlay.FlowerState.NONE,
+	FlowerOverlay.FlowerState.NONE,
+	FlowerOverlay.FlowerState.NONE
+]
+
 var current_view: RoomViews = RoomViews.MAIN_ROOM
 
 func _ready() -> void:
 	switch_view(RoomViews.MAIN_ROOM, false)
 	load_current_level()
+	reset_flower_marks()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	var guard_idx = -1
+
+	match current_view:
+		RoomViews.GUARD_1: guard_idx = 0
+		RoomViews.GUARD_2: guard_idx = 1
+		RoomViews.GUARD_3: guard_idx = 2
+
+	if guard_idx == -1:
+		return
+
+	var target_flower_state := FlowerOverlay.FlowerState.NONE
+
+	if event.is_action_pressed("mark_truth"):
+		target_flower_state = FlowerOverlay.FlowerState.TRUTH
+	elif event.is_action_pressed("mark_lie"):
+		target_flower_state = FlowerOverlay.FlowerState.LIAR
+	elif event.is_action_pressed("mark_half"):
+		target_flower_state = FlowerOverlay.FlowerState.HALF_TRUTH
+	else:
+		return
+
+	if guard_flower_states[guard_idx] == target_flower_state:
+		guard_flower_states[guard_idx] = FlowerOverlay.FlowerState.NONE
+	else:
+		guard_flower_states[guard_idx] = target_flower_state
+
+	flower_overlays[guard_idx].update_display(guard_flower_states[guard_idx])
+	AudioManager.play_sfx(AudioManager.SFX.CLICK)
 
 
 func load_current_level() -> void:
@@ -94,6 +138,12 @@ func _choose_door(chosen_door: int) -> void:
 		switch_view(RoomViews.MAIN_ROOM, false)
 		load_current_level()
 		await SceneTransition.fade_in()
+
+
+func reset_flower_marks() -> void:
+	for i in range(guard_flower_states.size()):
+		guard_flower_states[i] = FlowerOverlay.FlowerState.NONE
+		flower_overlays[i].update_display(FlowerOverlay.FlowerState.NONE)
 
 
 func _on_to_door_1_pressed() -> void: switch_view(RoomViews.DOOR_1)
