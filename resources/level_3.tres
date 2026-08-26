@@ -1,11 +1,35 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://drpkjegru2k31"]
 
 [ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://scripts/LevelData.gd" id="1_f5gkw"]
+[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://scripts/GuardData.gd" id="1_hxhn1"]
+
+[sub_resource type="Resource" id="Resource_hxhn1"]
+script = ExtResource("1_hxhn1")
+identifier = "Red Armor Guard"
+role = 1
+specialty = 1
+statement = "You can put your complete trust in the Cape Guard—he is an honest man who speaks only truth."
+summary = "Cape Guard is honest."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_adsg4"]
+script = ExtResource("1_hxhn1")
+identifier = "Cape Guard"
+role = 1
+statement = "Turn back! The Second Door is a death trap waiting to snap shut on you."
+summary = "Door 2 is a trap."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_xygox"]
+script = ExtResource("1_hxhn1")
+specialty = 1
+statement = "Do not be deceived by the Red Armor Guard. He speaks pure falsehoods about the Cape Guard's character."
+summary = "Red Armor Guard is lying."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
 script = ExtResource("1_f5gkw")
-death_door = 3
-guard_1_text = "Guard 3 is lying."
-guard_2_text = "Door 3 is safe."
-guard_3_text = "Door 1 is safe."
+safe_door_id = 2
+amulet_hint = "There is only one truth teller in the room..."
+guards = Array[ExtResource("1_hxhn1")]([SubResource("Resource_hxhn1"), SubResource("Resource_adsg4"), SubResource("Resource_xygox")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"

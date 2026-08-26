@@ -1,11 +1,33 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://0tlnctue5clv"]
 
+[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://scripts/GuardData.gd" id="1_3n4gr"]
 [ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://scripts/LevelData.gd" id="1_62fdt"]
+
+[sub_resource type="Resource" id="Resource_cxqhe"]
+script = ExtResource("1_3n4gr")
+statement = "Step away from those archways, princess. Both the First and Second Doors are rigged with deadly spike traps. "
+summary = "Door 1 and Door 2 are traps"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_3n4gr"]
+script = ExtResource("1_3n4gr")
+identifier = "Horned Helm Guard"
+role = 2
+statement = "If you value your life, listen to me: the First Door will only lead you to a gruesome death."
+summary = "Door 1 is a trap"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_a3i2a"]
+script = ExtResource("1_3n4gr")
+identifier = "Red Armor Guard"
+role = 1
+statement = "Pay no attention to the others. The Third Door is a guaranteed death trap."
+summary = "Door 3 is a trap."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
 script = ExtResource("1_62fdt")
-death_door = 2
-guard_1_text = "Door 1 leads to death."
-guard_2_text = "Guard 1 is telling the truth."
-guard_3_text = "Door 2 is safe."
+safe_door_id = 3
+amulet_hint = "There are at least 1 liars in the room..."
+guards = Array[ExtResource("1_3n4gr")]([SubResource("Resource_cxqhe"), SubResource("Resource_3n4gr"), SubResource("Resource_a3i2a")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"
