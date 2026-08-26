@@ -27,10 +27,17 @@ const DIALOGUE_DELAYS = {
 
 func _ready() -> void:
 	hide()
-	continue_button.pressed.connect(func():
-		AudioManager.play_sfx(AudioManager.SFX.CLICK)
-		hide()
-	)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_action_pressed("ui_accept"):
+		return
+
+	if is_typing:
+		is_skipping = true
+		return
+
+	hide()
 
 
 func play(character_name: String, message: String) -> void:
@@ -55,11 +62,11 @@ func show_line(character_name: String, message: String) -> void:
 
 		dialogue_label.visible_characters += 1
 		
-		var c = dialogue_label.text[dialogue_label.visible_characters - 1]
+		var c := dialogue_label.text[dialogue_label.visible_characters - 1]
 		if c not in SILENT_CHARS:
 			AudioManager.play_sfx(AudioManager.SFX.TALK)
 
-		var delay: float = DIALOGUE_DELAYS["normal"]
+		var delay := DIALOGUE_DELAYS["normal"]
 		match c:
 			",":
 				delay = DIALOGUE_DELAYS["comma"]
@@ -72,9 +79,8 @@ func show_line(character_name: String, message: String) -> void:
 	is_typing = false
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("ui_accept"):
-		return
+func _on_continue_button_pressed() -> void:
+	AudioManager.play_sfx(AudioManager.SFX.CLICK)
 
 	if is_typing:
 		is_skipping = true

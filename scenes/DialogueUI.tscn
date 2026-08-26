@@ -47,3 +47,5 @@ text = "Dialogue"
 unique_name_in_owner = true
 layout_mode = 2
 text = "Continue"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/ContinueButton" to="." method="_on_continue_button_pressed"]

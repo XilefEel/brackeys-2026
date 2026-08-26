@@ -20,13 +20,3 @@ offset_right = 674.0
 offset_bottom = 65.0
 size_flags_horizontal = 6
 text = "Room 1"
-
-[node name="TooltipPanel" type="PanelContainer" parent="." unique_id=1840348992]
-unique_name_in_owner = true
-visible = false
-offset_right = 1.0
-offset_bottom = 23.0
-
-[node name="TooltipLabel" type="Label" parent="TooltipPanel" unique_id=1123613316]
-unique_name_in_owner = true
-layout_mode = 2

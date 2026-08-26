@@ -10,10 +10,20 @@ enum SFX {
 	TALK,
 }
 
-@export var bgm: AudioStream = preload("res://assets/bgm.mp3")
-@export var sfx_click: AudioStream = preload("res://assets/click.mp3")
-@export var sfx_door: AudioStream = preload("res://assets/door.mp3")
-@export var sfx_talk: AudioStream = preload("res://assets/talk.mp3")
+@onready var bgm: AudioStream = preload("res://assets/bgm.mp3")
+@onready var sfx_click: AudioStream = preload("res://assets/click.mp3")
+@onready var sfx_door: AudioStream = preload("res://assets/door.mp3")
+@onready var sfx_talk: AudioStream = preload("res://assets/talk.mp3")
+
+@onready var bgm_tracks := {
+	BGM.GAME: bgm
+}
+
+@onready var sfx_tracks := {
+	SFX.CLICK: sfx_click,
+	SFX.DOOR_OPEN: sfx_door,
+	SFX.TALK: sfx_talk
+}
 
 var master_volume: float = 0.5
 var bgm_volume: float = 0.5
@@ -21,8 +31,7 @@ var sfx_volume: float = 0.5
 
 var bgm_player: AudioStreamPlayer
 
-var bgm_tracks: Dictionary = {}
-var sfx_tracks: Dictionary = {}
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -34,17 +43,7 @@ func _ready() -> void:
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.bus = &"BGM" if AudioServer.get_bus_index("BGM") != -1 else &"Master"
 	add_child(bgm_player)
-	
-	bgm_tracks = {
-		BGM.GAME: bgm
-	}
-	
-	sfx_tracks = {
-		SFX.CLICK: sfx_click,
-		SFX.DOOR_OPEN: sfx_door,
-		SFX.TALK: sfx_talk
-	}
-	
+
 	play_bgm(BGM.GAME)
 
 

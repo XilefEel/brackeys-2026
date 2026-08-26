@@ -48,8 +48,6 @@ func load_current_level() -> void:
 		return
 
 	spoken_guards.clear()
-	hud.hide_tooltip()
-
 	var current_level: LevelData = levels[current_level_index]
 	hud.update_room_info(current_level.level_number)
 

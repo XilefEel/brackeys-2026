@@ -1,8 +1,6 @@
 class_name MainMenu
 extends Control
 
-@export_file("*.tscn") var game_scene: String = "res://scenes/Game.tscn"
-
 @onready var play_button: Button = %Play
 @onready var settings_button: Button = %Settings
 @onready var quit_button: Button = %Quit
@@ -14,11 +12,8 @@ func _ready() -> void:
 
 
 func _on_play_pressed() -> void:
-	if ResourceLoader.exists(game_scene):
-		AudioManager.play_sfx(AudioManager.SFX.CLICK)
-		SceneTransition.change_scene(game_scene)
-	else:
-		push_error("Main game scene path is invalid: %s" % game_scene)
+	AudioManager.play_sfx(AudioManager.SFX.CLICK)
+	SceneTransition.change_scene("res://scenes/Game.tscn")
 
 
 func _on_settings_pressed() -> void:
