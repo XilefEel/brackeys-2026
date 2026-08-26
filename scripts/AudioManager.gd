@@ -1,6 +1,7 @@
 extends Node
 
 enum BGM {
+	MAIN_MENU,
 	GAME,
 }
 
@@ -10,13 +11,15 @@ enum SFX {
 	TALK,
 }
 
-@onready var bgm: AudioStream = preload("res://assets/bgm.mp3")
+@onready var main_menu_bgm: AudioStream = preload("res://assets/main_menu_bgm.mp3")
+@onready var rooms_bgm: AudioStream = preload("res://assets/rooms_bgm.mp3")
 @onready var sfx_click: AudioStream = preload("res://assets/click.mp3")
 @onready var sfx_door: AudioStream = preload("res://assets/door.mp3")
 @onready var sfx_talk: AudioStream = preload("res://assets/talk.mp3")
 
 @onready var bgm_tracks := {
-	BGM.GAME: bgm
+	BGM.GAME: rooms_bgm,
+	BGM.MAIN_MENU: main_menu_bgm
 }
 
 @onready var sfx_tracks := {
@@ -32,7 +35,6 @@ var sfx_volume: float = 0.5
 var bgm_player: AudioStreamPlayer
 
 
-
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
@@ -43,8 +45,6 @@ func _ready() -> void:
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.bus = &"BGM" if AudioServer.get_bus_index("BGM") != -1 else &"Master"
 	add_child(bgm_player)
-
-	play_bgm(BGM.GAME)
 
 
 func play_bgm(track: BGM) -> void:

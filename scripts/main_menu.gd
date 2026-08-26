@@ -7,6 +7,7 @@ extends Control
 
 
 func _ready() -> void:
+	AudioManager.play_bgm(AudioManager.BGM.MAIN_MENU)
 	if OS.get_name() == "Web":
 		quit_button.hide()
 

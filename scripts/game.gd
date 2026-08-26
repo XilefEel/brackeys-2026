@@ -58,6 +58,7 @@ var current_view: RoomViews = RoomViews.MAIN_ROOM
 
 
 func _ready() -> void:
+	AudioManager.play_bgm(AudioManager.BGM.GAME)
 	switch_view(RoomViews.MAIN_ROOM, false)
 	load_current_level()
 	reset_flower_marks()
@@ -104,7 +105,7 @@ func load_current_level() -> void:
 
 	spoken_guards.clear()
 	reset_flower_marks()
-	
+
 	var current_level: LevelData = levels[current_level_index]
 	hud.update_room_info(current_level.level_number)
 	room_title_card.show_title(current_level.level_number)
