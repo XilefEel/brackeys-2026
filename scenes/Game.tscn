@@ -76,6 +76,17 @@ offset_right = 202.0
 offset_bottom = 620.0
 text = "Guard 1"
 
+[node name="SummaryLabel" type="Label" parent="RoomView/ToGuard1" unique_id=2116282541]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ToGuard2" type="Button" parent="RoomView" unique_id=65352876]
 layout_mode = 0
 offset_left = 547.0
@@ -83,6 +94,17 @@ offset_top = 312.0
 offset_right = 617.0
 offset_bottom = 434.0
 text = "Guard 2"
+
+[node name="SummaryLabel" type="Label" parent="RoomView/ToGuard2" unique_id=2018816157]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ToGuard3" type="Button" parent="RoomView" unique_id=1832100708]
 layout_mode = 0
@@ -92,6 +114,17 @@ offset_right = 993.0
 offset_bottom = 497.0
 text = "Guard 3
 "
+
+[node name="SummaryLabel" type="Label" parent="RoomView/ToGuard3" unique_id=125610511]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Door1View" type="Control" parent="." unique_id=1660144989]
 visible = false
@@ -388,8 +421,14 @@ unique_name_in_owner = true
 [connection signal="pressed" from="RoomView/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="RoomView/ToDoor2" to="." method="_on_to_door_2_pressed"]
 [connection signal="pressed" from="RoomView/ToDoor3" to="." method="_on_to_door_3_pressed"]
+[connection signal="mouse_entered" from="RoomView/ToGuard1" to="." method="_on_guard_hover_entered" binds= [0]]
+[connection signal="mouse_exited" from="RoomView/ToGuard1" to="." method="_on_guard_hover_exited" binds= [0]]
 [connection signal="pressed" from="RoomView/ToGuard1" to="." method="_on_to_guard_1_pressed"]
+[connection signal="mouse_entered" from="RoomView/ToGuard2" to="." method="_on_guard_hover_entered" binds= [1]]
+[connection signal="mouse_exited" from="RoomView/ToGuard2" to="." method="_on_guard_hover_exited" binds= [1]]
 [connection signal="pressed" from="RoomView/ToGuard2" to="." method="_on_to_guard_2_pressed"]
+[connection signal="mouse_entered" from="RoomView/ToGuard3" to="." method="_on_guard_hover_entered" binds= [2]]
+[connection signal="mouse_exited" from="RoomView/ToGuard3" to="." method="_on_guard_hover_exited" binds= [2]]
 [connection signal="pressed" from="RoomView/ToGuard3" to="." method="_on_to_guard_3_pressed"]
 [connection signal="pressed" from="Door1View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Door1View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
