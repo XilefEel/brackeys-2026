@@ -39,8 +39,9 @@ func load_current_level() -> void:
 	if levels.is_empty():
 		push_error("No LevelData resources assigned in Inspector!")
 		return
-		
-	hud.update_room_info(current_level_index + 1)
+
+	var current_level: LevelData = levels[current_level_index]
+	hud.update_room_info(current_level.level_number)
 
 
 func switch_view(target_view: RoomViews, play_sound: bool = true) -> void:
@@ -52,24 +53,21 @@ func switch_view(target_view: RoomViews, play_sound: bool = true) -> void:
 		views[view_type].visible = (view_type == target_view)
 
 
-func _talk_guard(guard_number: int) -> void:
-	AudioManager.play_sfx(AudioManager.SFX.CLICK)
-	var current_level = levels[current_level_index]
-	var guard_text: String = ""
+func _talk_guard(guard_index: int) -> void:
+	var current_level: LevelData = levels[current_level_index]
+	
+	if guard_index < 0 or guard_index >= current_level.guards.size():
+		return
 
-	match guard_number:
-		1: guard_text = current_level.guard_1_text
-		2: guard_text = current_level.guard_2_text
-		3: guard_text = current_level.guard_3_text
-
-	dialogue_ui.play("Guard %d" % guard_number, guard_text)
+	var guard: GuardData = current_level.guards[guard_index]
+	dialogue_ui.play(guard.identifier, guard.statement)
 
 
 func _choose_door(chosen_door: int) -> void:
 	AudioManager.play_sfx(AudioManager.SFX.DOOR_OPEN)
-	var current_level = levels[current_level_index]
+	var current_level: LevelData = levels[current_level_index]
 	
-	if chosen_door == current_level.death_door:
+	if chosen_door != current_level.safe_door_id:
 		SceneTransition.change_scene("res://scenes/GameOver.tscn")
 	else:
 		current_level_index += 1
@@ -97,9 +95,9 @@ func _on_to_guard_3_pressed() -> void: switch_view(RoomViews.GUARD_3)
 
 func _on_go_back_pressed() -> void: switch_view(RoomViews.MAIN_ROOM)
 
-func _on_talk_guard_1_pressed() -> void: _talk_guard(1)
-func _on_talk_guard_2_pressed() -> void: _talk_guard(2)
-func _on_talk_guard_3_pressed() -> void: _talk_guard(3)
+func _on_talk_guard_1_pressed() -> void: _talk_guard(0)
+func _on_talk_guard_2_pressed() -> void: _talk_guard(1)
+func _on_talk_guard_3_pressed() -> void: _talk_guard(2)
 
 func _on_enter_door_1_pressed() -> void: _choose_door(1)
 func _on_enter_door_2_pressed() -> void: _choose_door(2)
