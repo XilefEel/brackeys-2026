@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dexyga0ufnjqt" path="res://assets/guard_3.png" id="12_jbgew"]
 [ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/DialogueUI.tscn" id="13_a85ww"]
 [ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/hud.tscn" id="14_jhsr3"]
+[ext_resource type="PackedScene" uid="uid://h7fcn4rd4oh0" path="res://scenes/RoomTitleCard.tscn" id="15_r7sob"]
 
 [node name="Game" type="Control" unique_id=179983871]
 layout_mode = 3
@@ -417,6 +418,8 @@ visible = false
 
 [node name="HUD" parent="." unique_id=360686923 instance=ExtResource("14_jhsr3")]
 unique_name_in_owner = true
+
+[node name="RoomTitleCard" parent="." unique_id=1249060871 instance=ExtResource("15_r7sob")]
 
 [connection signal="pressed" from="RoomView/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="RoomView/ToDoor2" to="." method="_on_to_door_2_pressed"]

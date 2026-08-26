@@ -5,6 +5,7 @@ extends Control
 
 @onready var dialogue_ui: DialogueUI = $DialogueUI
 @onready var hud: HUD = $HUD
+@onready var room_title_card: RoomTitleCard = $RoomTitleCard
 
 var current_level_index: int = 0
 var spoken_guards: Array[int] = []
@@ -50,6 +51,7 @@ func load_current_level() -> void:
 	spoken_guards.clear()
 	var current_level: LevelData = levels[current_level_index]
 	hud.update_room_info(current_level.level_number)
+	room_title_card.show_title(current_level.level_number)
 
 
 func switch_view(target_view: RoomViews, play_sound: bool = true) -> void:
@@ -88,11 +90,9 @@ func _choose_door(chosen_door: int) -> void:
 		if current_level_index >= levels.size():
 			dialogue_ui.play("VICTORY", "You escaped all rooms! You win!")
 			current_level_index = 0
-		else:
-			dialogue_ui.play("SAFE", "Door %d was safe! Moving to next room..." % chosen_door)
-			
-		load_current_level()
+
 		switch_view(RoomViews.MAIN_ROOM, false)
+		load_current_level()
 		await SceneTransition.fade_in()
 
 

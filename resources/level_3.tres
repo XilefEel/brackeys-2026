@@ -29,6 +29,7 @@ metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
 script = ExtResource("1_f5gkw")
+level_number = 3
 safe_door_id = 2
 amulet_hint = "There is only one truth teller in the room..."
 guards = Array[ExtResource("1_hxhn1")]([SubResource("Resource_hxhn1"), SubResource("Resource_adsg4"), SubResource("Resource_xygox")])
