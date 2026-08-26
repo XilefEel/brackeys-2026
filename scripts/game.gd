@@ -85,13 +85,12 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		return
 
-	var flower_state := guard_flower_states[guard_idx]
-
-	if flower_state == target_flower_state:
-		flower_state = FlowerOverlay.FlowerState.NONE
+	if guard_flower_states[guard_idx] == target_flower_state:
+		guard_flower_states[guard_idx] = FlowerOverlay.FlowerState.NONE
 	else:
-		flower_state = target_flower_state
+		guard_flower_states[guard_idx] = target_flower_state
 
+	var flower_state := guard_flower_states[guard_idx]
 	flower_overlays[guard_idx].update_display(flower_state)
 	main_room_flower_overlays[guard_idx].update_display(flower_state)
 
@@ -104,6 +103,8 @@ func load_current_level() -> void:
 		return
 
 	spoken_guards.clear()
+	reset_flower_marks()
+	
 	var current_level: LevelData = levels[current_level_index]
 	hud.update_room_info(current_level.level_number)
 	room_title_card.show_title(current_level.level_number)
