@@ -42,6 +42,12 @@ var spoken_guards: Array[int] = []
 	$Guard3View/FlowerOverlay
 ]
 
+@onready var main_room_flower_overlays: Array[FlowerOverlay] = [
+	$RoomView/ToGuard1/FlowerOverlay,
+	$RoomView/ToGuard2/FlowerOverlay,
+	$RoomView/ToGuard3/FlowerOverlay
+]
+
 var guard_flower_states: Array[FlowerOverlay.FlowerState] = [
 	FlowerOverlay.FlowerState.NONE,
 	FlowerOverlay.FlowerState.NONE,
@@ -49,6 +55,7 @@ var guard_flower_states: Array[FlowerOverlay.FlowerState] = [
 ]
 
 var current_view: RoomViews = RoomViews.MAIN_ROOM
+
 
 func _ready() -> void:
 	switch_view(RoomViews.MAIN_ROOM, false)
@@ -78,12 +85,16 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		return
 
-	if guard_flower_states[guard_idx] == target_flower_state:
-		guard_flower_states[guard_idx] = FlowerOverlay.FlowerState.NONE
-	else:
-		guard_flower_states[guard_idx] = target_flower_state
+	var flower_state := guard_flower_states[guard_idx]
 
-	flower_overlays[guard_idx].update_display(guard_flower_states[guard_idx])
+	if flower_state == target_flower_state:
+		flower_state = FlowerOverlay.FlowerState.NONE
+	else:
+		flower_state = target_flower_state
+
+	flower_overlays[guard_idx].update_display(flower_state)
+	main_room_flower_overlays[guard_idx].update_display(flower_state)
+
 	AudioManager.play_sfx(AudioManager.SFX.CLICK)
 
 
@@ -142,8 +153,11 @@ func _choose_door(chosen_door: int) -> void:
 
 func reset_flower_marks() -> void:
 	for i in range(guard_flower_states.size()):
-		guard_flower_states[i] = FlowerOverlay.FlowerState.NONE
-		flower_overlays[i].update_display(FlowerOverlay.FlowerState.NONE)
+		var none_state := FlowerOverlay.FlowerState.NONE
+
+		guard_flower_states[i] = none_state
+		flower_overlays[i].update_display(none_state)
+		main_room_flower_overlays[i].update_display(none_state)
 
 
 func _on_to_door_1_pressed() -> void: switch_view(RoomViews.DOOR_1)

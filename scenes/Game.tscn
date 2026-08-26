@@ -78,6 +78,13 @@ offset_right = 202.0
 offset_bottom = 620.0
 text = "Guard 1"
 
+[node name="FlowerOverlay" parent="RoomView/ToGuard1" unique_id=2132681387 instance=ExtResource("11_y5y3l")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -162.0
+offset_right = 10.0
+offset_bottom = -162.0
+
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard1" unique_id=2116282541]
 visible = false
 layout_mode = 1
@@ -96,6 +103,13 @@ offset_top = 312.0
 offset_right = 617.0
 offset_bottom = 434.0
 text = "Guard 2"
+
+[node name="FlowerOverlay" parent="RoomView/ToGuard2" unique_id=1058383490 instance=ExtResource("11_y5y3l")]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -137.0
+offset_right = -36.0
+offset_bottom = -137.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard2" unique_id=2018816157]
 visible = false
@@ -116,6 +130,13 @@ offset_right = 993.0
 offset_bottom = 497.0
 text = "Guard 3
 "
+
+[node name="FlowerOverlay" parent="RoomView/ToGuard3" unique_id=317706167 instance=ExtResource("11_y5y3l")]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -138.0
+offset_right = -16.0
+offset_bottom = -138.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard3" unique_id=125610511]
 visible = false
@@ -313,7 +334,7 @@ offset_bottom = 448.0
 focus_mode = 0
 text = "Talk"
 
-[node name="FlowerOverlay" parent="Guard1View" unique_id=2132681387 instance=ExtResource("11_y5y3l")]
+[node name="FlowerOverlay" parent="Guard1View" unique_id=595482420 instance=ExtResource("11_y5y3l")]
 layout_mode = 0
 offset_left = 583.0
 offset_top = 455.0
