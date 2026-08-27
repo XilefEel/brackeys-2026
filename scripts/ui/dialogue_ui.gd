@@ -3,20 +3,11 @@ extends CanvasLayer
 
 @onready var name_label: Label = %NameLabel
 @onready var dialogue_label: Label = %DialogueLabel
-@onready var continue_button: Button = %ContinueButton
 
 var is_typing := false
 var is_skipping := false
 
-const CHAR_READ_SPEED := 0.03
 const SILENT_CHARS = [".", ",", "!", "?", " ", "\n"]
-
-const PAUSE_CHARS = {
-	",": 0.1,
-	".": 0.25,
-	"!": 0.25,
-	"?": 0.25
-}
 
 const DIALOGUE_DELAYS = {
 	"normal": 0.03,
@@ -29,8 +20,14 @@ func _ready() -> void:
 	hide()
 
 
-func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("ui_accept"):
+func _input(event: InputEvent) -> void:
+	if not visible:
+		return
+
+	var is_click = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
+	var is_accept = event.is_action_pressed("ui_accept")
+
+	if not (is_click or is_accept):
 		return
 
 	if is_typing:
@@ -77,13 +74,3 @@ func show_line(character_name: String, message: String) -> void:
 
 	dialogue_label.visible_characters = dialogue_label.text.length()
 	is_typing = false
-
-
-func _on_continue_button_pressed() -> void:
-	AudioManager.play_sfx(AudioManager.SFX.CLICK)
-
-	if is_typing:
-		is_skipping = true
-		return
-
-	hide()
