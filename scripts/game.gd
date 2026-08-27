@@ -48,6 +48,8 @@ var spoken_guards: Array[int] = []
 	$RoomView/ToGuard3/FlowerOverlay
 ]
 
+@onready var amulet_overlay: PanelContainer = %AmuletOverlay
+
 var guard_flower_states: Array[FlowerOverlay.FlowerState] = [
 	FlowerOverlay.FlowerState.NONE,
 	FlowerOverlay.FlowerState.NONE,
@@ -62,9 +64,21 @@ func _ready() -> void:
 	switch_view(RoomViews.MAIN_ROOM, false)
 	load_current_level()
 	reset_flower_marks()
+	amulet_overlay.hide()
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("toggle_amulet"):
+		if current_view == RoomViews.MAIN_ROOM:
+			var current_level: LevelData = levels[current_level_index]
+			
+			if event.is_pressed():
+				amulet_overlay.show_hint(current_level.amulet_hint)
+				amulet_overlay.show()
+			else:
+				amulet_overlay.hide()
+		return
+
 	var guard_idx = -1
 
 	match current_view:

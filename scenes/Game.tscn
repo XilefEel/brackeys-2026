@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/DialogueUI.tscn" id="13_a85ww"]
 [ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/hud.tscn" id="14_jhsr3"]
 [ext_resource type="PackedScene" uid="uid://h7fcn4rd4oh0" path="res://scenes/RoomTitleCard.tscn" id="15_r7sob"]
+[ext_resource type="PackedScene" uid="uid://dtqj6awxniu5o" path="res://scenes/AmuletOverlay.tscn" id="17_vjgi4"]
 
 [node name="Game" type="Control" unique_id=179983871]
 layout_mode = 3
@@ -463,6 +464,14 @@ unique_name_in_owner = true
 
 [node name="RoomTitleCard" parent="." unique_id=1249060871 instance=ExtResource("15_r7sob")]
 visible = false
+
+[node name="AmuletOverlay" parent="." unique_id=1185836316 instance=ExtResource("17_vjgi4")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
 
 [connection signal="pressed" from="RoomView/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="RoomView/ToDoor2" to="." method="_on_to_door_2_pressed"]
