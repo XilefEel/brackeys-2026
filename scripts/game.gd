@@ -69,7 +69,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("toggle_amulet"):
-		if current_view == RoomViews.MAIN_ROOM:
+		if current_view == RoomViews.MAIN_ROOM and GlobalState.has_died_once:
 			var current_level: LevelData = levels[current_level_index]
 			
 			if event.is_pressed():
@@ -152,6 +152,7 @@ func _choose_door(chosen_door: int) -> void:
 	var current_level := levels[current_level_index]
 	
 	if chosen_door != current_level.safe_door_id:
+		GlobalState.has_died_once = true
 		SceneTransition.change_scene("res://scenes/GameOver.tscn")
 	else:
 		current_level_index += 1
@@ -164,6 +165,7 @@ func _choose_door(chosen_door: int) -> void:
 
 		switch_view(RoomViews.MAIN_ROOM, false)
 		load_current_level()
+		
 		await SceneTransition.fade_in()
 
 
