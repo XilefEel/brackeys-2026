@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vp8xrcsx8gvi"]
 
 [ext_resource type="Script" uid="uid://1m3m2bo4565b" path="res://scripts/ui/hud.gd" id="1_ahhtf"]
+[ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="2_hqnrr"]
 
 [node name="HUD" type="CanvasLayer" unique_id=360686923]
 script = ExtResource("1_ahhtf")
@@ -19,4 +20,5 @@ offset_top = 42.0
 offset_right = 674.0
 offset_bottom = 65.0
 size_flags_horizontal = 6
+theme = ExtResource("2_hqnrr")
 text = "Room 1"

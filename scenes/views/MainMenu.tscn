@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxp8pfpfug5fq" path="res://scripts/views/main_menu.gd" id="1_0ykhv"]
 [ext_resource type="Texture2D" uid="uid://dgpie0rgopf1w" path="res://assets/bg/main_menu_bg.jpg" id="1_yqorp"]
+[ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="3_4s20s"]
 
 [node name="MainMenu" type="Control" unique_id=1204170799]
 layout_mode = 3
@@ -36,6 +37,7 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=857830167]
 layout_mode = 2
+theme = ExtResource("3_4s20s")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "Title"
@@ -43,16 +45,19 @@ text = "Title"
 [node name="Play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=984424500]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_4s20s")
 text = "Play"
 
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1929140115]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_4s20s")
 text = "Settings"
 
 [node name="Quit" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1234005711]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_4s20s")
 text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sj3c35xn7a1v"]
 
 [ext_resource type="Script" uid="uid://b2u0ehr6jh1tu" path="res://scripts/views/game_over.gd" id="1_6bcno"]
+[ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="2_s1qx5"]
 
 [node name="GameOver" type="Control" unique_id=1204170799]
 layout_mode = 3
@@ -33,17 +34,20 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=857830167]
 layout_mode = 2
+theme = ExtResource("2_s1qx5")
 theme_override_font_sizes/font_size = 64
 text = "You died."
 
 [node name="Restart" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=984424500]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_s1qx5")
 text = "Restart"
 
 [node name="Main Menu" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1234005711]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_s1qx5")
 text = "Main menu"
 
 [connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]

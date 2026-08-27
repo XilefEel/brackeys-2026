@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://w5q73hqsidip"]
 
 [ext_resource type="Script" uid="uid://co48xnqqcu8ag" path="res://scripts/ui/dialogue_ui.gd" id="1_0qyo7"]
+[ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="2_wjgy6"]
 
 [node name="DialogueUI" type="CanvasLayer" unique_id=1727500279]
 script = ExtResource("1_0qyo7")
@@ -36,16 +37,19 @@ size_flags_horizontal = 3
 [node name="NameLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1175091052]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_wjgy6")
 text = "Name"
 
 [node name="DialogueLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1554550188]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_wjgy6")
 text = "Dialogue"
 
 [node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1835480848]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("2_wjgy6")
 text = "Continue"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/ContinueButton" to="." method="_on_continue_button_pressed"]

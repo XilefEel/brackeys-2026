@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dtqj6awxniu5o"]
 
 [ext_resource type="Script" uid="uid://cr5w8y2u5twic" path="res://scripts/ui/amulet_overlay.gd" id="1_gkgpi"]
+[ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="2_ncgu5"]
 
 [node name="AmuletOverlay" type="PanelContainer" unique_id=1185836316]
 custom_minimum_size = Vector2(600, 400)
@@ -27,7 +28,7 @@ mouse_filter = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("2_ncgu5")
 text = "Hint"
 horizontal_alignment = 1
 autowrap_mode = 3
