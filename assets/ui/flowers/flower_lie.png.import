@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y18mq7bmbkjf"
-path="res://.godot/imported/flower_half_truth.png-7a52ad7a20aaa91d2a3ba6d46eaa969f.ctex"
+uid="uid://6hkbmcc3c2no"
+path="res://.godot/imported/flower_lie.png-87c4f09dd3e2aa40b297d43822a6aa15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flower_half_truth.png"
-dest_files=["res://.godot/imported/flower_half_truth.png-7a52ad7a20aaa91d2a3ba6d46eaa969f.ctex"]
+source_file="res://assets/ui/flowers/flower_lie.png"
+dest_files=["res://.godot/imported/flower_lie.png-87c4f09dd3e2aa40b297d43822a6aa15.ctex"]
 
 [params]
 

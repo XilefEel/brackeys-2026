@@ -11,11 +11,11 @@ enum SFX {
 	TALK,
 }
 
-@onready var main_menu_bgm: AudioStream = preload("res://assets/main_menu_bgm.mp3")
-@onready var rooms_bgm: AudioStream = preload("res://assets/rooms_bgm.mp3")
-@onready var sfx_click: AudioStream = preload("res://assets/click.mp3")
-@onready var sfx_door: AudioStream = preload("res://assets/door.mp3")
-@onready var sfx_talk: AudioStream = preload("res://assets/talk.mp3")
+@onready var main_menu_bgm: AudioStream = preload("res://assets/audio/bgm/main_menu_bgm.mp3")
+@onready var rooms_bgm: AudioStream = preload("res://assets/audio/bgm/rooms_bgm.mp3")
+@onready var sfx_click: AudioStream = preload("res://assets/audio/sfx/click.mp3")
+@onready var sfx_door: AudioStream = preload("res://assets/audio/sfx/door.mp3")
+@onready var sfx_talk: AudioStream = preload("res://assets/audio/sfx/talk.mp3")
 
 @onready var bgm_tracks := {
 	BGM.GAME: rooms_bgm,

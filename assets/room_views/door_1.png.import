@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6hkbmcc3c2no"
-path="res://.godot/imported/flower_lie.png-65493b7cb2c1a9985fff939ddcb034c2.ctex"
+uid="uid://bennd2hj5ikcp"
+path="res://.godot/imported/door_1.png-d8557b0b69d8a9b3ef3461fdebe59142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flower_lie.png"
-dest_files=["res://.godot/imported/flower_lie.png-65493b7cb2c1a9985fff939ddcb034c2.ctex"]
+source_file="res://assets/room_views/door_1.png"
+dest_files=["res://.godot/imported/door_1.png-d8557b0b69d8a9b3ef3461fdebe59142.ctex"]
 
 [params]
 

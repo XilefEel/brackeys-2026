@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br23588on4ruy"
-path="res://.godot/imported/flower_truth.png-9cc4afd93eee36f7b41823af5fa54fe0.ctex"
+uid="uid://d1l30pnvmq81k"
+path="res://.godot/imported/room.png-c3045c7c421fde7b33a762d309b32eda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flower_truth.png"
-dest_files=["res://.godot/imported/flower_truth.png-9cc4afd93eee36f7b41823af5fa54fe0.ctex"]
+source_file="res://assets/room_views/room.png"
+dest_files=["res://.godot/imported/room.png-c3045c7c421fde7b33a762d309b32eda.ctex"]
 
 [params]
 

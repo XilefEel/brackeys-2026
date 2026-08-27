@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://pfamldwn3xba"]
 
-[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://scripts/GuardData.gd" id="1_727sg"]
-[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://scripts/LevelData.gd" id="1_k2fya"]
+[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://resources/models/LevelData.gd" id="1_k2fya"]
+[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://resources/models/GuardData.gd" id="1_or7n4"]
 
 [sub_resource type="Resource" id="Resource_sqk0d"]
-script = ExtResource("1_727sg")
+script = ExtResource("1_or7n4")
 identifier = "Cape Guard"
 specialty = 1
 statement = "Don't waste your breath asking the Shield Guard for directions. Venom spews from his mouth every time he opens it."
@@ -12,14 +12,14 @@ summary = "Shield Guard is a Liar."
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [sub_resource type="Resource" id="Resource_727sg"]
-script = ExtResource("1_727sg")
+script = ExtResource("1_or7n4")
 role = 1
 statement = "I swear on my honor, entering through the First Door will end your journey."
 summary = "Door 1 is a trap."
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [sub_resource type="Resource" id="Resource_k5fwk"]
-script = ExtResource("1_727sg")
+script = ExtResource("1_or7n4")
 identifier = "Horned Helm Guard"
 role = 2
 statement = "Take my advice cautiously—the Second Door holds nothing behind it but a lethal hazard."
@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://b847wsowr1b63"
 script = ExtResource("1_k2fya")
 level_number = 2
 amulet_hint = " The liar and the half-truther are neighbors..."
-guards = Array[ExtResource("1_727sg")]([SubResource("Resource_sqk0d"), SubResource("Resource_727sg"), SubResource("Resource_k5fwk")])
+guards = Array[ExtResource("1_or7n4")]([SubResource("Resource_sqk0d"), SubResource("Resource_727sg"), SubResource("Resource_k5fwk")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"
