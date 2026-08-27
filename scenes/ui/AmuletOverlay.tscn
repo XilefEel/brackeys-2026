@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtqj6awxniu5o"]
 
-[ext_resource type="Script" uid="uid://cr5w8y2u5twic" path="res://scripts/amulet_overlay.gd" id="1_gkgpi"]
+[ext_resource type="Script" uid="uid://cr5w8y2u5twic" path="res://scripts/ui/amulet_overlay.gd" id="1_gkgpi"]
 
 [node name="AmuletOverlay" type="PanelContainer" unique_id=1185836316]
 custom_minimum_size = Vector2(600, 400)

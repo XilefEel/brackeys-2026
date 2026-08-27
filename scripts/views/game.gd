@@ -153,7 +153,7 @@ func _choose_door(chosen_door: int) -> void:
 	
 	if chosen_door != current_level.safe_door_id:
 		GlobalState.has_died_once = true
-		SceneTransition.change_scene("res://scenes/GameOver.tscn")
+		SceneTransition.change_scene("res://scenes/views/GameOver.tscn")
 	else:
 		current_level_index += 1
 

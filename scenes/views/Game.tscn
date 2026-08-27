@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bet3vjayiyr06"]
 
-[ext_resource type="Script" uid="uid://bdv1oc2utolsx" path="res://scripts/game.gd" id="1_7ua8r"]
+[ext_resource type="Script" uid="uid://bdv1oc2utolsx" path="res://scripts/views/game.gd" id="1_7ua8r"]
 [ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://resources/models/LevelData.gd" id="2_r7sob"]
 [ext_resource type="Resource" uid="uid://0tlnctue5clv" path="res://resources/levels/level_1.tres" id="3_y5y3l"]
 [ext_resource type="Resource" uid="uid://pfamldwn3xba" path="res://resources/levels/level_2.tres" id="4_vjgi4"]
@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://rkw2nll21roj" path="res://assets/room_views/door_3.png" id="9_attvq"]
 [ext_resource type="Texture2D" uid="uid://dn708a7d2p7q4" path="res://assets/room_views/guard_1.png" id="10_bneo8"]
 [ext_resource type="Texture2D" uid="uid://d2ksl6m3pb7ly" path="res://assets/room_views/guard_2.png" id="11_ocgqw"]
-[ext_resource type="PackedScene" uid="uid://bc1huw5ivx3m1" path="res://scenes/FlowerOverlay.tscn" id="11_y5y3l"]
+[ext_resource type="PackedScene" uid="uid://bc1huw5ivx3m1" path="res://scenes/ui/FlowerOverlay.tscn" id="11_y5y3l"]
 [ext_resource type="Texture2D" uid="uid://dexyga0ufnjqt" path="res://assets/room_views/guard_3.png" id="12_jbgew"]
-[ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/DialogueUI.tscn" id="13_a85ww"]
-[ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/hud.tscn" id="14_jhsr3"]
-[ext_resource type="PackedScene" uid="uid://h7fcn4rd4oh0" path="res://scenes/RoomTitleCard.tscn" id="15_r7sob"]
-[ext_resource type="PackedScene" uid="uid://dtqj6awxniu5o" path="res://scenes/AmuletOverlay.tscn" id="17_vjgi4"]
+[ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/ui/DialogueUI.tscn" id="13_a85ww"]
+[ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/ui/hud.tscn" id="14_jhsr3"]
+[ext_resource type="PackedScene" uid="uid://h7fcn4rd4oh0" path="res://scenes/ui/RoomTitleCard.tscn" id="15_r7sob"]
+[ext_resource type="PackedScene" uid="uid://dtqj6awxniu5o" path="res://scenes/ui/AmuletOverlay.tscn" id="17_vjgi4"]
 
 [node name="Game" type="Control" unique_id=179983871]
 layout_mode = 3

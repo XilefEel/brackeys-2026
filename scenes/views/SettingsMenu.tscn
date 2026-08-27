@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb52vub8ekxn6"]
 
-[ext_resource type="Script" uid="uid://cpqeog800b8qu" path="res://scripts/settings_menu.gd" id="1_yelko"]
+[ext_resource type="Script" uid="uid://cpqeog800b8qu" path="res://scripts/views/settings_menu.gd" id="1_yelko"]
 
 [node name="SettingsMenu" type="Control" unique_id=2088652194]
 layout_mode = 3

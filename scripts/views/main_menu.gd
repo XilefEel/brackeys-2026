@@ -14,12 +14,12 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	AudioManager.play_sfx(AudioManager.SFX.CLICK)
-	SceneTransition.change_scene("res://scenes/Game.tscn")
+	SceneTransition.change_scene("res://scenes/views/Game.tscn")
 
 
 func _on_settings_pressed() -> void:
 	AudioManager.play_sfx(AudioManager.SFX.CLICK)
-	SceneTransition.change_scene("res://scenes/SettingsMenu.tscn")
+	SceneTransition.change_scene("res://scenes/views/SettingsMenu.tscn")
 
 
 func _on_quit_pressed() -> void:

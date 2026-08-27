@@ -25,4 +25,4 @@ func _on_sfx_volume_slider_value_changed(value: float) -> void:
 
 func _on_back_button_pressed() -> void:
 	AudioManager.play_sfx(AudioManager.SFX.CLICK)
-	SceneTransition.change_scene("res://scenes/MainMenu.tscn")
+	SceneTransition.change_scene("res://scenes/views/MainMenu.tscn")
