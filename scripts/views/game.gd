@@ -21,31 +21,31 @@ var current_level_index: int = 0
 var spoken_guards: Array[int] = []
 
 @onready var views: Dictionary = {
-	RoomViews.MAIN_ROOM: $RoomView,
-	RoomViews.DOOR_1: $Door1View,
-	RoomViews.DOOR_2: $Door2View,
-	RoomViews.DOOR_3: $Door3View,
-	RoomViews.GUARD_1: $Guard1View,
-	RoomViews.GUARD_2: $Guard2View,
-	RoomViews.GUARD_3: $Guard3View
+	RoomViews.MAIN_ROOM: $ThreeDoorsView/RoomView,
+	RoomViews.DOOR_1: $ThreeDoorsView/Door1View,
+	RoomViews.DOOR_2: $ThreeDoorsView/Door2View,
+	RoomViews.DOOR_3: $ThreeDoorsView/Door3View,
+	RoomViews.GUARD_1: $ThreeDoorsView/Guard1View,
+	RoomViews.GUARD_2: $ThreeDoorsView/Guard2View,
+	RoomViews.GUARD_3: $ThreeDoorsView/Guard3View
 }
 
 @onready var summary_labels: Array[Label] = [
-	$RoomView/ToGuard1/SummaryLabel,
-	$RoomView/ToGuard2/SummaryLabel,
-	$RoomView/ToGuard3/SummaryLabel
+	$ThreeDoorsView/RoomView/ToGuard1/SummaryLabel,
+	$ThreeDoorsView/RoomView/ToGuard2/SummaryLabel,
+	$ThreeDoorsView/RoomView/ToGuard3/SummaryLabel
 ]
 
 @onready var flower_overlays: Array[FlowerOverlay] = [
-	$Guard1View/FlowerOverlay,
-	$Guard2View/FlowerOverlay,
-	$Guard3View/FlowerOverlay
+	$ThreeDoorsView/Guard1View/FlowerOverlay,
+	$ThreeDoorsView/Guard2View/FlowerOverlay,
+	$ThreeDoorsView/Guard3View/FlowerOverlay
 ]
 
 @onready var main_room_flower_overlays: Array[FlowerOverlay] = [
-	$RoomView/ToGuard1/FlowerOverlay,
-	$RoomView/ToGuard2/FlowerOverlay,
-	$RoomView/ToGuard3/FlowerOverlay
+	$ThreeDoorsView/RoomView/ToGuard1/FlowerOverlay,
+	$ThreeDoorsView/RoomView/ToGuard2/FlowerOverlay,
+	$ThreeDoorsView/RoomView/ToGuard3/FlowerOverlay
 ]
 
 @onready var amulet_overlay: PanelContainer = %AmuletOverlay
@@ -175,25 +175,6 @@ func reset_flower_marks() -> void:
 		guard_flower_states[i] = none_state
 		flower_overlays[i].update_display(none_state)
 		main_room_flower_overlays[i].update_display(none_state)
-
-
-func _on_to_door_1_pressed() -> void: switch_view(RoomViews.DOOR_1)
-func _on_to_door_2_pressed() -> void: switch_view(RoomViews.DOOR_2)
-func _on_to_door_3_pressed() -> void: switch_view(RoomViews.DOOR_3)
-
-func _on_to_guard_1_pressed() -> void: switch_view(RoomViews.GUARD_1)
-func _on_to_guard_2_pressed() -> void: switch_view(RoomViews.GUARD_2)
-func _on_to_guard_3_pressed() -> void: switch_view(RoomViews.GUARD_3)
-
-func _on_go_back_pressed() -> void: switch_view(RoomViews.MAIN_ROOM)
-
-func _on_talk_guard_1_pressed() -> void: _talk_guard(0)
-func _on_talk_guard_2_pressed() -> void: _talk_guard(1)
-func _on_talk_guard_3_pressed() -> void: _talk_guard(2)
-
-func _on_enter_door_1_pressed() -> void: _choose_door(1)
-func _on_enter_door_2_pressed() -> void: _choose_door(2)
-func _on_enter_door_3_pressed() -> void: _choose_door(3)
 
 
 func _on_guard_hover_entered(guard_index: int) -> void:

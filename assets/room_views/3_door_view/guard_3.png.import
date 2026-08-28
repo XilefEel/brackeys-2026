@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dexyga0ufnjqt"
-path="res://.godot/imported/guard_3.png-44708dbf1a7d8879e8f62eef5e2d78fa.ctex"
+path="res://.godot/imported/guard_3.png-0897f3e19bbfd040bf4ad2bfb275b7c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/room_views/guard_3.png"
-dest_files=["res://.godot/imported/guard_3.png-44708dbf1a7d8879e8f62eef5e2d78fa.ctex"]
+source_file="res://assets/room_views/3_door_view/guard_3.png"
+dest_files=["res://.godot/imported/guard_3.png-0897f3e19bbfd040bf4ad2bfb275b7c2.ctex"]
 
 [params]
 
