@@ -23,6 +23,7 @@ script = ExtResource("1_7ua8r")
 levels = Array[ExtResource("2_r7sob")]([ExtResource("3_y5y3l"), ExtResource("4_vjgi4"), ExtResource("5_kyk2p")])
 
 [node name="TwoDoorsView" parent="." unique_id=58006885 instance=ExtResource("6_r22hj")]
+visible = false
 layout_mode = 1
 
 [node name="ThreeDoorsView" parent="." unique_id=440240064 instance=ExtResource("7_oyq8o")]

@@ -136,7 +136,7 @@ offset_bottom = 119.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
-[node name="ToGuard2" type="Button" parent="Door1View" unique_id=1252909787]
+[node name="ToDoor2" type="Button" parent="Door1View" unique_id=1252909787]
 layout_mode = 0
 offset_left = 1130.0
 offset_right = 1280.0
@@ -295,12 +295,12 @@ offset_bottom = 109.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
-[node name="ToDoor1" type="Button" parent="Guard2View" unique_id=86988952]
+[node name="ToDoor2" type="Button" parent="Guard2View" unique_id=86988952]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Guard 1
+text = "Door 2
 "
 
 [node name="Talk" type="Button" parent="Guard2View" unique_id=2095995471]
@@ -325,7 +325,7 @@ offset_bottom = 453.0
 [connection signal="pressed" from="RoomView/ToGuard1" to="." method="_on_to_guard_1_pressed"]
 [connection signal="pressed" from="RoomView/ToGuard2" to="." method="_on_to_guard_2_pressed"]
 [connection signal="pressed" from="Door1View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Door1View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
+[connection signal="pressed" from="Door1View/ToDoor2" to="." method="_on_to_door_2_pressed"]
 [connection signal="pressed" from="Door1View/ToGuard1" to="." method="_on_to_guard_1_pressed"]
 [connection signal="pressed" from="Door1View/EnterDoor" to="." method="_on_enter_door_1_pressed"]
 [connection signal="pressed" from="Door2View/GoBack" to="." method="_on_go_back_pressed"]
@@ -336,5 +336,5 @@ offset_bottom = 453.0
 [connection signal="pressed" from="Guard1View/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="Guard1View/Talk" to="." method="_on_talk_guard_1_pressed"]
 [connection signal="pressed" from="Guard2View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard2View/ToDoor1" to="." method="_on_to_door_1_pressed"]
+[connection signal="pressed" from="Guard2View/ToDoor2" to="." method="_on_to_door_2_pressed"]
 [connection signal="pressed" from="Guard2View/Talk" to="." method="_on_talk_guard_2_pressed"]

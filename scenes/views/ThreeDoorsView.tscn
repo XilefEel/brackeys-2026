@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dexyga0ufnjqt" path="res://assets/room_views/3_door_view/guard_3.png" id="9_tplgu"]
 
 [node name="ThreeDoorsView" type="Control" unique_id=440240064]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

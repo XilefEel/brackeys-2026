@@ -7,6 +7,11 @@ extends Control
 @onready var hud: HUD = $HUD
 @onready var room_title_card: RoomTitleCard = $RoomTitleCard
 
+@onready var two_doors_view: TwoDoorsView = $TwoDoorsView
+@onready var three_doors_view: ThreeDoorsView = $ThreeDoorsView
+
+var active_layout: Control
+
 enum RoomViews {
 	MAIN_ROOM,
 	DOOR_1,
@@ -19,34 +24,6 @@ enum RoomViews {
 
 var current_level_index: int = 0
 var spoken_guards: Array[int] = []
-
-@onready var views: Dictionary = {
-	RoomViews.MAIN_ROOM: $ThreeDoorsView/RoomView,
-	RoomViews.DOOR_1: $ThreeDoorsView/Door1View,
-	RoomViews.DOOR_2: $ThreeDoorsView/Door2View,
-	RoomViews.DOOR_3: $ThreeDoorsView/Door3View,
-	RoomViews.GUARD_1: $ThreeDoorsView/Guard1View,
-	RoomViews.GUARD_2: $ThreeDoorsView/Guard2View,
-	RoomViews.GUARD_3: $ThreeDoorsView/Guard3View
-}
-
-@onready var summary_labels: Array[Label] = [
-	$ThreeDoorsView/RoomView/ToGuard1/SummaryLabel,
-	$ThreeDoorsView/RoomView/ToGuard2/SummaryLabel,
-	$ThreeDoorsView/RoomView/ToGuard3/SummaryLabel
-]
-
-@onready var flower_overlays: Array[FlowerOverlay] = [
-	$ThreeDoorsView/Guard1View/FlowerOverlay,
-	$ThreeDoorsView/Guard2View/FlowerOverlay,
-	$ThreeDoorsView/Guard3View/FlowerOverlay
-]
-
-@onready var main_room_flower_overlays: Array[FlowerOverlay] = [
-	$ThreeDoorsView/RoomView/ToGuard1/FlowerOverlay,
-	$ThreeDoorsView/RoomView/ToGuard2/FlowerOverlay,
-	$ThreeDoorsView/RoomView/ToGuard3/FlowerOverlay
-]
 
 @onready var amulet_overlay: PanelContainer = %AmuletOverlay
 
@@ -61,9 +38,7 @@ var current_view: RoomViews = RoomViews.MAIN_ROOM
 
 func _ready() -> void:
 	AudioManager.play_bgm(AudioManager.BGM.GAME)
-	switch_view(RoomViews.MAIN_ROOM, false)
 	load_current_level()
-	reset_flower_marks()
 	amulet_overlay.hide()
 
 
@@ -86,7 +61,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		RoomViews.GUARD_2: guard_idx = 1
 		RoomViews.GUARD_3: guard_idx = 2
 
-	if guard_idx == -1:
+	if guard_idx == -1 or guard_idx >= active_layout.flower_overlays.size():
 		return
 
 	var target_flower_state := FlowerOverlay.FlowerState.NONE
@@ -106,8 +81,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		guard_flower_states[guard_idx] = target_flower_state
 
 	var flower_state := guard_flower_states[guard_idx]
-	flower_overlays[guard_idx].update_display(flower_state)
-	main_room_flower_overlays[guard_idx].update_display(flower_state)
+	active_layout.flower_overlays[guard_idx].update_display(flower_state)
+	active_layout.main_room_flower_overlays[guard_idx].update_display(flower_state)
 
 	AudioManager.play_sfx(AudioManager.SFX.CLICK)
 
@@ -118,9 +93,21 @@ func load_current_level() -> void:
 		return
 
 	spoken_guards.clear()
-	reset_flower_marks()
 
 	var current_level: LevelData = levels[current_level_index]
+
+	if current_level.door_count == 2:
+		two_doors_view.show()
+		three_doors_view.hide()
+		active_layout = two_doors_view
+	else:
+		two_doors_view.hide()
+		three_doors_view.show()
+		active_layout = three_doors_view
+
+	reset_flower_marks()
+	switch_view(RoomViews.MAIN_ROOM, false)
+
 	hud.update_room_info(current_level.level_number)
 	room_title_card.show_title(current_level.level_number)
 
@@ -130,8 +117,7 @@ func switch_view(target_view: RoomViews, play_sound: bool = true) -> void:
 		AudioManager.play_sfx(AudioManager.SFX.CLICK)
 
 	current_view = target_view
-	for view_type in views.keys():
-		views[view_type].visible = (view_type == target_view)
+	active_layout.show_view(target_view)
 
 
 func _talk_guard(guard_index: int) -> void:
@@ -173,8 +159,10 @@ func reset_flower_marks() -> void:
 		var none_state := FlowerOverlay.FlowerState.NONE
 
 		guard_flower_states[i] = none_state
-		flower_overlays[i].update_display(none_state)
-		main_room_flower_overlays[i].update_display(none_state)
+
+		if active_layout and i < active_layout.flower_overlays.size():
+			active_layout.flower_overlays[i].update_display(none_state)
+			active_layout.main_room_flower_overlays[i].update_display(none_state)
 
 
 func _on_guard_hover_entered(guard_index: int) -> void:
@@ -183,14 +171,16 @@ func _on_guard_hover_entered(guard_index: int) -> void:
 
 	if guard_index in spoken_guards:
 		var current_level := levels[current_level_index]
+
 		if guard_index < current_level.guards.size():
 			var guard := current_level.guards[guard_index]
 			
-			var label := summary_labels[guard_index]
-			label.text = "%s\n\"%s\"" % [guard.identifier, guard.summary]
-			label.show()
+			if guard_index < active_layout.summary_labels.size():
+				var label: Label = active_layout.summary_labels[guard_index]
+				label.text = "%s\n\"%s\"" % [guard.identifier, guard.summary]
+				label.show()
 
 
 func _on_guard_hover_exited(guard_index: int) -> void:
-	if guard_index < summary_labels.size():
-		summary_labels[guard_index].hide()
+	if active_layout and guard_index < active_layout.summary_labels.size():
+		active_layout.summary_labels[guard_index].hide()
