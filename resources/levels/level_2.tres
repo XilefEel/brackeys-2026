@@ -1,34 +1,33 @@
-[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://pfamldwn3xba"]
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://0tlnctue5clv"]
 
-[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://resources/models/LevelData.gd" id="1_k2fya"]
-[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://resources/models/GuardData.gd" id="1_or7n4"]
+[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://resources/models/LevelData.gd" id="1_62fdt"]
+[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://resources/models/GuardData.gd" id="1_sfdh2"]
 
-[sub_resource type="Resource" id="Resource_sqk0d"]
-script = ExtResource("1_or7n4")
-identifier = "Cape Guard"
-specialty = 1
-statement = "Don't waste your breath asking the Shield Guard for directions. Venom spews from his mouth every time he opens it."
-summary = "Shield Guard is a Liar."
+[sub_resource type="Resource" id="Resource_cxqhe"]
+script = ExtResource("1_sfdh2")
+statement = "Step away from those archways, princess. Both the First and Second Doors are rigged with deadly spike traps. "
+summary = "Door 1 and Door 2 are traps"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
-[sub_resource type="Resource" id="Resource_727sg"]
-script = ExtResource("1_or7n4")
-role = 1
-statement = "I swear on my honor, entering through the First Door will end your journey."
-summary = "Door 1 is a trap."
-metadata/_custom_type_script = "uid://b847wsowr1b63"
-
-[sub_resource type="Resource" id="Resource_k5fwk"]
-script = ExtResource("1_or7n4")
+[sub_resource type="Resource" id="Resource_3n4gr"]
+script = ExtResource("1_sfdh2")
 identifier = "Horned Helm Guard"
 role = 2
-statement = "Take my advice cautiously—the Second Door holds nothing behind it but a lethal hazard."
-summary = "Door 2 is a trap."
+statement = "If you value your life, listen to me: the First Door will only lead you to a gruesome death."
+summary = "Door 1 is a trap"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_a3i2a"]
+script = ExtResource("1_sfdh2")
+identifier = "Red Armor Guard"
+role = 1
+statement = "Pay no attention to the others. The Third Door is a guaranteed death trap."
+summary = "Door 3 is a trap."
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
-script = ExtResource("1_k2fya")
-level_number = 2
-amulet_hint = " The liar and the half-truther are neighbors..."
-guards = Array[ExtResource("1_or7n4")]([SubResource("Resource_sqk0d"), SubResource("Resource_727sg"), SubResource("Resource_k5fwk")])
+script = ExtResource("1_62fdt")
+safe_door_id = 3
+amulet_hint = "There are at least 1 liars in the room..."
+guards = Array[ExtResource("1_sfdh2")]([SubResource("Resource_cxqhe"), SubResource("Resource_3n4gr"), SubResource("Resource_a3i2a")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"

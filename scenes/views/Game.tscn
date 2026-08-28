@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bdv1oc2utolsx" path="res://scripts/views/game.gd" id="1_7ua8r"]
 [ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://resources/models/LevelData.gd" id="2_r7sob"]
-[ext_resource type="Resource" uid="uid://0tlnctue5clv" path="res://resources/levels/level_1.tres" id="3_y5y3l"]
-[ext_resource type="Resource" uid="uid://pfamldwn3xba" path="res://resources/levels/level_2.tres" id="4_vjgi4"]
-[ext_resource type="Resource" uid="uid://drpkjegru2k31" path="res://resources/levels/level_3.tres" id="5_kyk2p"]
+[ext_resource type="Resource" uid="uid://bhaveis3siwwl" path="res://resources/levels/level_1.tres" id="3_y5y3l"]
+[ext_resource type="Resource" uid="uid://0tlnctue5clv" path="res://resources/levels/level_2.tres" id="4_6a15w"]
+[ext_resource type="Resource" uid="uid://pfamldwn3xba" path="res://resources/levels/level_3.tres" id="4_vjgi4"]
+[ext_resource type="Resource" uid="uid://drpkjegru2k31" path="res://resources/levels/level_4.tres" id="5_kyk2p"]
 [ext_resource type="PackedScene" uid="uid://benkjqsvap6o2" path="res://scenes/views/TwoDoorsView.tscn" id="6_r22hj"]
 [ext_resource type="PackedScene" uid="uid://b0b6kvib3wsge" path="res://scenes/views/ThreeDoorsView.tscn" id="7_oyq8o"]
 [ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/ui/DialogueUI.tscn" id="13_a85ww"]
@@ -20,7 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7ua8r")
-levels = Array[ExtResource("2_r7sob")]([ExtResource("3_y5y3l"), ExtResource("4_vjgi4"), ExtResource("5_kyk2p")])
+levels = Array[ExtResource("2_r7sob")]([ExtResource("3_y5y3l"), ExtResource("4_6a15w"), ExtResource("4_vjgi4"), ExtResource("5_kyk2p")])
 
 [node name="TwoDoorsView" parent="." unique_id=58006885 instance=ExtResource("6_r22hj")]
 visible = false
