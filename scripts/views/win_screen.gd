@@ -37,6 +37,9 @@ func _ready() -> void:
 	choice_a_button.pressed.connect(_on_bad_choice)
 	choice_b_button.pressed.connect(_on_good_choice)
 
+	choice_a_button.visible = false
+	choice_b_button.visible = false
+
 	is_typing = true
 	is_skipping = false
 	await Typewriter.run(
@@ -46,6 +49,9 @@ func _ready() -> void:
 		func(): return is_skipping
 	)
 	is_typing = false
+
+	choice_a_button.visible = true
+	choice_b_button.visible = true
 
 
 func _on_good_choice() -> void:
@@ -68,9 +74,13 @@ func _on_bad_choice() -> void:
 
 func _show_ending(state: State, screen: Control, label: Label, text: String) -> void:
 	AudioManager.play_sfx(AudioManager.SFX.CLICK)
+	await SceneTransition.fade_out()
+
 	current_state = state
 	choice_screen.hide()
 	screen.show()
+
+	await SceneTransition.fade_in()
 
 	is_typing = true
 	is_skipping = false
@@ -84,9 +94,6 @@ func _show_ending(state: State, screen: Control, label: Label, text: String) -> 
 
 
 func _input(event: InputEvent) -> void:
-	if current_state == State.CHOICE_SCREEN:
-		return
-
 	var is_click = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
 	var is_accept = event.is_action_pressed("ui_accept")
 
@@ -95,6 +102,9 @@ func _input(event: InputEvent) -> void:
 
 	if is_typing:
 		is_skipping = true
+		return
+
+	if current_state == State.CHOICE_SCREEN:
 		return
 
 	_return_to_menu()

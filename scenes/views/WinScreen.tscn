@@ -63,16 +63,10 @@ offset_top = 450.0
 offset_right = 977.0
 offset_bottom = 633.0
 theme = ExtResource("3_r6imf")
-text = "The stairs seem to go on forever, each step heavier than the last.
-
-Then, finally, a door.
-
-Light spills from beneath it, blinding and warm, unlike anything you've felt in this place."
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="GoodEndingScreen" type="Control" parent="." unique_id=514682028]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,18 +93,10 @@ offset_right = 655.0
 offset_bottom = 494.0
 theme = ExtResource("3_r6imf")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "You push the door open.
-
-Light floods over you, swallowing the stairs, the walls, the weight you've carried this whole way.
-
-For the first time, there is nothing left to fear.
-
-You are free."
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="BadEndingScreen" type="Control" parent="." unique_id=1009971396]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,12 +122,5 @@ offset_top = 250.0
 offset_right = 907.0
 offset_bottom = 495.0
 theme = ExtResource("3_r6imf")
-text = "Your hand falls from the handle.
-
-The light is too much. Too unfamiliar.
-
-You turn, and the stairs welcome you back down, into the rooms you know.
-
-Some doors are easier left closed."
 horizontal_alignment = 1
 autowrap_mode = 3
