@@ -16,14 +16,6 @@ var is_first_death := false
 var is_typing := false
 var is_skipping := false
 
-const SILENT_CHARS = [".", ",", "!", "?", " ", "\n"]
-
-const DIALOGUE_DELAYS = {
-	"normal": 0.03,
-	"comma": 0.15,
-	"period": 0.3,
-}
-
 const FIRST_DEATH_TEXT := "You find yourself trapped amidst the castle's walls.\n\nDarkness begins to grow.\n\nIn a desperate attempt to find yourself, you feel a sudden coldness on your palm."
 const NORMAL_DEATH_TEXT := "You find yourself trapped amidst the castle's walls.\n\nSomehow, you stumble across a familiar looking room."
 const AMULET_TEXT := "A striking, silver amulet.\n\nOne that reveals which hearts are true, and ones who deceive.\n\nHold Q to use the amulet."
@@ -42,36 +34,6 @@ func _ready() -> void:
 		death_label,
 		FIRST_DEATH_TEXT if is_first_death else NORMAL_DEATH_TEXT
 	)
-
-
-func _show_line(label: Label, message: String) -> void:
-	label.text = message
-	label.visible_characters = 0
-
-	is_typing = true
-	is_skipping = false
-
-	while label.visible_characters < label.text.length():
-		if is_skipping:
-			break
-
-		label.visible_characters += 1
-
-		var c := label.text[label.visible_characters - 1]
-		if c not in SILENT_CHARS:
-			AudioManager.play_sfx(AudioManager.SFX.TALK)
-
-		var delay := DIALOGUE_DELAYS["normal"]
-		match c:
-			",":
-				delay = DIALOGUE_DELAYS["comma"]
-			".", "!", "?":
-				delay = DIALOGUE_DELAYS["period"]
-
-		await get_tree().create_timer(delay).timeout
-
-	label.visible_characters = label.text.length()
-	is_typing = false
 
 
 func _input(event: InputEvent) -> void:
@@ -101,6 +63,18 @@ func _go_to_amulet_screen() -> void:
 	death_screen.hide()
 	amulet_screen.show()
 	_show_line(amulet_label, AMULET_TEXT)
+
+
+func _show_line(label: Label, message: String) -> void:
+	is_typing = true
+	is_skipping = false
+	await Typewriter.run(
+		label,
+		message,
+		get_tree(),
+		func(): return is_skipping
+	)
+	is_typing = false
 
 
 func _return_to_game() -> void:

@@ -94,36 +94,3 @@ One that reveals which hearts are true, and ones who deceive.
 Hold Q to use the amulet."
 horizontal_alignment = 1
 autowrap_mode = 3
-
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=737097310]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=305665721]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=857830167]
-layout_mode = 2
-theme = ExtResource("2_s1qx5")
-theme_override_font_sizes/font_size = 64
-text = "You died."
-
-[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=984424500]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("2_s1qx5")
-text = "Restart"
-
-[node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1234005711]
-unique_name_in_owner = true
-layout_mode = 2
-theme = ExtResource("2_s1qx5")
-text = "Main menu"
-
-[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
