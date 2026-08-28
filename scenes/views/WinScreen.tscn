@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://8u78kd6xbs4c"]
+
+[ext_resource type="Script" uid="uid://bb2flhdauck47" path="res://scripts/views/win_screen.gd" id="1_m0mpe"]
+[ext_resource type="Texture2D" uid="uid://c06yl0esbbkf" path="res://assets/bg/choice_screen.png" id="2_wrc8s"]
+[ext_resource type="Texture2D" uid="uid://bfldqpxgpab2" path="res://assets/bg/good_ending_screen.png" id="3_a6ehx"]
+[ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="3_r6imf"]
+[ext_resource type="Texture2D" uid="uid://7s3ki4vb1fy5" path="res://assets/bg/death_screen_bg.png" id="4_8i1mm"]
+
+[node name="WinScreen" type="Control" unique_id=764627606]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m0mpe")
+
+[node name="ChoiceScreen" type="Control" parent="." unique_id=378571192]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ChoiceScreen" unique_id=388970071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wrc8s")
+expand_mode = 1
+
+[node name="ChoiceAButton" type="Button" parent="ChoiceScreen" unique_id=1336301009]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 234.0
+offset_top = 368.0
+offset_right = 354.0
+offset_bottom = 413.0
+theme = ExtResource("3_r6imf")
+theme_override_font_sizes/font_size = 32
+text = "Go back"
+
+[node name="ChoiceBButton" type="Button" parent="ChoiceScreen" unique_id=949356281]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 952.0
+offset_top = 383.0
+offset_right = 1040.0
+offset_bottom = 428.0
+theme = ExtResource("3_r6imf")
+theme_override_font_sizes/font_size = 32
+text = "Leave"
+
+[node name="Label" type="Label" parent="ChoiceScreen" unique_id=1170141980]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="GoodEndingScreen" type="Control" parent="." unique_id=514682028]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GoodEndingScreen" unique_id=2096092943]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_a6ehx")
+expand_mode = 1
+
+[node name="GoodEndingText" type="Label" parent="GoodEndingScreen" unique_id=1735882888]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BadEndingScreen" type="Control" parent="." unique_id=1009971396]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect3" type="TextureRect" parent="BadEndingScreen" unique_id=1562263166]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_8i1mm")
+expand_mode = 1
+
+[node name="BadEndingText" type="Label" parent="BadEndingScreen" unique_id=861891473]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

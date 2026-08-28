@@ -156,12 +156,12 @@ func _choose_door(chosen_door: int) -> void:
 	else:
 		current_level_index += 1
 
+		if current_level_index >= levels.size():
+			SceneTransition.change_scene("res://scenes/views/WinScreen.tscn")
+			return
+
 		await SceneTransition.fade_out()
 		
-		if current_level_index >= levels.size():
-			dialogue_ui.play("VICTORY", "You escaped all rooms! You win!")
-			current_level_index = 0
-
 		switch_view(RoomViews.MAIN_ROOM, false)
 		load_current_level()
 		
