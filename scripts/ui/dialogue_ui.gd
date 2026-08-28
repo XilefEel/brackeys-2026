@@ -42,10 +42,10 @@ func play(character_name: String, message: String) -> void:
 		return
 
 	show()
-	show_line(character_name, message)
+	_show_line(character_name, message)
 
 
-func show_line(character_name: String, message: String) -> void:
+func _show_line(character_name: String, message: String) -> void:
 	name_label.text = character_name
 	dialogue_label.text = message
 	dialogue_label.visible_characters = 0

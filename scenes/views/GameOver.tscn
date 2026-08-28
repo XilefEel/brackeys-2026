@@ -71,12 +71,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -60.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_k4ypp")
 expand_mode = 1
 
 [node name="AmuletText" type="Label" parent="AmuletScreen" unique_id=1153756518]
+unique_name_in_owner = true
 layout_mode = 1
 offset_left = 230.0
 offset_top = 435.0
