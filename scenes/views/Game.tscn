@@ -46,7 +46,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_45i86")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="ToDoor1" type="Button" parent="RoomView" unique_id=1732475068]
 layout_mode = 0
@@ -174,7 +173,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_sv1m6")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="GoBack" type="Button" parent="Door1View" unique_id=1850824653]
 layout_mode = 0
@@ -227,7 +225,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_a8wo8")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="GoBack" type="Button" parent="Door2View" unique_id=1248489535]
 layout_mode = 0
@@ -281,7 +278,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_attvq")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="GoBack" type="Button" parent="Door3View" unique_id=2001529103]
 layout_mode = 0
@@ -326,7 +322,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_bneo8")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="GoBack" type="Button" parent="Guard1View" unique_id=1765352749]
 layout_mode = 0
@@ -380,7 +375,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("11_ocgqw")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="GoBack" type="Button" parent="Guard2View" unique_id=2136604533]
 layout_mode = 0
@@ -441,7 +435,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_jbgew")
 expand_mode = 1
-stretch_mode = 5
 
 [node name="GoBack" type="Button" parent="Guard3View" unique_id=1665156038]
 layout_mode = 0

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://sj3c35xn7a1v"]
 
 [ext_resource type="Script" uid="uid://b2u0ehr6jh1tu" path="res://scripts/views/game_over.gd" id="1_6bcno"]
+[ext_resource type="Texture2D" uid="uid://7s3ki4vb1fy5" path="res://assets/bg/death_screen_bg.png" id="2_jxuma"]
 [ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="2_s1qx5"]
+[ext_resource type="Texture2D" uid="uid://b7sa2bwngrinp" path="res://assets/ui/amulet.png" id="4_k4ypp"]
 
 [node name="GameOver" type="Control" unique_id=1204170799]
 layout_mode = 3
@@ -12,16 +14,86 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6bcno")
 
-[node name="TextureRect" type="ColorRect" parent="." unique_id=1389788662]
+[node name="Background" type="TextureRect" parent="." unique_id=686750809]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_jxuma")
+expand_mode = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="TextureRect" unique_id=737097310]
+[node name="DeathScreen" type="Control" parent="." unique_id=727964303]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="DeathScreen" unique_id=1943341707]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DeathText" type="Label" parent="DeathScreen/CenterContainer" unique_id=2126861258]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme = ExtResource("2_s1qx5")
+theme_override_font_sizes/font_size = 28
+text = "You find yourself trapped admist the castle's walls.
+
+Darkness begins to grow. 
+
+In a desperate attempt to find yourself, you feel a sudden coldness on your palm."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AmuletScreen" type="Control" parent="." unique_id=1430926857]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Amulet" type="TextureRect" parent="AmuletScreen" unique_id=574807559]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_k4ypp")
+expand_mode = 1
+
+[node name="AmuletText" type="Label" parent="AmuletScreen" unique_id=1153756518]
+layout_mode = 1
+offset_left = 230.0
+offset_top = 435.0
+offset_right = 1065.0
+offset_bottom = 632.0
+theme = ExtResource("2_s1qx5")
+theme_override_font_sizes/font_size = 28
+text = "A striking, silver amulet. 
+
+One that reveals which hearts are true, and ones who deceive.
+
+Hold Q to use the amulet."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=737097310]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,26 +101,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer" unique_id=305665721]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=305665721]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=857830167]
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=857830167]
 layout_mode = 2
 theme = ExtResource("2_s1qx5")
 theme_override_font_sizes/font_size = 64
 text = "You died."
 
-[node name="Restart" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=984424500]
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=984424500]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_s1qx5")
 text = "Restart"
 
-[node name="Main Menu" type="Button" parent="TextureRect/CenterContainer/VBoxContainer" unique_id=1234005711]
+[node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1234005711]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_s1qx5")
 text = "Main menu"
 
-[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
