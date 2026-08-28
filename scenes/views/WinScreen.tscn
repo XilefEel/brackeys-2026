@@ -36,10 +36,10 @@ expand_mode = 1
 [node name="ChoiceAButton" type="Button" parent="ChoiceScreen" unique_id=1336301009]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 234.0
-offset_top = 368.0
-offset_right = 354.0
-offset_bottom = 413.0
+offset_left = 195.0
+offset_top = 280.0
+offset_right = 315.0
+offset_bottom = 325.0
 theme = ExtResource("3_r6imf")
 theme_override_font_sizes/font_size = 32
 text = "Go back"
@@ -47,18 +47,29 @@ text = "Go back"
 [node name="ChoiceBButton" type="Button" parent="ChoiceScreen" unique_id=949356281]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 952.0
-offset_top = 383.0
-offset_right = 1040.0
-offset_bottom = 428.0
+offset_left = 994.0
+offset_top = 280.0
+offset_right = 1082.0
+offset_bottom = 325.0
 theme = ExtResource("3_r6imf")
 theme_override_font_sizes/font_size = 32
 text = "Leave"
 
-[node name="Label" type="Label" parent="ChoiceScreen" unique_id=1170141980]
+[node name="ChoiceText" type="Label" parent="ChoiceScreen" unique_id=1170141980]
+unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 307.0
+offset_top = 450.0
+offset_right = 977.0
+offset_bottom = 633.0
+theme = ExtResource("3_r6imf")
+text = "The stairs seem to go on forever, each step heavier than the last.
+
+Then, finally, a door.
+
+Light spills from beneath it, blinding and warm, unlike anything you've felt in this place."
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="GoodEndingScreen" type="Control" parent="." unique_id=514682028]
 visible = false
@@ -82,8 +93,21 @@ expand_mode = 1
 [node name="GoodEndingText" type="Label" parent="GoodEndingScreen" unique_id=1735882888]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 84.0
+offset_top = 249.0
+offset_right = 655.0
+offset_bottom = 494.0
+theme = ExtResource("3_r6imf")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You push the door open.
+
+Light floods over you, swallowing the stairs, the walls, the weight you've carried this whole way.
+
+For the first time, there is nothing left to fear.
+
+You are free."
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="BadEndingScreen" type="Control" parent="." unique_id=1009971396]
 visible = false
@@ -107,5 +131,17 @@ expand_mode = 1
 [node name="BadEndingText" type="Label" parent="BadEndingScreen" unique_id=861891473]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 372.0
+offset_top = 250.0
+offset_right = 907.0
+offset_bottom = 495.0
+theme = ExtResource("3_r6imf")
+text = "Your hand falls from the handle.
+
+The light is too much. Too unfamiliar.
+
+You turn, and the stairs welcome you back down, into the rooms you know.
+
+Some doors are easier left closed."
+horizontal_alignment = 1
+autowrap_mode = 3
