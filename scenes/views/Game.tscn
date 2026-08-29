@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://0tlnctue5clv" path="res://resources/levels/level_2.tres" id="4_6a15w"]
 [ext_resource type="Resource" uid="uid://pfamldwn3xba" path="res://resources/levels/level_3.tres" id="4_vjgi4"]
 [ext_resource type="Resource" uid="uid://drpkjegru2k31" path="res://resources/levels/level_4.tres" id="5_kyk2p"]
-[ext_resource type="PackedScene" uid="uid://benkjqsvap6o2" path="res://scenes/views/TwoDoorsView.tscn" id="6_r22hj"]
+[ext_resource type="PackedScene" uid="uid://ch431qwmolji3" path="res://scenes/views/TwoDoorsView.tscn" id="6_r22hj"]
 [ext_resource type="PackedScene" uid="uid://b0b6kvib3wsge" path="res://scenes/views/ThreeDoorsView.tscn" id="7_oyq8o"]
 [ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/ui/DialogueUI.tscn" id="13_a85ww"]
 [ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/ui/hud.tscn" id="14_jhsr3"]
@@ -28,6 +28,7 @@ visible = false
 layout_mode = 1
 
 [node name="ThreeDoorsView" parent="." unique_id=440240064 instance=ExtResource("7_oyq8o")]
+visible = false
 layout_mode = 1
 
 [node name="DialogueUI" parent="." unique_id=1727500279 instance=ExtResource("13_a85ww")]
@@ -36,7 +37,6 @@ visible = false
 
 [node name="HUD" parent="." unique_id=360686923 instance=ExtResource("14_jhsr3")]
 unique_name_in_owner = true
-visible = false
 
 [node name="RoomTitleCard" parent="." unique_id=1249060871 instance=ExtResource("15_r7sob")]
 visible = false
