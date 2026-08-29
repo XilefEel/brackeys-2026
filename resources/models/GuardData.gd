@@ -15,6 +15,8 @@ enum Specialty {
 @export var identifier: String = "Shield Guard"
 @export var role: Role = Role.TRUTH_TELLER
 @export var specialty: Specialty = Specialty.DOOR_SPEAKER
+@export var position: int = 0
 
+@export var dialogue: Array[String] = []
 @export_multiline var statement: String = ""
 @export var summary: String = ""

@@ -7,6 +7,10 @@ extends CanvasLayer
 var is_typing := false
 var is_skipping := false
 
+var current_name: String = ""
+var lines: Array[String] = []
+var current_index: int = 0
+
 
 func _ready() -> void:
 	hide()
@@ -26,19 +30,28 @@ func _input(event: InputEvent) -> void:
 		is_skipping = true
 		return
 
-	hide()
+	current_index += 1
+	if current_index < lines.size():
+		show_current_line()
+	else:
+		hide()
 
 
-func play(character_name: String, message: String) -> void:
-	if message.is_empty():
+func play(character_name: String, dialogue_lines: Array[String]) -> void:
+	if dialogue_lines.is_empty():
 		return
 
+	current_name = character_name
+	lines = dialogue_lines
+	current_index = 0
+
 	show()
-	_show_line(character_name, message)
+	show_current_line()
 
 
-func _show_line(character_name: String, message: String) -> void:
-	name_label.text = character_name
+func show_current_line() -> void:
+	name_label.text = current_name
+	var message = lines[current_index]
 
 	is_typing = true
 	is_skipping = false

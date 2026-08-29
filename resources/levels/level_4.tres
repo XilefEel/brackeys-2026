@@ -8,7 +8,7 @@ script = ExtResource("1_onuep")
 identifier = "Red Armor Guard"
 role = 1
 specialty = 1
-statement = "You can put your complete trust in the Cape Guard—he is an honest man who speaks only truth."
+dialogue = Array[String](["You can put your complete trust in the Cape Guard.", "He is an honest man who speaks only truth."])
 summary = "Cape Guard is honest."
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
@@ -16,14 +16,14 @@ metadata/_custom_type_script = "uid://b847wsowr1b63"
 script = ExtResource("1_onuep")
 identifier = "Cape Guard"
 role = 1
-statement = "Turn back! The Second Door is a death trap waiting to snap shut on you."
+dialogue = Array[String](["Turn back! The Second Door is a death trap waiting to snap shut on you."])
 summary = "Door 2 is a trap."
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [sub_resource type="Resource" id="Resource_xygox"]
 script = ExtResource("1_onuep")
 specialty = 1
-statement = "Do not be deceived by the Red Armor Guard. He speaks pure falsehoods about the Cape Guard's character."
+dialogue = Array[String](["Do not be deceived by the Red Armor Guard.", "He speaks pure falsehoods about the Cape Guard's character."])
 summary = "Red Armor Guard is lying."
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
