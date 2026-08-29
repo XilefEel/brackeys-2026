@@ -141,6 +141,7 @@ func _choose_door(chosen_door: int) -> void:
 		SceneTransition.change_scene("res://scenes/views/GameOver.tscn")
 	else:
 		current_level_index += 1
+		AudioManager.set_room_layer(current_level_index + 1)
 
 		if current_level_index >= levels.size():
 			SceneTransition.change_scene("res://scenes/views/WinScreen.tscn")
