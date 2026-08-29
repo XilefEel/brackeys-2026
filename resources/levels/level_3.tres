@@ -14,6 +14,7 @@ metadata/_custom_type_script = "uid://b847wsowr1b63"
 [sub_resource type="Resource" id="Resource_727sg"]
 script = ExtResource("1_or7n4")
 role = 1
+specialty = 1
 dialogue = Array[String](["I swear on my honor, entering through the First Door will end your journey."])
 summary = "Door 1 is a trap."
 metadata/_custom_type_script = "uid://b847wsowr1b63"

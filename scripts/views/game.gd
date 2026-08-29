@@ -130,7 +130,7 @@ func _talk_guard(guard_index: int) -> void:
 		spoken_guards.append(guard_index)
 
 	var guard := current_level.guards[guard_index]
-	dialogue_ui.play(guard.identifier, guard.dialogue)
+	dialogue_ui.play(guard.identifier, guard.dialogue, guard.specialty)
 
 
 func _choose_door(chosen_door: int) -> void:

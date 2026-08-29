@@ -9,6 +9,7 @@ var is_skipping := false
 
 var current_name: String = ""
 var lines: Array[String] = []
+var current_sfx: AudioManager.SFX = AudioManager.SFX.TYPE
 var current_index: int = 0
 
 
@@ -37,12 +38,13 @@ func _input(event: InputEvent) -> void:
 		hide()
 
 
-func play(character_name: String, dialogue_lines: Array[String]) -> void:
+func play(character_name: String, dialogue_lines: Array[String], specialty: GuardData.Specialty) -> void:
 	if dialogue_lines.is_empty():
 		return
 
 	current_name = character_name
 	lines = dialogue_lines
+	current_sfx = _get_sfx_for_specialty(specialty)
 	current_index = 0
 
 	show()
@@ -59,6 +61,17 @@ func show_current_line() -> void:
 		dialogue_label,
 		message,
 		get_tree(),
-		func(): return is_skipping
+		func(): return is_skipping,
+		current_sfx
 	)
 	is_typing = false
+
+
+func _get_sfx_for_specialty(specialty: GuardData.Specialty) -> AudioManager.SFX:
+	match specialty:
+		GuardData.Specialty.GUARD_SPEAKER:
+			return AudioManager.SFX.GUARD_SPEAKER_TALK
+		GuardData.Specialty.DOOR_SPEAKER:
+			return AudioManager.SFX.DOOR_SPEAKER_TALK
+		_:
+			return AudioManager.SFX.TYPE

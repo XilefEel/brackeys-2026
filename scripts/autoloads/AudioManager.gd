@@ -8,7 +8,9 @@ enum BGM {
 enum SFX {
 	CLICK,
 	DOOR_OPEN,
-	TALK,
+	GUARD_SPEAKER_TALK,
+	DOOR_SPEAKER_TALK,
+	TYPE,
 }
 
 var main_menu_bgm: AudioStream = preload("res://assets/audio/bgm/main_menu_bgm.mp3")
@@ -22,14 +24,18 @@ var room_stems: Array[AudioStream] = [
 	preload("res://assets/audio/bgm/room_6.ogg"),
 ]
 
-var sfx_click: AudioStream = preload("res://assets/audio/sfx/click.mp3")
-var sfx_door: AudioStream = preload("res://assets/audio/sfx/door.mp3")
-var sfx_talk: AudioStream = preload("res://assets/audio/sfx/talk.mp3")
+var sfx_click := preload("res://assets/audio/sfx/click.mp3")
+var sfx_door := preload("res://assets/audio/sfx/door.mp3")
+var sfx_guard_speaker_talk := preload("res://assets/audio/sfx/guard_speaker.mp3")
+var sfx_door_speaker_talk := preload("res://assets/audio/sfx/door_speaker.mp3")
+var sfx_type := preload("res://assets/audio/sfx/type.mp3")
 
 var sfx_tracks := {
 	SFX.CLICK: sfx_click,
 	SFX.DOOR_OPEN: sfx_door,
-	SFX.TALK: sfx_talk,
+	SFX.GUARD_SPEAKER_TALK: sfx_guard_speaker_talk,
+	SFX.DOOR_SPEAKER_TALK: sfx_door_speaker_talk,
+	SFX.TYPE: sfx_type,
 }
 
 var master_volume := 0.5

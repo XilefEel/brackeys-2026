@@ -13,7 +13,8 @@ static func run(
 	label: Label,
 	message: String,
 	tree: SceneTree,
-	skip_flag: Callable
+	skip_flag: Callable,
+	speaker: AudioManager.SFX = AudioManager.SFX.TYPE
 ) -> void:
 	label.text = message
 	label.visible_characters = 0
@@ -26,7 +27,7 @@ static func run(
 
 		var c := label.text[label.visible_characters - 1]
 		if c not in SILENT_CHARS:
-			AudioManager.play_sfx(AudioManager.SFX.TALK)
+			AudioManager.play_sfx(speaker)
 
 		var delay: float = DIALOGUE_DELAYS["normal"]
 		match c:

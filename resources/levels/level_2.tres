@@ -13,6 +13,7 @@ metadata/_custom_type_script = "uid://b847wsowr1b63"
 script = ExtResource("1_or7n4")
 identifier = "Horned Helm Guard"
 role = 2
+specialty = 1
 dialogue = Array[String](["If you value your life, listen to me.", "The First Door will only lead you to a gruesome death."])
 summary = "Door 1 is a trap"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
