@@ -48,6 +48,14 @@ func _on_enter_door_1_pressed() -> void: get_parent()._choose_door(1)
 func _on_enter_door_2_pressed() -> void: get_parent()._choose_door(2)
 func _on_enter_door_3_pressed() -> void: get_parent()._choose_door(3)
 
+func _on_to_guard_1_mouse_entered() -> void: get_parent()._on_guard_hover_entered(0)
+func _on_to_guard_1_mouse_exited() -> void: get_parent()._on_guard_hover_exited(0)
+
+func _on_to_guard_2_mouse_entered() -> void: get_parent()._on_guard_hover_entered(1)
+func _on_to_guard_2_mouse_exited() -> void: get_parent()._on_guard_hover_exited(1)
+
+func _on_to_guard_3_mouse_entered() -> void: get_parent()._on_guard_hover_entered(2)
+func _on_to_guard_3_mouse_exited() -> void: get_parent()._on_guard_hover_exited(2)
 
 func show_view(target_view: Game.RoomViews) -> void:
 	for view_type in views:

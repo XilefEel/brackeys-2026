@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
 script = ExtResource("1_k2fya")
-level_number = 2
+level_number = 3
 amulet_hint = " The liar and the half-truther are neighbors..."
 guards = Array[ExtResource("1_or7n4")]([SubResource("Resource_sqk0d"), SubResource("Resource_727sg"), SubResource("Resource_k5fwk")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"
