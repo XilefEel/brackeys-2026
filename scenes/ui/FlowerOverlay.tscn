@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bc1huw5ivx3m1"]
 
-[ext_resource type="Texture2D" uid="uid://6hkbmcc3c2no" path="res://assets/ui/flowers/flower_lie.png" id="1_0as2p"]
+[ext_resource type="Texture2D" uid="uid://cg5vg7hesi4wh" path="res://assets/ui/flowers/flower_lie.png" id="1_0as2p"]
 [ext_resource type="Script" uid="uid://c2liayvai7ksa" path="res://scripts/ui/flower_overlay.gd" id="1_lx1an"]
-[ext_resource type="Texture2D" uid="uid://br23588on4ruy" path="res://assets/ui/flowers/flower_truth.png" id="2_lx1an"]
-[ext_resource type="Texture2D" uid="uid://y18mq7bmbkjf" path="res://assets/ui/flowers/flower_half_truth.png" id="3_8qqeo"]
+[ext_resource type="Texture2D" uid="uid://ckk5ku7t806po" path="res://assets/ui/flowers/flower_truth.png" id="2_lx1an"]
+[ext_resource type="Texture2D" uid="uid://cn8llkedho3bl" path="res://assets/ui/flowers/flower_half_truth.png" id="3_8qqeo"]
 
 [node name="FlowerOverlay" type="Control" unique_id=2132681387]
 layout_mode = 3

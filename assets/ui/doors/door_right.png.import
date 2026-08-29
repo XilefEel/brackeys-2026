@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckk5ku7t806po"
-path="res://.godot/imported/flower_truth.png-1d88d7074365083b1d97b9fe116fb39b.ctex"
+uid="uid://edou8c4micn8"
+path="res://.godot/imported/door_right.png-38eda909d79545dbbbec2203bd6a5435.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/flowers/flower_truth.png"
-dest_files=["res://.godot/imported/flower_truth.png-1d88d7074365083b1d97b9fe116fb39b.ctex"]
+source_file="res://assets/ui/doors/door_right.png"
+dest_files=["res://.godot/imported/door_right.png-38eda909d79545dbbbec2203bd6a5435.ctex"]
 
 [params]
 

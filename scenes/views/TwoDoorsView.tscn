@@ -1,13 +1,16 @@
-[gd_scene format=3 uid="uid://benkjqsvap6o2"]
+[gd_scene format=3 uid="uid://ch431qwmolji3"]
 
-[ext_resource type="Texture2D" uid="uid://cmqag78hur3cn" path="res://assets/room_views/2_door_view/room.png" id="1_h5yk7"]
 [ext_resource type="Script" uid="uid://blq6lxty5a650" path="res://scripts/views/two_doors_view.gd" id="1_k006q"]
+[ext_resource type="Texture2D" uid="uid://b56xqf1vfybh0" path="res://assets/room_views/2_door_view/room_2_guards.png" id="2_1ivnr"]
 [ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="2_k006q"]
+[ext_resource type="Texture2D" uid="uid://p1m4xaulj3co" path="res://assets/room_views/2_door_view/room_2_guards_dust.png" id="3_ib2pe"]
 [ext_resource type="PackedScene" uid="uid://bc1huw5ivx3m1" path="res://scenes/ui/FlowerOverlay.tscn" id="3_yavby"]
-[ext_resource type="Texture2D" uid="uid://b4u4wnmingpia" path="res://assets/room_views/2_door_view/door_1.png" id="4_img38"]
-[ext_resource type="Texture2D" uid="uid://dfphxigtcq8q8" path="res://assets/room_views/2_door_view/door_2.png" id="5_g2b2c"]
-[ext_resource type="Texture2D" uid="uid://biyl64wppjj8d" path="res://assets/room_views/2_door_view/guard_1.png" id="6_6xtmh"]
-[ext_resource type="Texture2D" uid="uid://duncw676u4x3h" path="res://assets/room_views/2_door_view/guard_2.png" id="7_7hhiw"]
+[ext_resource type="Texture2D" uid="uid://cyhs1pcypbldo" path="res://assets/room_views/2_door_view/room_2_guards_window.png" id="4_pfklg"]
+[ext_resource type="Texture2D" uid="uid://dr1njsidnlyyy" path="res://assets/room_views/2_door_view/room_2_guards_darkness.png" id="5_uwtn6"]
+[ext_resource type="Texture2D" uid="uid://bbq74vge0jg46" path="res://assets/ui/doors/door.png" id="7_3hdk7"]
+[ext_resource type="Texture2D" uid="uid://b1qugi7jk8bw" path="res://assets/ui/guards/door_speaker.png" id="8_v3ae3"]
+[ext_resource type="Texture2D" uid="uid://nut15118sn2u" path="res://assets/ui/guards/guard_speaker.png" id="10_gv2ck"]
+[ext_resource type="Texture2D" uid="uid://bkexlf10yj60u" path="res://assets/room_views/2_door_view/room_2_guards_zoom.png" id="11_1ivnr"]
 
 [node name="TwoDoorsView" type="Control" unique_id=58006885]
 layout_mode = 3
@@ -33,42 +36,76 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_h5yk7")
+texture = ExtResource("2_1ivnr")
 expand_mode = 1
 
-[node name="ToDoor1" type="Button" parent="RoomView" unique_id=1775712664]
-layout_mode = 0
-offset_left = 528.0
-offset_top = 317.0
-offset_right = 601.0
-offset_bottom = 467.0
-theme = ExtResource("2_k006q")
-text = "Door 1"
+[node name="TextureRect2" type="TextureRect" parent="RoomView" unique_id=1693249223]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ib2pe")
+expand_mode = 1
 
-[node name="ToDoor2" type="Button" parent="RoomView" unique_id=328283815]
-layout_mode = 0
-offset_left = 687.0
-offset_top = 318.0
-offset_right = 755.0
-offset_bottom = 462.0
-theme = ExtResource("2_k006q")
-text = "Door 2"
+[node name="TextureRect3" type="TextureRect" parent="RoomView" unique_id=636562351]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pfklg")
+expand_mode = 1
 
-[node name="ToGuard1" type="Button" parent="RoomView" unique_id=1635506206]
+[node name="TextureRect4" type="TextureRect" parent="RoomView" unique_id=929860710]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_uwtn6")
+expand_mode = 1
+
+[node name="ToDoor1" type="TextureButton" parent="RoomView" unique_id=1014550507]
 layout_mode = 0
-offset_left = 402.0
-offset_top = 307.0
-offset_right = 495.0
-offset_bottom = 512.0
+offset_left = 391.0
+offset_top = 159.0
+offset_right = 604.0
+offset_bottom = 479.0
 theme = ExtResource("2_k006q")
-text = "Guard 1"
+texture_normal = ExtResource("7_3hdk7")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="ToDoor2" type="TextureButton" parent="RoomView" unique_id=13263298]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 144.0
+offset_right = 845.0
+offset_bottom = 492.5131
+theme = ExtResource("2_k006q")
+texture_normal = ExtResource("7_3hdk7")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="ToGuard1" type="TextureButton" parent="RoomView" unique_id=1037619177]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 187.0
+offset_right = 473.0
+offset_bottom = 531.4839
+theme = ExtResource("2_k006q")
+texture_normal = ExtResource("8_v3ae3")
+ignore_texture_size = true
+stretch_mode = 6
 
 [node name="FlowerOverlay" parent="RoomView/ToGuard1" unique_id=2132681387 instance=ExtResource("3_yavby")]
 layout_mode = 0
-offset_left = -22.0
-offset_top = -140.0
-offset_right = -22.0
-offset_bottom = -140.0
+offset_top = -90.0
+offset_bottom = -90.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard1" unique_id=1537853416]
 visible = false
@@ -81,21 +118,24 @@ grow_vertical = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ToGuard2" type="Button" parent="RoomView" unique_id=1392150271]
+[node name="ToGuard2" type="TextureButton" parent="RoomView" unique_id=1650806394]
 layout_mode = 0
-offset_left = 796.0
-offset_top = 311.0
-offset_right = 883.0
-offset_bottom = 514.0
+offset_left = 754.0
+offset_top = 175.0
+offset_right = 958.0
+offset_bottom = 527.24
 theme = ExtResource("2_k006q")
-text = "Guard 2"
+texture_normal = ExtResource("10_gv2ck")
+ignore_texture_size = true
+stretch_mode = 6
+flip_h = true
 
 [node name="FlowerOverlay" parent="RoomView/ToGuard2" unique_id=709875217 instance=ExtResource("3_yavby")]
 layout_mode = 0
-offset_left = -21.0
-offset_top = -136.0
-offset_right = -21.0
-offset_bottom = -136.0
+offset_left = 63.0
+offset_top = -100.0
+offset_right = 63.0
+offset_bottom = -100.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard2" unique_id=1400372677]
 visible = false
@@ -124,7 +164,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_img38")
+texture = ExtResource("11_1ivnr")
 expand_mode = 1
 
 [node name="GoBack" type="Button" parent="Door1View" unique_id=1511898990]
@@ -151,14 +191,16 @@ offset_bottom = 725.0
 theme = ExtResource("2_k006q")
 text = "Guard 1"
 
-[node name="EnterDoor" type="Button" parent="Door1View" unique_id=706898096]
+[node name="EnterDoor" type="TextureButton" parent="Door1View" unique_id=1373592017]
 layout_mode = 0
-offset_left = 542.0
-offset_top = 244.0
-offset_right = 758.0
-offset_bottom = 654.0
+offset_left = 392.0
+offset_top = 20.0
+offset_right = 918.0
+offset_bottom = 796.6415
 theme = ExtResource("2_k006q")
-text = "Enter Door"
+texture_normal = ExtResource("7_3hdk7")
+ignore_texture_size = true
+stretch_mode = 6
 
 [node name="Door2View" type="Control" parent="." unique_id=1299974224]
 visible = false
@@ -176,7 +218,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_g2b2c")
+texture = ExtResource("11_1ivnr")
 expand_mode = 1
 
 [node name="GoBack" type="Button" parent="Door2View" unique_id=1013710773]
@@ -205,14 +247,16 @@ theme = ExtResource("2_k006q")
 text = "Door 1
 "
 
-[node name="EnterDoor" type="Button" parent="Door2View" unique_id=1083422637]
+[node name="EnterDoor" type="TextureButton" parent="Door2View" unique_id=1964712446]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 233.0
-offset_right = 752.0
-offset_bottom = 645.0
+offset_left = 379.0
+offset_top = 25.0
+offset_right = 909.0
+offset_bottom = 795.0855
 theme = ExtResource("2_k006q")
-text = "Enter Door"
+texture_normal = ExtResource("7_3hdk7")
+ignore_texture_size = true
+stretch_mode = 6
 
 [node name="Guard1View" type="Control" parent="." unique_id=1856520568]
 visible = false
@@ -230,8 +274,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_6xtmh")
+texture = ExtResource("11_1ivnr")
 expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Guard1View" unique_id=1778606276]
+layout_mode = 0
+offset_left = 859.0
+offset_top = -58.0
+offset_right = 1477.0
+offset_bottom = 1054.7332
+texture = ExtResource("7_3hdk7")
 
 [node name="GoBack" type="Button" parent="Guard1View" unique_id=1413549015]
 layout_mode = 0
@@ -250,22 +302,24 @@ offset_bottom = 720.0
 theme = ExtResource("2_k006q")
 text = "Door 1"
 
-[node name="Talk" type="Button" parent="Guard1View" unique_id=504835787]
+[node name="Talk" type="TextureButton" parent="Guard1View" unique_id=224721132]
 layout_mode = 0
-offset_left = 532.0
-offset_top = 363.0
-offset_right = 788.0
-offset_bottom = 427.0
+offset_left = 360.0
+offset_top = 11.0
+offset_right = 1011.0
+offset_bottom = 1260.0577
 focus_mode = 0
 theme = ExtResource("2_k006q")
-text = "Talk"
+texture_normal = ExtResource("8_v3ae3")
+ignore_texture_size = true
+stretch_mode = 6
 
 [node name="FlowerOverlay" parent="Guard1View" unique_id=1415806297 instance=ExtResource("3_yavby")]
 layout_mode = 0
-offset_left = 583.0
-offset_top = 455.0
-offset_right = 583.0
-offset_bottom = 455.0
+offset_left = 529.0
+offset_top = 335.0
+offset_right = 529.0
+offset_bottom = 335.0
 
 [node name="Guard2View" type="Control" parent="." unique_id=1988443601]
 visible = false
@@ -283,15 +337,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_7hhiw")
+texture = ExtResource("11_1ivnr")
 expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Guard2View" unique_id=112665656]
+layout_mode = 0
+offset_left = -205.0
+offset_top = -33.0
+offset_right = 413.0
+offset_bottom = 1079.7332
+texture = ExtResource("7_3hdk7")
 
 [node name="GoBack" type="Button" parent="Guard2View" unique_id=246544640]
 layout_mode = 0
-offset_left = 207.0
-offset_top = 49.0
-offset_right = 357.0
-offset_bottom = 109.0
+offset_left = 192.0
+offset_top = 30.0
+offset_right = 342.0
+offset_bottom = 90.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
@@ -303,22 +365,25 @@ theme = ExtResource("2_k006q")
 text = "Door 2
 "
 
-[node name="Talk" type="Button" parent="Guard2View" unique_id=2095995471]
+[node name="Talk" type="TextureButton" parent="Guard2View" unique_id=1822168781]
 layout_mode = 0
-offset_left = 496.0
-offset_top = 372.0
-offset_right = 756.0
-offset_bottom = 434.0
+offset_left = 292.0
+offset_top = 26.0
+offset_right = 912.0
+offset_bottom = 1235.0
 focus_mode = 0
 theme = ExtResource("2_k006q")
-text = "Talk"
+texture_normal = ExtResource("10_gv2ck")
+ignore_texture_size = true
+stretch_mode = 6
+flip_h = true
 
 [node name="FlowerOverlay" parent="Guard2View" unique_id=792597428 instance=ExtResource("3_yavby")]
 layout_mode = 0
-offset_left = 564.0
-offset_top = 453.0
-offset_right = 564.0
-offset_bottom = 453.0
+offset_left = 644.0
+offset_top = 341.0
+offset_right = 644.0
+offset_bottom = 341.0
 
 [connection signal="pressed" from="RoomView/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="RoomView/ToDoor2" to="." method="_on_to_door_2_pressed"]
