@@ -22,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_k006q")
 
 [node name="RoomView" type="Control" parent="." unique_id=1770698311]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,7 +209,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Door1View" type="Control" parent="." unique_id=500040465]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -348,8 +348,8 @@ texture = ExtResource("7_3hdk7")
 layout_mode = 0
 offset_left = 146.0
 offset_top = 64.0
-offset_right = 296.0
-offset_bottom = 124.0
+offset_right = 228.0
+offset_bottom = 95.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
@@ -411,14 +411,23 @@ texture = ExtResource("7_3hdk7")
 layout_mode = 0
 offset_left = 192.0
 offset_top = 30.0
-offset_right = 342.0
-offset_bottom = 90.0
+offset_right = 274.0
+offset_bottom = 61.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
 [node name="ToDoor2" type="Button" parent="Guard2View" unique_id=86988952]
 layout_mode = 0
 offset_right = 150.0
+offset_bottom = 720.0
+theme = ExtResource("2_k006q")
+text = "Door 2
+"
+
+[node name="ToDoor3" type="Button" parent="Guard2View" unique_id=945938454]
+layout_mode = 0
+offset_left = 1131.0
+offset_right = 1281.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
 text = "Door 2
@@ -475,8 +484,8 @@ texture = ExtResource("7_3hdk7")
 layout_mode = 0
 offset_left = 192.0
 offset_top = 30.0
-offset_right = 342.0
-offset_bottom = 90.0
+offset_right = 274.0
+offset_bottom = 61.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
@@ -484,6 +493,16 @@ text = "Go Back"
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 720.0
+theme = ExtResource("2_k006q")
+text = "Door 2
+"
+
+[node name="ToDoor3" type="Button" parent="Guard3View" unique_id=1715430101]
+layout_mode = 0
+offset_left = 1130.0
+offset_top = -1.0
+offset_right = 1280.0
+offset_bottom = 719.0
 theme = ExtResource("2_k006q")
 text = "Door 2
 "
@@ -539,8 +558,8 @@ texture = ExtResource("7_3hdk7")
 layout_mode = 0
 offset_left = 192.0
 offset_top = 30.0
-offset_right = 342.0
-offset_bottom = 90.0
+offset_right = 274.0
+offset_bottom = 61.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
@@ -587,22 +606,24 @@ offset_bottom = 341.0
 [connection signal="mouse_exited" from="RoomView/ToGuard4" to="." method="_on_to_guard_4_mouse_exited"]
 [connection signal="pressed" from="RoomView/ToGuard4" to="." method="_on_to_guard_4_pressed"]
 [connection signal="pressed" from="Door1View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Door1View/ToDoor2" to="." method="_on_to_door_2_pressed"]
-[connection signal="pressed" from="Door1View/ToGuard1" to="." method="_on_to_guard_1_pressed"]
+[connection signal="pressed" from="Door1View/ToDoor2" to="." method="navigate_right"]
+[connection signal="pressed" from="Door1View/ToGuard1" to="." method="navigate_left"]
 [connection signal="pressed" from="Door1View/EnterDoor" to="." method="_on_enter_door_1_pressed"]
 [connection signal="pressed" from="Door2View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Door2View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
+[connection signal="pressed" from="Door2View/ToGuard2" to="." method="navigate_right"]
 [connection signal="pressed" from="Door2View/ToDoor1" to="." method="_on_to_door_1_pressed"]
 [connection signal="pressed" from="Door2View/EnterDoor" to="." method="_on_enter_door_2_pressed"]
 [connection signal="pressed" from="Guard1View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard1View/ToDoor1" to="." method="_on_to_door_1_pressed"]
+[connection signal="pressed" from="Guard1View/ToDoor1" to="." method="navigate_right"]
 [connection signal="pressed" from="Guard1View/Talk" to="." method="_on_talk_guard_1_pressed"]
 [connection signal="pressed" from="Guard2View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard2View/ToDoor2" to="." method="_on_to_door_2_pressed"]
+[connection signal="pressed" from="Guard2View/ToDoor2" to="." method="navigate_left"]
+[connection signal="pressed" from="Guard2View/ToDoor3" to="." method="navigate_right"]
 [connection signal="pressed" from="Guard2View/Talk" to="." method="_on_talk_guard_2_pressed"]
 [connection signal="pressed" from="Guard3View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard3View/ToDoor2" to="." method="_on_to_door_2_pressed"]
+[connection signal="pressed" from="Guard3View/ToDoor2" to="." method="navigate_left"]
+[connection signal="pressed" from="Guard3View/ToDoor3" to="." method="navigate_right"]
 [connection signal="pressed" from="Guard3View/Talk" to="." method="_on_talk_guard_3_pressed"]
 [connection signal="pressed" from="Guard4View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard4View/ToDoor2" to="." method="_on_to_door_2_pressed"]
+[connection signal="pressed" from="Guard4View/ToDoor2" to="." method="navigate_left"]
 [connection signal="pressed" from="Guard4View/Talk" to="." method="_on_talk_guard_4_pressed"]

@@ -22,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_tam5s")
 
 [node name="RoomView" type="Control" parent="." unique_id=2098356908]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,10 +85,10 @@ stretch_mode = 6
 
 [node name="ToGuard1" type="TextureButton" parent="RoomView" unique_id=980809825]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 196.0
-offset_right = 293.0
-offset_bottom = 606.0
+offset_left = 65.0
+offset_top = 227.0
+offset_right = 273.0
+offset_bottom = 637.0
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
 ignore_texture_size = true
@@ -113,10 +114,10 @@ vertical_alignment = 1
 
 [node name="ToGuard2" type="TextureButton" parent="RoomView" unique_id=1682536586]
 layout_mode = 0
-offset_left = 330.0
-offset_top = 212.0
-offset_right = 476.0
-offset_bottom = 499.78845
+offset_left = 355.0
+offset_top = 227.71153
+offset_right = 481.0
+offset_bottom = 476.0769
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
 ignore_texture_size = true
@@ -124,10 +125,10 @@ stretch_mode = 6
 
 [node name="FlowerOverlay" parent="RoomView/ToGuard2" unique_id=417191794 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = 10.0
-offset_top = -75.0
-offset_right = 10.0
-offset_bottom = -75.0
+offset_left = -11.0
+offset_top = -82.0
+offset_right = -11.0
+offset_bottom = -82.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard2" unique_id=1896635320]
 visible = false
@@ -142,10 +143,10 @@ vertical_alignment = 1
 
 [node name="ToGuard3" type="TextureButton" parent="RoomView" unique_id=931697278]
 layout_mode = 0
-offset_left = 505.0
-offset_top = 252.0
-offset_right = 623.0
-offset_bottom = 436.5641
+offset_left = 487.0
+offset_top = 249.0
+offset_right = 605.0
+offset_bottom = 433.5641
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("10_cmirx")
 ignore_texture_size = true
@@ -153,10 +154,10 @@ stretch_mode = 6
 
 [node name="FlowerOverlay" parent="RoomView/ToGuard3" unique_id=1155591192 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = -22.0
-offset_top = -112.0
-offset_right = -22.0
-offset_bottom = -112.0
+offset_left = -19.0
+offset_top = -108.0
+offset_right = -19.0
+offset_bottom = -108.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard3" unique_id=987678318]
 visible = false
@@ -182,10 +183,10 @@ stretch_mode = 6
 
 [node name="FlowerOverlay" parent="RoomView/ToGuard4" unique_id=630870454 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = -22.0
-offset_top = -112.0
-offset_right = -22.0
-offset_bottom = -112.0
+offset_left = -16.0
+offset_top = -104.0
+offset_right = -16.0
+offset_bottom = -104.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard4" unique_id=803499084]
 visible = false
@@ -200,10 +201,10 @@ vertical_alignment = 1
 
 [node name="ToGuard5" type="TextureButton" parent="RoomView" unique_id=1573789084]
 layout_mode = 0
-offset_left = 856.0
-offset_top = 218.91745
-offset_right = 1007.0
-offset_bottom = 494.59634
+offset_left = 807.0
+offset_top = 226.95413
+offset_right = 946.0
+offset_bottom = 480.7248
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
 ignore_texture_size = true
@@ -211,10 +212,10 @@ stretch_mode = 6
 
 [node name="FlowerOverlay" parent="RoomView/ToGuard5" unique_id=2144849771 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = -7.0
-offset_top = -94.91745
-offset_right = -7.0
-offset_bottom = -94.91745
+offset_left = -4.0
+offset_top = -88.0
+offset_right = -4.0
+offset_bottom = -88.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard5" unique_id=1672175299]
 visible = false
@@ -229,10 +230,10 @@ vertical_alignment = 1
 
 [node name="ToGuard6" type="TextureButton" parent="RoomView" unique_id=1475346186]
 layout_mode = 0
-offset_left = 988.0
-offset_top = 206.0
-offset_right = 1195.0
-offset_bottom = 583.9175
+offset_left = 1004.0
+offset_top = 233.0
+offset_right = 1236.0
+offset_bottom = 656.5597
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
 ignore_texture_size = true
@@ -240,10 +241,10 @@ stretch_mode = 6
 
 [node name="FlowerOverlay" parent="RoomView/ToGuard6" unique_id=1449541467 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = 20.0
-offset_top = -96.0
-offset_right = 20.0
-offset_bottom = -96.0
+offset_left = 26.0
+offset_top = -79.0
+offset_right = 26.0
+offset_bottom = -79.0
 
 [node name="SummaryLabel" type="Label" parent="RoomView/ToGuard6" unique_id=1784631278]
 visible = false
@@ -279,8 +280,8 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 198.0
 offset_top = 59.0
-offset_right = 323.0
-offset_bottom = 119.0
+offset_right = 280.0
+offset_bottom = 90.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
@@ -400,6 +401,14 @@ offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
 text = "Guard 3"
 
+[node name="ToGuard4" type="Button" parent="Door3View" unique_id=476754186]
+layout_mode = 0
+offset_left = 1130.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = ExtResource("2_tam5s")
+text = "Guard 3"
+
 [node name="EnterDoor" type="TextureButton" parent="Door3View" unique_id=559744487]
 layout_mode = 0
 offset_left = 396.0
@@ -432,18 +441,18 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Guard1View" unique_id=1794265583]
 layout_mode = 0
-offset_left = 895.0
-offset_top = -120.0
-offset_right = 1575.0
-offset_bottom = 1104.3667
+offset_left = 996.0
+offset_top = -129.0
+offset_right = 1676.0
+offset_bottom = 1095.3667
 texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard1View" unique_id=1520290002]
 layout_mode = 0
 offset_left = 146.0
 offset_top = 64.0
-offset_right = 296.0
-offset_bottom = 124.0
+offset_right = 228.0
+offset_bottom = 95.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
@@ -457,10 +466,10 @@ text = "Door 1"
 
 [node name="Talk" type="TextureButton" parent="Guard1View" unique_id=1084219205]
 layout_mode = 0
-offset_left = 318.0
-offset_top = -77.0
-offset_right = 1060.0
-offset_bottom = 1373.2197
+offset_left = 344.0
+offset_top = -79.0
+offset_right = 1086.0
+offset_bottom = 1371.2197
 focus_mode = 0
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
@@ -469,10 +478,10 @@ stretch_mode = 6
 
 [node name="FlowerOverlay" parent="Guard1View" unique_id=286339450 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 291.0
-offset_right = 523.0
-offset_bottom = 291.0
+offset_left = 546.0
+offset_top = 294.0
+offset_right = 546.0
+offset_bottom = 294.0
 
 [node name="Guard2View" type="Control" parent="." unique_id=1924338066]
 visible = false
@@ -495,18 +504,18 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Guard2View" unique_id=625337532]
 layout_mode = 0
-offset_left = -266.0
-offset_top = -120.0
-offset_right = 414.0
-offset_bottom = 1104.3667
+offset_left = -353.0
+offset_top = -132.0
+offset_right = 327.0
+offset_bottom = 1092.3667
 texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard2View" unique_id=558271825]
 layout_mode = 0
 offset_left = 207.0
 offset_top = 49.0
-offset_right = 357.0
-offset_bottom = 109.0
+offset_right = 289.0
+offset_bottom = 80.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
@@ -527,10 +536,10 @@ text = "Door 1"
 
 [node name="Talk" type="TextureButton" parent="Guard2View" unique_id=1441543810]
 layout_mode = 0
-offset_left = 400.0
-offset_top = -37.0
-offset_right = 1117.0
-offset_bottom = 1301.2516
+offset_left = 356.0
+offset_top = -78.0
+offset_right = 1073.0
+offset_bottom = 1260.2516
 focus_mode = 0
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("10_cmirx")
@@ -539,10 +548,10 @@ stretch_mode = 6
 
 [node name="FlowerOverlay" parent="Guard2View" unique_id=2028196064 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = 575.0
-offset_top = 262.0
-offset_right = 575.0
-offset_bottom = 262.0
+offset_left = 536.0
+offset_top = 252.0
+offset_right = 536.0
+offset_bottom = 252.0
 
 [node name="Guard3View" type="Control" parent="." unique_id=1076608866]
 visible = false
@@ -565,18 +574,18 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Guard3View" unique_id=872667837]
 layout_mode = 0
-offset_left = 905.0
-offset_top = -122.0
-offset_right = 1585.0
-offset_bottom = 1102.3667
+offset_left = 973.0
+offset_top = -133.0
+offset_right = 1653.0
+offset_bottom = 1091.3667
 texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard3View" unique_id=483741159]
 layout_mode = 0
 offset_left = 197.0
 offset_top = 43.0
-offset_right = 347.0
-offset_bottom = 103.0
+offset_right = 279.0
+offset_bottom = 74.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
@@ -590,10 +599,10 @@ text = "Door 3"
 
 [node name="Talk" type="TextureButton" parent="Guard3View" unique_id=313709554]
 layout_mode = 0
-offset_left = 422.0
-offset_top = -42.0
-offset_right = 1141.0
-offset_bottom = 1390.3386
+offset_left = 389.0
+offset_top = -57.0
+offset_right = 1108.0
+offset_bottom = 1375.3386
 focus_mode = 0
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
@@ -609,10 +618,10 @@ text = "Door 2"
 
 [node name="FlowerOverlay" parent="Guard3View" unique_id=814082317 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = 609.0
-offset_top = 311.0
-offset_right = 609.0
-offset_bottom = 311.0
+offset_left = 575.0
+offset_top = 317.0
+offset_right = 575.0
+offset_bottom = 317.0
 
 [node name="Guard4View" type="Control" parent="." unique_id=659244494]
 visible = false
@@ -635,18 +644,18 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Guard4View" unique_id=429499397]
 layout_mode = 0
-offset_left = -284.0
-offset_top = -122.0
-offset_right = 396.0
-offset_bottom = 1102.3667
+offset_left = -367.0
+offset_top = -130.0
+offset_right = 313.0
+offset_bottom = 1094.3667
 texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard4View" unique_id=2082287235]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 43.0
-offset_right = 347.0
-offset_bottom = 103.0
+offset_left = 190.0
+offset_top = 30.0
+offset_right = 272.0
+offset_bottom = 61.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
@@ -660,10 +669,10 @@ text = "Door 3"
 
 [node name="Talk" type="TextureButton" parent="Guard4View" unique_id=2016777363]
 layout_mode = 0
-offset_left = 422.0
-offset_top = -42.0
-offset_right = 1141.0
-offset_bottom = 1390.3386
+offset_left = 362.0
+offset_top = -80.0
+offset_right = 1081.0
+offset_bottom = 1352.3386
 focus_mode = 0
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
@@ -679,10 +688,10 @@ text = "Door 2"
 
 [node name="FlowerOverlay" parent="Guard4View" unique_id=1714522258 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = 609.0
-offset_top = 311.0
-offset_right = 609.0
-offset_bottom = 311.0
+offset_left = 562.0
+offset_top = 303.0
+offset_right = 562.0
+offset_bottom = 303.0
 
 [node name="Guard5View" type="Control" parent="." unique_id=1959465602]
 visible = false
@@ -705,18 +714,18 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Guard5View" unique_id=245040474]
 layout_mode = 0
-offset_left = 905.0
-offset_top = -122.0
-offset_right = 1585.0
-offset_bottom = 1102.3667
+offset_left = 989.0
+offset_top = -127.0
+offset_right = 1669.0
+offset_bottom = 1097.3667
 texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard5View" unique_id=409139103]
 layout_mode = 0
 offset_left = 197.0
 offset_top = 43.0
-offset_right = 347.0
-offset_bottom = 103.0
+offset_right = 279.0
+offset_bottom = 74.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
@@ -730,10 +739,10 @@ text = "Door 3"
 
 [node name="Talk" type="TextureButton" parent="Guard5View" unique_id=1408529003]
 layout_mode = 0
-offset_left = 422.0
-offset_top = -42.0
-offset_right = 1141.0
-offset_bottom = 1390.3386
+offset_left = 382.0
+offset_top = -55.0
+offset_right = 1101.0
+offset_bottom = 1377.3386
 focus_mode = 0
 theme = ExtResource("2_tam5s")
 texture_normal = ExtResource("8_rvhxg")
@@ -749,9 +758,9 @@ text = "Door 2"
 
 [node name="FlowerOverlay" parent="Guard5View" unique_id=391648601 instance=ExtResource("3_5equp")]
 layout_mode = 0
-offset_left = 609.0
+offset_left = 571.0
 offset_top = 311.0
-offset_right = 609.0
+offset_right = 571.0
 offset_bottom = 311.0
 
 [node name="Guard6View" type="Control" parent="." unique_id=1917884077]
@@ -775,28 +784,20 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Guard6View" unique_id=995903460]
 layout_mode = 0
-offset_left = -267.0
-offset_top = -116.0
-offset_right = 413.0
-offset_bottom = 1108.3667
+offset_left = -354.0
+offset_top = -122.0
+offset_right = 326.0
+offset_bottom = 1102.3667
 texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard6View" unique_id=1390555256]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 43.0
-offset_right = 347.0
-offset_bottom = 103.0
+offset_left = 193.0
+offset_top = 32.0
+offset_right = 275.0
+offset_bottom = 63.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
-
-[node name="ToDoor3" type="Button" parent="Guard6View" unique_id=2102648008]
-layout_mode = 0
-offset_left = 1130.0
-offset_right = 1280.0
-offset_bottom = 720.0
-theme = ExtResource("2_tam5s")
-text = "Door 3"
 
 [node name="Talk" type="TextureButton" parent="Guard6View" unique_id=2138828473]
 layout_mode = 0
@@ -846,36 +847,36 @@ offset_bottom = 311.0
 [connection signal="mouse_exited" from="RoomView/ToGuard6" to="." method="_on_to_guard_6_mouse_exited"]
 [connection signal="pressed" from="RoomView/ToGuard6" to="." method="_on_to_guard_6_pressed"]
 [connection signal="pressed" from="Door1View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Door1View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
-[connection signal="pressed" from="Door1View/ToGuard1" to="." method="_on_to_guard_1_pressed"]
+[connection signal="pressed" from="Door1View/ToGuard2" to="." method="navigate_right"]
+[connection signal="pressed" from="Door1View/ToGuard1" to="." method="navigate_left"]
 [connection signal="pressed" from="Door1View/EnterDoor" to="." method="_on_enter_door_1_pressed"]
 [connection signal="pressed" from="Door2View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Door2View/ToGuard3" to="." method="_on_to_guard_3_pressed"]
-[connection signal="pressed" from="Door2View/ToGuard2" to="." method="_on_to_guard_2_pressed"]
+[connection signal="pressed" from="Door2View/ToGuard3" to="." method="navigate_right"]
+[connection signal="pressed" from="Door2View/ToGuard2" to="." method="navigate_left"]
 [connection signal="pressed" from="Door2View/EnterDoor" to="." method="_on_enter_door_2_pressed"]
 [connection signal="pressed" from="Door3View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Door3View/ToGuard3" to="." method="_on_to_guard_3_pressed"]
+[connection signal="pressed" from="Door3View/ToGuard3" to="." method="navigate_left"]
+[connection signal="pressed" from="Door3View/ToGuard4" to="." method="navigate_right"]
 [connection signal="pressed" from="Door3View/EnterDoor" to="." method="_on_enter_door_3_pressed"]
 [connection signal="pressed" from="Guard1View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard1View/ToDoor1" to="." method="_on_to_door_1_pressed"]
+[connection signal="pressed" from="Guard1View/ToDoor1" to="." method="navigate_right"]
 [connection signal="pressed" from="Guard1View/Talk" to="." method="_on_talk_guard_1_pressed"]
 [connection signal="pressed" from="Guard2View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard2View/ToDoor2" to="." method="_on_to_door_2_pressed"]
-[connection signal="pressed" from="Guard2View/ToDoor1" to="." method="_on_to_door_1_pressed"]
+[connection signal="pressed" from="Guard2View/ToDoor2" to="." method="navigate_right"]
+[connection signal="pressed" from="Guard2View/ToDoor1" to="." method="navigate_left"]
 [connection signal="pressed" from="Guard2View/Talk" to="." method="_on_talk_guard_2_pressed"]
 [connection signal="pressed" from="Guard3View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard3View/ToDoor3" to="." method="_on_to_door_3_pressed"]
+[connection signal="pressed" from="Guard3View/ToDoor3" to="." method="navigate_right"]
 [connection signal="pressed" from="Guard3View/Talk" to="." method="_on_talk_guard_3_pressed"]
-[connection signal="pressed" from="Guard3View/ToDoor2" to="." method="_on_to_door_2_pressed"]
+[connection signal="pressed" from="Guard3View/ToDoor2" to="." method="navigate_left"]
 [connection signal="pressed" from="Guard4View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard4View/ToDoor3" to="." method="_on_to_door_3_pressed"]
+[connection signal="pressed" from="Guard4View/ToDoor3" to="." method="navigate_right"]
 [connection signal="pressed" from="Guard4View/Talk" to="." method="_on_talk_guard_4_pressed"]
-[connection signal="pressed" from="Guard4View/ToDoor2" to="." method="_on_to_door_2_pressed"]
+[connection signal="pressed" from="Guard4View/ToDoor2" to="." method="navigate_left"]
 [connection signal="pressed" from="Guard5View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard5View/ToDoor3" to="." method="_on_to_door_3_pressed"]
+[connection signal="pressed" from="Guard5View/ToDoor3" to="." method="navigate_right"]
 [connection signal="pressed" from="Guard5View/Talk" to="." method="_on_talk_guard_5_pressed"]
-[connection signal="pressed" from="Guard5View/ToDoor2" to="." method="_on_to_door_2_pressed"]
+[connection signal="pressed" from="Guard5View/ToDoor2" to="." method="navigate_left"]
 [connection signal="pressed" from="Guard6View/GoBack" to="." method="_on_go_back_pressed"]
-[connection signal="pressed" from="Guard6View/ToDoor3" to="." method="_on_to_door_3_pressed"]
 [connection signal="pressed" from="Guard6View/Talk" to="." method="_on_talk_guard_6_pressed"]
-[connection signal="pressed" from="Guard6View/ToDoor2" to="." method="_on_to_door_2_pressed"]
+[connection signal="pressed" from="Guard6View/ToDoor2" to="." method="navigate_left"]

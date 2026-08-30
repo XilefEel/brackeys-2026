@@ -1,6 +1,20 @@
 class_name ThreeDoorsView
 extends Control
 
+const ROOMS_IN_ORDER: Array[Game.RoomViews] = [
+	Game.RoomViews.GUARD_1,
+	Game.RoomViews.DOOR_1,
+	Game.RoomViews.GUARD_2,
+	Game.RoomViews.GUARD_3,
+	Game.RoomViews.DOOR_2,
+	Game.RoomViews.GUARD_4,
+	Game.RoomViews.GUARD_5,
+	Game.RoomViews.DOOR_3,
+	Game.RoomViews.GUARD_6,
+]
+
+var nav_sequence: Array[Game.RoomViews] = []
+
 @onready var views: Dictionary = {
 	Game.RoomViews.MAIN_ROOM: $RoomView,
 	Game.RoomViews.DOOR_1: $Door1View,
@@ -61,6 +75,26 @@ extends Control
 
 
 func setup_guards(guards_by_position: Array[GuardData]) -> void:
+	nav_sequence.clear()
+
+	for view_type in ROOMS_IN_ORDER:
+		match view_type:
+			Game.RoomViews.DOOR_1, Game.RoomViews.DOOR_2, Game.RoomViews.DOOR_3:
+				nav_sequence.append(view_type)
+
+			Game.RoomViews.GUARD_1:
+				if _has_guard(0, guards_by_position): nav_sequence.append(view_type)
+			Game.RoomViews.GUARD_2:
+				if _has_guard(1, guards_by_position): nav_sequence.append(view_type)
+			Game.RoomViews.GUARD_3:
+				if _has_guard(2, guards_by_position): nav_sequence.append(view_type)
+			Game.RoomViews.GUARD_4:
+				if _has_guard(3, guards_by_position): nav_sequence.append(view_type)
+			Game.RoomViews.GUARD_5:
+				if _has_guard(4, guards_by_position): nav_sequence.append(view_type)
+			Game.RoomViews.GUARD_6:
+				if _has_guard(5, guards_by_position): nav_sequence.append(view_type)
+
 	for i in range(guard_buttons.size()):
 		var button_node := guard_buttons[i]
 		var close_up_node := guard_close_ups[i]
@@ -82,6 +116,34 @@ func setup_guards(guards_by_position: Array[GuardData]) -> void:
 			close_up_node.texture_normal = GuardData.get_texture(guard.specialty, GuardData.Direction.CENTER)
 		else:
 			button_node.hide()
+
+
+func _has_guard(slot_idx: int, guards_by_position: Array[GuardData]) -> bool:
+	return slot_idx < guards_by_position.size() and guards_by_position[slot_idx] != null
+
+
+func navigate_right() -> void:
+	_step_navigation(1)
+
+
+func navigate_left() -> void:
+	_step_navigation(-1)
+
+
+func _step_navigation(step: int) -> void:
+	if nav_sequence.is_empty():
+		return
+
+	var parent_game = get_parent()
+	var current_view: Game.RoomViews = parent_game.current_view
+	var current_idx := nav_sequence.find(current_view)
+
+	if current_idx == -1:
+		current_idx = 0 if step > 0 else nav_sequence.size() - 1
+	else:
+		current_idx = (current_idx + step + nav_sequence.size()) % nav_sequence.size()
+
+	parent_game.switch_view(nav_sequence[current_idx])
 
 
 func _on_to_door_1_pressed() -> void: get_parent().switch_view(Game.RoomViews.DOOR_1)
