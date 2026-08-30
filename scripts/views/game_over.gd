@@ -79,4 +79,4 @@ func _show_line(label: Label, message: String) -> void:
 
 func _return_to_game() -> void:
 	AudioManager.play_sfx(AudioManager.SFX.CLICK)
-	SceneTransition.change_scene("res://scenes/views/game.tscn")
+	SceneTransition.change_scene("res://scenes/views/Game.tscn")
