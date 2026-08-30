@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://c3qq2wq2mqth0"]
+
+[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://resources/models/GuardData.gd" id="1_sgo0n"]
+[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://resources/models/LevelData.gd" id="2_o52cb"]
+
+[sub_resource type="Resource" id="Resource_hxhn1"]
+script = ExtResource("1_sgo0n")
+identifier = "Tired Guard"
+dialogue = Array[String](["Safety lies in either the door I am guarding or the door across me."])
+summary = "Between the left and right door, one is safe"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_adsg4"]
+script = ExtResource("1_sgo0n")
+identifier = "Hand Guard"
+specialty = 1
+position = 1
+dialogue = Array[String](["I know the guards beside me like the back of my hand.", "And I'm telling you that at least one of them is lying."])
+summary = "At least one of my neighbours are lying"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_xygox"]
+script = ExtResource("1_sgo0n")
+identifier = "Leg Guard"
+role = 1
+position = 2
+dialogue = Array[String](["The door I am guarding and its left sibling will lead Your Highness to danger."])
+summary = "Middle and left door are unsafe."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_yw3bn"]
+script = ExtResource("1_sgo0n")
+identifier = "Mane Guard"
+role = 1
+position = 3
+dialogue = Array[String](["The door I am guarding or the one on the right, only one shall be safe for you."])
+summary = "Between the middle and right door, one is safe"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_6rgbx"]
+script = ExtResource("1_sgo0n")
+identifier = "Horned Guard"
+specialty = 1
+position = 4
+dialogue = Array[String](["I don't trust the other side of this room.", "Someone's not being honest there."])
+summary = "There is at least one liar on the opposite side of the room"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_r3v0c"]
+script = ExtResource("1_sgo0n")
+identifier = "Side Guard"
+role = 1
+specialty = 1
+position = 5
+dialogue = Array[String](["Listen to me Princess, look across me and look at the guard beside me. ", "There is at least one liar among them."])
+summary = "Between my neighbour and the guard across, there is at least one liar"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[resource]
+script = ExtResource("2_o52cb")
+level_number = 6
+amulet_hint = "The scales has yet to tip. Opportunity shines through nonetheless."
+guards = Array[ExtResource("1_sgo0n")]([SubResource("Resource_hxhn1"), SubResource("Resource_adsg4"), SubResource("Resource_xygox"), SubResource("Resource_yw3bn"), SubResource("Resource_6rgbx"), SubResource("Resource_r3v0c")])
+metadata/_custom_type_script = "uid://t4f7rb56ocsr"

@@ -5,41 +5,26 @@
 
 [sub_resource type="Resource" id="Resource_cxqhe"]
 script = ExtResource("1_or7n4")
-dialogue = Array[String](["Step away from those archways, princess.", "Both the First and Second Doors are rigged with deadly spike traps. "])
-summary = "Door 1 and Door 2 are traps"
+role = 1
+position = 1
+dialogue = Array[String](["Neither my door nor my neighbour's door will lead to anyplace safe for Your Highness."])
+summary = "Both doors are unsafe"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [sub_resource type="Resource" id="Resource_3n4gr"]
 script = ExtResource("1_or7n4")
 identifier = "Horned Helm Guard"
-role = 2
 specialty = 1
 position = 2
-dialogue = Array[String](["If you value your life, listen to me.", "The First Door will only lead you to a gruesome death."])
-summary = "Door 1 is a trap"
-metadata/_custom_type_script = "uid://b847wsowr1b63"
-
-[sub_resource type="Resource" id="Resource_a3i2a"]
-script = ExtResource("1_or7n4")
-identifier = "Red Armor Guard"
-role = 1
-position = 4
-dialogue = Array[String](["Pay no attention to the others, princess.", "The Third Door is a guaranteed death trap."])
-summary = "Door 3 is a trap."
-metadata/_custom_type_script = "uid://b847wsowr1b63"
-
-[sub_resource type="Resource" id="Resource_rbwim"]
-script = ExtResource("1_or7n4")
-specialty = 1
-position = 5
-dialogue = Array[String](["test2"])
-summary = "test2"
+dialogue = Array[String](["Oh Princess, have you heard? My companion here guards doors that are unsafe."])
+summary = "My neighbour only guards unsafe doors"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
 script = ExtResource("1_k2fya")
 level_number = 2
-safe_door_id = 3
-amulet_hint = "There are at least 1 liars in the room..."
-guards = Array[ExtResource("1_or7n4")]([SubResource("Resource_cxqhe"), SubResource("Resource_3n4gr"), SubResource("Resource_a3i2a"), SubResource("Resource_rbwim")])
+door_count = 2
+safe_door_id = 2
+amulet_hint = "You are in a room. One guard tells only lies, another tells nothing but the truth"
+guards = Array[ExtResource("1_or7n4")]([SubResource("Resource_cxqhe"), SubResource("Resource_3n4gr")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"

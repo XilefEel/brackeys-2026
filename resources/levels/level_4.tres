@@ -5,33 +5,42 @@
 
 [sub_resource type="Resource" id="Resource_hxhn1"]
 script = ExtResource("1_onuep")
-identifier = "Red Armor Guard"
-role = 1
-specialty = 1
-dialogue = Array[String](["You can put your complete trust in the Cape Guard.", "He is an honest man who speaks only truth."])
-summary = "Cape Guard is honest."
+identifier = "Heavy Armored Guard"
+dialogue = Array[String](["Neither the door I am guarding nor the door next to me is safe for Your Highness."])
+summary = "Left and middle door is unsafe"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [sub_resource type="Resource" id="Resource_adsg4"]
 script = ExtResource("1_onuep")
 identifier = "Cape Guard"
 role = 1
-specialty = 1
-dialogue = Array[String](["Turn back! The Second Door is a death trap waiting to snap shut on you."])
-summary = "Door 2 is a trap."
+position = 2
+dialogue = Array[String](["The door on the right is unsafe."])
+summary = "Right door is unsafe"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
-[sub_resource type="Resource" id="Resource_xygox"]
+[sub_resource type="Resource" id="Resource_sygx3"]
 script = ExtResource("1_onuep")
+role = 2
 specialty = 1
-dialogue = Array[String](["Do not be deceived by the Red Armor Guard.", "He speaks pure falsehoods about the Cape Guard's character."])
-summary = "Red Armor Guard is lying."
+position = 3
+dialogue = Array[String](["Here's a secret for you Princess. I believe that at least one of my neighbouring guards are lying."])
+summary = "At least one of my neighbours are lying"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_bl7rf"]
+script = ExtResource("1_onuep")
+identifier = "Armed Guard"
+specialty = 1
+position = 5
+dialogue = Array[String](["See that guard across me? Yeah I wouldn't trust him if I were you."])
+summary = "The guard opposite of me is lying"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
 script = ExtResource("1_f5gkw")
 level_number = 4
-safe_door_id = 2
-amulet_hint = "There is only one truth teller in the room..."
-guards = Array[ExtResource("1_onuep")]([SubResource("Resource_hxhn1"), SubResource("Resource_adsg4"), SubResource("Resource_xygox")])
+safe_door_id = 3
+amulet_hint = "Differing statements, equal on either side."
+guards = Array[ExtResource("1_onuep")]([SubResource("Resource_hxhn1"), SubResource("Resource_adsg4"), SubResource("Resource_sygx3"), SubResource("Resource_bl7rf")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"

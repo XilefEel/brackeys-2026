@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://dirgge3tnfsc0"]
+
+[ext_resource type="Script" uid="uid://b847wsowr1b63" path="res://resources/models/GuardData.gd" id="1_yw3bn"]
+[ext_resource type="Script" uid="uid://t4f7rb56ocsr" path="res://resources/models/LevelData.gd" id="2_6rgbx"]
+
+[sub_resource type="Resource" id="Resource_hxhn1"]
+script = ExtResource("1_yw3bn")
+identifier = "Pole Guard"
+role = 2
+specialty = 1
+dialogue = Array[String](["Hey Princess, you see those two guards across me?", "I believe one of them is currently being untrue."])
+summary = "A guard on the right door is lying."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_adsg4"]
+script = ExtResource("1_yw3bn")
+identifier = "Iron Guard"
+role = 2
+position = 2
+dialogue = Array[String](["Between the door I am guarding and the one on the left, at least one of them is safe."])
+summary = "Between the middle and left door, at least one is safe."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_xygox"]
+script = ExtResource("1_yw3bn")
+position = 3
+dialogue = Array[String](["Be wary of my door and the one on the right, for at least one of them will hurt you."])
+summary = "Between the middle and right door, at least one is unsafe."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_hrksf"]
+script = ExtResource("1_yw3bn")
+identifier = "Helm Guard"
+role = 2
+specialty = 1
+position = 4
+dialogue = Array[String](["These guards beside me? Trust me, but know that one of them is a liar"])
+summary = "One of my neighbours are lying"
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[sub_resource type="Resource" id="Resource_7xi47"]
+script = ExtResource("1_yw3bn")
+identifier = "Sharp Guard"
+role = 1
+position = 5
+dialogue = Array[String](["Your Highness, know that between the right door and the door I am guarding, at least one is safe."])
+summary = "Between the middle and right door, at least one is safe."
+metadata/_custom_type_script = "uid://b847wsowr1b63"
+
+[resource]
+script = ExtResource("2_6rgbx")
+level_number = 5
+amulet_hint = "In a room filled with incomplete people with incomplete truths, a liar hides in their midst"
+guards = Array[ExtResource("1_yw3bn")]([SubResource("Resource_hxhn1"), SubResource("Resource_adsg4"), SubResource("Resource_xygox"), SubResource("Resource_hrksf"), SubResource("Resource_7xi47")])
+metadata/_custom_type_script = "uid://t4f7rb56ocsr"

@@ -6,30 +6,15 @@
 [sub_resource type="Resource" id="Resource_cxqhe"]
 script = ExtResource("1_sfdh2")
 role = 1
-dialogue = Array[String](["Halt, princess! ", "Step through Door 1 and you shall pass unharmed. Touch Door 2, and you court a painful death."])
-summary = "Door 2 leads to a trap."
-metadata/_custom_type_script = "uid://b847wsowr1b63"
-
-[sub_resource type="Resource" id="Resource_3n4gr"]
-script = ExtResource("1_sfdh2")
-identifier = "Horned Helm Guard"
-specialty = 1
-position = 1
-dialogue = Array[String](["Bah! Don't listen to that snake! Guard 1 lies through his teeth. ", "Door 1 will see you butchered the moment you cross the threshold"])
-summary = "Door 1 is a trap."
-metadata/_custom_type_script = "uid://b847wsowr1b63"
-
-[sub_resource type="Resource" id="Resource_yc005"]
-script = ExtResource("1_sfdh2")
-position = 3
-dialogue = Array[String](["test1"])
-summary = "test1"
+position = 2
+dialogue = Array[String](["Welcome, Your Highness. You have been here before I presume?", "Although I do wonder, for how much longer will you keep trying?", "But no matter, just know that the right door is unsafe."])
+summary = "Right door is unsafe"
 metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [resource]
 script = ExtResource("1_62fdt")
 door_count = 2
 safe_door_id = 2
-amulet_hint = "There are at least 1 liars in the room..."
-guards = Array[ExtResource("1_sfdh2")]([SubResource("Resource_cxqhe"), SubResource("Resource_3n4gr"), SubResource("Resource_yc005")])
+amulet_hint = "A lone presence guarding your one true escape."
+guards = Array[ExtResource("1_sfdh2")]([SubResource("Resource_cxqhe")])
 metadata/_custom_type_script = "uid://t4f7rb56ocsr"

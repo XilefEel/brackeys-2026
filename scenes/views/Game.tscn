@@ -7,7 +7,9 @@
 [ext_resource type="Resource" uid="uid://pfamldwn3xba" path="res://resources/levels/level_3.tres" id="4_vjgi4"]
 [ext_resource type="Resource" uid="uid://drpkjegru2k31" path="res://resources/levels/level_4.tres" id="5_kyk2p"]
 [ext_resource type="PackedScene" uid="uid://ch431qwmolji3" path="res://scenes/views/TwoDoorsView.tscn" id="6_r22hj"]
+[ext_resource type="Resource" uid="uid://dirgge3tnfsc0" path="res://resources/levels/level_5.tres" id="7_7ahv3"]
 [ext_resource type="PackedScene" uid="uid://b0b6kvib3wsge" path="res://scenes/views/ThreeDoorsView.tscn" id="7_oyq8o"]
+[ext_resource type="Resource" uid="uid://c3qq2wq2mqth0" path="res://resources/levels/level_6.tres" id="8_4kul5"]
 [ext_resource type="PackedScene" uid="uid://w5q73hqsidip" path="res://scenes/ui/DialogueUI.tscn" id="13_a85ww"]
 [ext_resource type="PackedScene" uid="uid://vp8xrcsx8gvi" path="res://scenes/ui/hud.tscn" id="14_jhsr3"]
 [ext_resource type="PackedScene" uid="uid://h7fcn4rd4oh0" path="res://scenes/ui/RoomTitleCard.tscn" id="15_r7sob"]
@@ -21,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7ua8r")
-levels = Array[ExtResource("2_r7sob")]([ExtResource("3_y5y3l"), ExtResource("4_6a15w"), ExtResource("4_vjgi4"), ExtResource("5_kyk2p")])
+levels = Array[ExtResource("2_r7sob")]([ExtResource("3_y5y3l"), ExtResource("4_6a15w"), ExtResource("4_vjgi4"), ExtResource("5_kyk2p"), ExtResource("7_7ahv3"), ExtResource("8_4kul5")])
 
 [node name="TwoDoorsView" parent="." unique_id=58006885 instance=ExtResource("6_r22hj")]
 visible = false
