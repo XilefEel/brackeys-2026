@@ -22,7 +22,6 @@ grow_vertical = 2
 script = ExtResource("1_k006q")
 
 [node name="RoomView" type="Control" parent="." unique_id=1770698311]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -209,6 +208,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Door1View" type="Control" parent="." unique_id=500040465]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -230,8 +230,8 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 198.0
 offset_top = 59.0
-offset_right = 323.0
-offset_bottom = 119.0
+offset_right = 280.0
+offset_bottom = 90.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
@@ -284,8 +284,8 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 212.0
 offset_top = 54.0
-offset_right = 362.0
-offset_bottom = 114.0
+offset_right = 294.0
+offset_bottom = 85.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 

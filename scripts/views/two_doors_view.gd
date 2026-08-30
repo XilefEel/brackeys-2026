@@ -10,7 +10,6 @@ const ROOMS_IN_ORDER: Array[Game.RoomViews] = [
 	Game.RoomViews.GUARD_4,
 ]
 
-
 @onready var views: Dictionary = {
 	Game.RoomViews.MAIN_ROOM: $RoomView,
 	Game.RoomViews.DOOR_1: $Door1View,

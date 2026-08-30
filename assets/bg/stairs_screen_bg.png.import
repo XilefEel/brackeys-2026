@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2f64ocd5afyt"
-path="res://.godot/imported/good_ending_screen.png-200af7487a7ac31e3273c9cd1e5b2cf0.ctex"
+uid="uid://dx2nv1rj50pb1"
+path="res://.godot/imported/stairs_screen_bg.png-9d9cab0c9bfd4c923648f7be44d5a9f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bg/good_ending_screen.png"
-dest_files=["res://.godot/imported/good_ending_screen.png-200af7487a7ac31e3273c9cd1e5b2cf0.ctex"]
+source_file="res://assets/bg/stairs_screen_bg.png"
+dest_files=["res://.godot/imported/stairs_screen_bg.png-9d9cab0c9bfd4c923648f7be44d5a9f7.ctex"]
 
 [params]
 
