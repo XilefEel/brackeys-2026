@@ -258,7 +258,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Door1View" type="Control" parent="." unique_id=2000453378]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -278,27 +277,27 @@ expand_mode = 1
 
 [node name="GoBack" type="Button" parent="Door1View" unique_id=548687091]
 layout_mode = 0
-offset_left = 198.0
-offset_top = 59.0
-offset_right = 280.0
-offset_bottom = 90.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToGuard2" type="Button" parent="Door1View" unique_id=1563396031]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 721.0
 theme = ExtResource("2_tam5s")
-text = "Guard 2"
+text = "Next "
 
 [node name="ToGuard1" type="Button" parent="Door1View" unique_id=256818822]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 725.0
 theme = ExtResource("2_tam5s")
-text = "Guard 1"
+text = "Prev"
 
 [node name="EnterDoor" type="TextureButton" parent="Door1View" unique_id=94321000]
 layout_mode = 0
@@ -332,28 +331,28 @@ expand_mode = 1
 
 [node name="GoBack" type="Button" parent="Door2View" unique_id=1867621240]
 layout_mode = 0
-offset_left = 212.0
-offset_top = 54.0
-offset_right = 362.0
-offset_bottom = 114.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToGuard3" type="Button" parent="Door2View" unique_id=1147875572]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Guard 3"
+text = "Next "
 
 [node name="ToGuard2" type="Button" parent="Door2View" unique_id=1391403782]
 layout_mode = 0
 offset_top = 1.0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Guard 2"
+text = "Prev"
 
 [node name="EnterDoor" type="TextureButton" parent="Door2View" unique_id=914358251]
 layout_mode = 0
@@ -387,27 +386,27 @@ expand_mode = 1
 
 [node name="GoBack" type="Button" parent="Door3View" unique_id=482615516]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 60.0
-offset_right = 349.0
-offset_bottom = 120.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToGuard3" type="Button" parent="Door3View" unique_id=292457339]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Guard 3"
+text = "Prev"
 
 [node name="ToGuard4" type="Button" parent="Door3View" unique_id=476754186]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Guard 3"
+text = "Next"
 
 [node name="EnterDoor" type="TextureButton" parent="Door3View" unique_id=559744487]
 layout_mode = 0
@@ -449,20 +448,20 @@ texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard1View" unique_id=1520290002]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 64.0
-offset_right = 228.0
-offset_bottom = 95.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToDoor1" type="Button" parent="Guard1View" unique_id=294711778]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 1"
+text = "Next"
 
 [node name="Talk" type="TextureButton" parent="Guard1View" unique_id=1084219205]
 layout_mode = 0
@@ -512,27 +511,27 @@ texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard2View" unique_id=558271825]
 layout_mode = 0
-offset_left = 207.0
-offset_top = 49.0
-offset_right = 289.0
-offset_bottom = 80.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToDoor2" type="Button" parent="Guard2View" unique_id=931119704]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 2"
+text = "Next"
 
 [node name="ToDoor1" type="Button" parent="Guard2View" unique_id=1077974999]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 1"
+text = "Prev"
 
 [node name="Talk" type="TextureButton" parent="Guard2View" unique_id=1441543810]
 layout_mode = 0
@@ -582,20 +581,20 @@ texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard3View" unique_id=483741159]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 43.0
-offset_right = 279.0
-offset_bottom = 74.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToDoor3" type="Button" parent="Guard3View" unique_id=1187610906]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 3"
+text = "Next "
 
 [node name="Talk" type="TextureButton" parent="Guard3View" unique_id=313709554]
 layout_mode = 0
@@ -611,10 +610,10 @@ stretch_mode = 6
 
 [node name="ToDoor2" type="Button" parent="Guard3View" unique_id=1206109465]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 2"
+text = "Prev"
 
 [node name="FlowerOverlay" parent="Guard3View" unique_id=814082317 instance=ExtResource("3_5equp")]
 layout_mode = 0
@@ -652,20 +651,20 @@ texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard4View" unique_id=2082287235]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 30.0
-offset_right = 272.0
-offset_bottom = 61.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToDoor3" type="Button" parent="Guard4View" unique_id=2099339462]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 3"
+text = "Next "
 
 [node name="Talk" type="TextureButton" parent="Guard4View" unique_id=2016777363]
 layout_mode = 0
@@ -681,10 +680,10 @@ stretch_mode = 6
 
 [node name="ToDoor2" type="Button" parent="Guard4View" unique_id=1730569033]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 2"
+text = "Prev"
 
 [node name="FlowerOverlay" parent="Guard4View" unique_id=1714522258 instance=ExtResource("3_5equp")]
 layout_mode = 0
@@ -722,20 +721,20 @@ texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard5View" unique_id=409139103]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 43.0
-offset_right = 279.0
-offset_bottom = 74.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
 [node name="ToDoor3" type="Button" parent="Guard5View" unique_id=1032088901]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 3"
+text = "Next "
 
 [node name="Talk" type="TextureButton" parent="Guard5View" unique_id=1408529003]
 layout_mode = 0
@@ -751,10 +750,10 @@ stretch_mode = 6
 
 [node name="ToDoor2" type="Button" parent="Guard5View" unique_id=217928157]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 2"
+text = "Prev"
 
 [node name="FlowerOverlay" parent="Guard5View" unique_id=391648601 instance=ExtResource("3_5equp")]
 layout_mode = 0
@@ -792,10 +791,10 @@ texture = ExtResource("6_rvhxg")
 
 [node name="GoBack" type="Button" parent="Guard6View" unique_id=1390555256]
 layout_mode = 0
-offset_left = 193.0
-offset_top = 32.0
-offset_right = 275.0
-offset_bottom = 63.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_tam5s")
 text = "Go Back"
 
@@ -813,10 +812,10 @@ stretch_mode = 6
 
 [node name="ToDoor2" type="Button" parent="Guard6View" unique_id=779576212]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_tam5s")
-text = "Door 2"
+text = "Prev"
 
 [node name="FlowerOverlay" parent="Guard6View" unique_id=834813471 instance=ExtResource("3_5equp")]
 layout_mode = 0

@@ -93,10 +93,10 @@ stretch_mode = 6
 
 [node name="ToGuard1" type="TextureButton" parent="RoomView" unique_id=1037619177]
 layout_mode = 0
-offset_left = 283.0
-offset_top = 196.29031
-offset_right = 447.0
-offset_bottom = 508.41934
+offset_left = 268.0
+offset_top = 196.0
+offset_right = 432.0
+offset_bottom = 508.12903
 theme = ExtResource("2_k006q")
 texture_normal = ExtResource("8_v3ae3")
 ignore_texture_size = true
@@ -179,10 +179,10 @@ vertical_alignment = 1
 
 [node name="ToGuard4" type="TextureButton" parent="RoomView" unique_id=1373622232]
 layout_mode = 0
-offset_left = 828.0
-offset_top = 207.0
-offset_right = 1001.0
-offset_bottom = 505.71335
+offset_left = 851.0
+offset_top = 208.0
+offset_right = 1024.0
+offset_bottom = 506.71335
 theme = ExtResource("2_k006q")
 texture_normal = ExtResource("10_gv2ck")
 ignore_texture_size = true
@@ -228,27 +228,27 @@ expand_mode = 1
 
 [node name="GoBack" type="Button" parent="Door1View" unique_id=1511898990]
 layout_mode = 0
-offset_left = 198.0
-offset_top = 59.0
-offset_right = 280.0
-offset_bottom = 90.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
 [node name="ToDoor2" type="Button" parent="Door1View" unique_id=1252909787]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 721.0
 theme = ExtResource("2_k006q")
-text = "Door 2"
+text = "Next"
 
 [node name="ToGuard1" type="Button" parent="Door1View" unique_id=1502329936]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 725.0
 theme = ExtResource("2_k006q")
-text = "Guard 1"
+text = "Prev"
 
 [node name="EnterDoor" type="TextureButton" parent="Door1View" unique_id=1373592017]
 layout_mode = 0
@@ -282,29 +282,28 @@ expand_mode = 1
 
 [node name="GoBack" type="Button" parent="Door2View" unique_id=1013710773]
 layout_mode = 0
-offset_left = 212.0
-offset_top = 54.0
-offset_right = 294.0
-offset_bottom = 85.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
 [node name="ToGuard2" type="Button" parent="Door2View" unique_id=1066622109]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Guard 2"
+text = "Next"
 
 [node name="ToDoor1" type="Button" parent="Door2View" unique_id=1028777887]
 layout_mode = 0
 offset_top = 1.0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Door 1
-"
+text = "Prev"
 
 [node name="EnterDoor" type="TextureButton" parent="Door2View" unique_id=1964712446]
 layout_mode = 0
@@ -346,20 +345,20 @@ texture = ExtResource("7_3hdk7")
 
 [node name="GoBack" type="Button" parent="Guard1View" unique_id=1413549015]
 layout_mode = 0
-offset_left = 146.0
-offset_top = 64.0
-offset_right = 228.0
-offset_bottom = 95.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
 [node name="ToDoor1" type="Button" parent="Guard1View" unique_id=1867080477]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_right = 1280.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Door 1"
+text = "Next"
 
 [node name="Talk" type="TextureButton" parent="Guard1View" unique_id=224721132]
 layout_mode = 0
@@ -409,29 +408,27 @@ texture = ExtResource("7_3hdk7")
 
 [node name="GoBack" type="Button" parent="Guard2View" unique_id=246544640]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 30.0
-offset_right = 274.0
-offset_bottom = 61.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
 [node name="ToDoor2" type="Button" parent="Guard2View" unique_id=86988952]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Door 2
-"
+text = "Prev"
 
 [node name="ToDoor3" type="Button" parent="Guard2View" unique_id=945938454]
 layout_mode = 0
-offset_left = 1131.0
+offset_left = 1181.0
 offset_right = 1281.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Door 2
-"
+text = "Next"
 
 [node name="Talk" type="TextureButton" parent="Guard2View" unique_id=1822168781]
 layout_mode = 0
@@ -482,30 +479,28 @@ texture = ExtResource("7_3hdk7")
 
 [node name="GoBack" type="Button" parent="Guard3View" unique_id=1569134075]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 30.0
-offset_right = 274.0
-offset_bottom = 61.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
 [node name="ToDoor2" type="Button" parent="Guard3View" unique_id=841167103]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Door 2
-"
+text = "Prev"
 
 [node name="ToDoor3" type="Button" parent="Guard3View" unique_id=1715430101]
 layout_mode = 0
-offset_left = 1130.0
+offset_left = 1180.0
 offset_top = -1.0
 offset_right = 1280.0
 offset_bottom = 719.0
 theme = ExtResource("2_k006q")
-text = "Door 2
-"
+text = "Next"
 
 [node name="Talk" type="TextureButton" parent="Guard3View" unique_id=2007976890]
 layout_mode = 0
@@ -556,20 +551,19 @@ texture = ExtResource("7_3hdk7")
 
 [node name="GoBack" type="Button" parent="Guard4View" unique_id=2014340427]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 30.0
-offset_right = 274.0
-offset_bottom = 61.0
+offset_left = 150.0
+offset_top = 50.0
+offset_right = 232.0
+offset_bottom = 81.0
 theme = ExtResource("2_k006q")
 text = "Go Back"
 
 [node name="ToDoor2" type="Button" parent="Guard4View" unique_id=1304083984]
 layout_mode = 0
-offset_right = 150.0
+offset_right = 100.0
 offset_bottom = 720.0
 theme = ExtResource("2_k006q")
-text = "Door 2
-"
+text = "Prev"
 
 [node name="Talk" type="TextureButton" parent="Guard4View" unique_id=639021314]
 layout_mode = 0
@@ -611,7 +605,7 @@ offset_bottom = 341.0
 [connection signal="pressed" from="Door1View/EnterDoor" to="." method="_on_enter_door_1_pressed"]
 [connection signal="pressed" from="Door2View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Door2View/ToGuard2" to="." method="navigate_right"]
-[connection signal="pressed" from="Door2View/ToDoor1" to="." method="_on_to_door_1_pressed"]
+[connection signal="pressed" from="Door2View/ToDoor1" to="." method="navigate_left"]
 [connection signal="pressed" from="Door2View/EnterDoor" to="." method="_on_enter_door_2_pressed"]
 [connection signal="pressed" from="Guard1View/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="Guard1View/ToDoor1" to="." method="navigate_right"]
