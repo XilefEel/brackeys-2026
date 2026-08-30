@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cs4itx811a1n5"]
 
 [ext_resource type="Script" uid="uid://cxp8pfpfug5fq" path="res://scripts/views/main_menu.gd" id="1_0ykhv"]
-[ext_resource type="Texture2D" uid="uid://dgpie0rgopf1w" path="res://assets/bg/main_menu_bg.jpg" id="1_yqorp"]
+[ext_resource type="Texture2D" uid="uid://dc0pp0ys0tyl1" path="res://assets/bg/main_menu.png" id="2_4s20s"]
 [ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="3_4s20s"]
 
 [node name="MainMenu" type="Control" unique_id=1204170799]
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_yqorp")
+texture = ExtResource("2_4s20s")
 expand_mode = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=737097310]
@@ -37,7 +37,6 @@ layout_mode = 2
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=857830167]
 layout_mode = 2
 theme = ExtResource("3_4s20s")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "GuardRooms"
 

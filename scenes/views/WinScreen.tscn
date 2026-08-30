@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://8u78kd6xbs4c"]
 
 [ext_resource type="Script" uid="uid://bb2flhdauck47" path="res://scripts/views/win_screen.gd" id="1_m0mpe"]
-[ext_resource type="Texture2D" uid="uid://c06yl0esbbkf" path="res://assets/bg/choice_screen.png" id="2_wrc8s"]
-[ext_resource type="Texture2D" uid="uid://bfldqpxgpab2" path="res://assets/bg/good_ending_screen.png" id="3_a6ehx"]
+[ext_resource type="Texture2D" uid="uid://dtpesh2iqjxjn" path="res://assets/bg/choice_screen.png" id="2_wrc8s"]
+[ext_resource type="Texture2D" uid="uid://c2f64ocd5afyt" path="res://assets/bg/good_ending_screen.png" id="3_a6ehx"]
 [ext_resource type="Theme" uid="uid://c6unk72pufcr1" path="res://assets/themes/main_theme.tres" id="3_r6imf"]
 [ext_resource type="Texture2D" uid="uid://7s3ki4vb1fy5" path="res://assets/bg/death_screen_bg.png" id="4_8i1mm"]
 
@@ -67,6 +67,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="GoodEndingScreen" type="Control" parent="." unique_id=514682028]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,6 +98,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="BadEndingScreen" type="Control" parent="." unique_id=1009971396]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

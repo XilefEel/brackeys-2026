@@ -18,5 +18,4 @@ enum Specialty {
 @export var position: int = 0
 
 @export var dialogue: Array[String] = []
-@export_multiline var statement: String = ""
 @export var summary: String = ""
