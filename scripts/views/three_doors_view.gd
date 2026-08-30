@@ -15,12 +15,12 @@ extends Control
 }
 
 @onready var summary_labels: Array[Label] = [
-	$RoomView/ToGuard1/SummaryLabel, # Slot 0 (Door 1 Left)
-	$RoomView/ToGuard2/SummaryLabel, # Slot 1 (Door 1 Right)
-	$RoomView/ToGuard3/SummaryLabel, # Slot 2 (Door 2 Left)
-	$RoomView/ToGuard4/SummaryLabel, # Slot 3 (Door 2 Right)
-	$RoomView/ToGuard5/SummaryLabel, # Slot 4 (Door 3 Left)
-	$RoomView/ToGuard6/SummaryLabel, # Slot 5 (Door 3 Right)
+	$RoomView/ToGuard1/SummaryLabel,
+	$RoomView/ToGuard2/SummaryLabel,
+	$RoomView/ToGuard3/SummaryLabel,
+	$RoomView/ToGuard4/SummaryLabel,
+	$RoomView/ToGuard5/SummaryLabel,
+	$RoomView/ToGuard6/SummaryLabel,
 ]
 
 @onready var flower_overlays: Array[FlowerOverlay] = [
@@ -50,10 +50,21 @@ extends Control
 	$RoomView/ToGuard6,
 ]
 
+@onready var guard_close_ups: Array[TextureButton] = [
+	$Guard1View/Talk,
+	$Guard2View/Talk,
+	$Guard3View/Talk,
+	$Guard4View/Talk,
+	$Guard5View/Talk,
+	$Guard6View/Talk,
+]
+
 
 func setup_guards(guards_by_position: Array[GuardData]) -> void:
 	for i in range(guard_buttons.size()):
 		var button_node := guard_buttons[i]
+		var close_up_node := guard_close_ups[i]
+
 		var guard: GuardData = guards_by_position[i] if i < guards_by_position.size() else null
 
 		if guard != null:
@@ -68,6 +79,7 @@ func setup_guards(guards_by_position: Array[GuardData]) -> void:
 				dir = GuardData.Direction.LEFT
 
 			button_node.texture_normal = GuardData.get_texture(guard.specialty, dir)
+			close_up_node.texture_normal = GuardData.get_texture(guard.specialty, GuardData.Direction.CENTER)
 		else:
 			button_node.hide()
 

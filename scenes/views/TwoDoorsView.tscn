@@ -120,10 +120,10 @@ vertical_alignment = 1
 
 [node name="ToGuard2" type="TextureButton" parent="RoomView" unique_id=1650806394]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 197.0
-offset_right = 638.0
-offset_bottom = 504.34668
+offset_left = 464.0
+offset_top = 200.0
+offset_right = 642.0
+offset_bottom = 507.34668
 theme = ExtResource("2_k006q")
 texture_normal = ExtResource("10_gv2ck")
 ignore_texture_size = true

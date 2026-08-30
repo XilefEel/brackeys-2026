@@ -39,15 +39,25 @@ extends Control
 	$RoomView/ToGuard4,
 ]
 
+@onready var guard_close_ups: Array[TextureButton] = [
+	$Guard1View/Talk,
+	$Guard2View/Talk,
+	$Guard3View/Talk,
+	$Guard4View/Talk,
+]
+
 
 func setup_guards(guards_by_position: Array[GuardData]) -> void:
 	for i in range(guard_buttons.size()):
 		var button_node := guard_buttons[i]
+		var close_up_node := guard_close_ups[i]
+		
 		var guard := guards_by_position[i] if i < guards_by_position.size() else null
 
 		if guard != null:
 			button_node.show()
 			button_node.texture_normal = GuardData.get_texture(guard.specialty, GuardData.Direction.CENTER)
+			close_up_node.texture_normal = GuardData.get_texture(guard.specialty, GuardData.Direction.CENTER)
 		else:
 			button_node.hide()
 
