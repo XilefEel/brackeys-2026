@@ -30,6 +30,7 @@ metadata/_custom_type_script = "uid://b847wsowr1b63"
 
 [sub_resource type="Resource" id="Resource_rbwim"]
 script = ExtResource("1_or7n4")
+specialty = 1
 position = 5
 dialogue = Array[String](["test2"])
 summary = "test2"

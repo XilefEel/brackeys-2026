@@ -41,7 +41,7 @@ extends Control
 	$RoomView/ToGuard6/FlowerOverlay,
 ]
 
-@onready var guard_buttons: Array[Control] = [
+@onready var guard_buttons: Array[TextureButton] = [
 	$RoomView/ToGuard1,
 	$RoomView/ToGuard2,
 	$RoomView/ToGuard3,
@@ -54,9 +54,20 @@ extends Control
 func setup_guards(guards_by_position: Array[GuardData]) -> void:
 	for i in range(guard_buttons.size()):
 		var button_node := guard_buttons[i]
-		
-		if guards_by_position[i] != null:
+		var guard: GuardData = guards_by_position[i] if i < guards_by_position.size() else null
+
+		if guard != null:
 			button_node.show()
+
+			var dir := GuardData.Direction.CENTER
+			if i in [0, 1]:
+				dir = GuardData.Direction.RIGHT
+			elif i in [2, 3]:
+				dir = GuardData.Direction.CENTER
+			elif i in [4, 5]:
+				dir = GuardData.Direction.LEFT
+
+			button_node.texture_normal = GuardData.get_texture(guard.specialty, dir)
 		else:
 			button_node.hide()
 
